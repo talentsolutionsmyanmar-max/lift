@@ -42,19 +42,21 @@ function icon(name,cls){return `<svg class="${cls||'ic'}" viewBox="0 0 24 24" fi
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 /* Lift wordmark — the red dot sits ON the dotless ı (tight, optically centred) */
 function wordmark(){return `<span class="wordmark">l<span class="wl">ı</span>ft</span>`;}
-/* Signature brand moment: the doorway opening onto a sunrise with a green shoot.
-   Drawn fresh as a focal illustration (not the faint watermark). */
-function doorwayArt(){return `<svg viewBox="0 0 200 220" fill="none" aria-hidden="true">
-  <defs><linearGradient id="hg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3d9a8"/><stop offset="1" stop-color="#e9b98a"/></linearGradient>
-  <linearGradient id="hg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e6eee0"/><stop offset="1" stop-color="#cddabb"/></linearGradient></defs>
-  <circle cx="150" cy="58" r="34" fill="url(#hg)"/>
-  <path d="M60 220V110c0-46 26-66 60-66s60 20 60 66v110" fill="url(#hg2)"/>
-  <path d="M78 220V114c0-32 18-48 42-48s42 16 42 48v106" fill="#f5f4ee"/>
-  <path d="M0 200c56-72 120-52 200-100v120H0Z" fill="#a9bd8f" opacity=".8"/>
-  <path d="M0 220c70-40 110-4 200-56v56H0Z" fill="#7d9660" opacity=".8"/>
-  <path d="M150 176v-58m0 26c-20 0-26-14-23-29 19 1 25 12 23 29Z" fill="#5d7a45"/>
-  <path d="M152 167c16 0 22-12 20-24-17 1-23 11-20 24Z" fill="#6d8a52"/>
-  </svg>`;}
+/* The door mark — pure confident geometry, not clip-art. An open doorway with light beyond. */
+function doorMark(cls){return `<svg class="${cls||'door'}" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 21V4.5A1.5 1.5 0 0 1 6.5 3h8A1.5 1.5 0 0 1 16 4.5V21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M3 21h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M16 8.5 19 10v11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".6"/><circle cx="12.6" cy="12.6" r="1" fill="currentColor"/></svg>`;}
+/* Hero doorway — a luminous opening rendered in light and geometry, with a green shoot. */
+function doorwayArt(){return `<svg viewBox="0 0 150 190" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="dg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3d9a8"/><stop offset="1" stop-color="#dd9450"/></linearGradient>
+    <linearGradient id="dl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7f4ea"/><stop offset="1" stop-color="#cfe0c6"/></linearGradient>
+  </defs>
+  <circle cx="112" cy="40" r="22" fill="url(#dg)" opacity=".95"/>
+  <path d="M30 190V80c0-34 22-50 45-50s45 16 45 50v110" fill="url(#dl)"/>
+  <path d="M46 190V86c0-24 13-36 29-36s29 12 29 36v104" fill="#17211b" opacity=".12"/>
+  <path d="M0 168c34-42 70-30 150-58v80H0Z" fill="#3d7349" opacity=".55"/>
+  <path d="M112 150v-34m0 16c-12 0-16-9-14-18 11 1 15 8 14 18Z" fill="#7fb27e"/>
+  <path d="M113 143c10 0 14-8 12-15-9 1-12 7-12 15Z" fill="#a3c39a"/>
+</svg>`;}
 
 /* ---------- navigation (single source) ---------- */
 const SECTIONS=[
@@ -84,7 +86,7 @@ function renderShell(){
  <a class="skip" href="#main">${t('a11y.skip')}</a>
  <div class="shell">
   <aside class="sidebar">
-    <a class="brand" href="#home" aria-label="Lift home">${wordmark()}</a>
+    <a class="brand" href="#home" aria-label="Lift home">${doorMark()}${wordmark()}</a>
     <p class="brand-note">${t('app.tagline')}</p>
     <nav class="sidenav" aria-label="Main">
       ${SECTIONS.map(s=>`<a href="#${s.id}" data-route="${s.id}">${icon(s.icon)}<span>${t('nav.'+s.id)}</span></a>`).join('')}
@@ -95,7 +97,7 @@ function renderShell(){
   </aside>
   <div class="workspace">
     <header class="topbar">
-      <a class="mobile-brand" href="#home" aria-label="Lift home">${wordmark()}</a>
+      <a class="mobile-brand" href="#home" aria-label="Lift home">${doorMark()}${wordmark()}</a>
       <span class="context">${t('app.context')}</span>
       <span class="spacer"></span>
       <button class="iconbtn" id="btn-text" aria-pressed="false" aria-label="${t('a11y.largerText')}"><b style="font-size:13px">A+</b></button>
@@ -189,15 +191,14 @@ function PgHome(){
  const hasEq=s.everyday.selected.length>0, hasFam=s.family.topics.length>0;
  const cont=(hasEq||hasFam)?`<a class="taskrow" href="${hasEq?'#life/everyday':'#family'}"><span class="tic">${icon(hasEq?'life':'family')}</span><span class="tt"><b>${t('home.continue')}</b><span>${hasEq?t('eq.selected'):t('fam.questions','')||t('fam.choose')}</span></span><span class="chev">›</span></a>`:'';
  return `
- ${pagehead(t('home.eyebrow'), t('home.title'), t('home.intro'))}
- <div class="card hero-card hero-focal">
-   <div class="hero-focal-body">
-     <b class="hero-focal-title">${t('home.start.title')}</b>
-     <p class="hero-focal-sub">${t('home.start.sub')}</p>
-     <a class="btn primary block" href="#life/everyday">${t('home.start.cta')} ${icon('arrow')}</a>
-   </div>
-   <div class="hero-focal-art" aria-hidden="true">${doorwayArt()}</div>
- </div>
+ <section class="hero">
+   <div class="eyebrow">${t('home.eyebrow')}</div>
+   <div class="hero-title">${t('home.start.title')}</div>
+   <p class="hero-sub">${t('home.start.sub')}</p>
+   <a class="btn primary" href="#life/everyday" style="min-width:180px">${t('home.start.cta')} ${icon('arrow')}</a>
+   <div class="hero-door">${doorwayArt()}</div>
+ </section>
+ <div class="pagehead" style="margin-top:var(--sp-8)"><div class="eyebrow">${t('nav.home')}</div><h1 style="font-size:clamp(22px,4vw,28px)">${t('home.title')}</h1><p>${t('home.intro')}</p></div>
  ${cont}
  <div class="stack" style="margin-top:16px">
    <a class="taskrow" href="#life/money"><span class="tic">${icon('money')}</span><span class="tt"><b>${t('home.money.title')}</b><span>${t('home.money.sub')}</span></span><span class="chev">›</span></a>
