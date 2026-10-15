@@ -1,0 +1,77 @@
+/* Doorstep — application layer. Only behaviour-driven additions to doorstep.css
+   (the approved design system). No new visual language is introduced here. */
+html,body{margin:0;min-height:100%}
+body{background:#E9EDE7}
+body.dark{background:#060C09}
+.app.lift{position:relative;max-width:520px;margin:0 auto;min-height:100dvh;display:flex;flex-direction:column;background:var(--bg)}
+@media (min-width:600px){.app.lift{box-shadow:0 0 0 1px var(--line),0 30px 80px -40px rgba(0,0,0,.35)}}
+.app>main{flex:1;outline:none}
+.hdr{position:sticky;top:0;z-index:20}
+.app .sill{position:sticky;top:60px;z-index:19}
+.nav{position:sticky;bottom:0;z-index:20;padding-bottom:calc(8px + env(safe-area-inset-bottom))}
+.dock{z-index:20;padding-bottom:calc(var(--s4) + env(safe-area-inset-bottom))}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip{position:absolute;left:12px;top:-80px;z-index:100;background:var(--surface);color:var(--text);padding:12px 16px;border-radius:var(--r-control);box-shadow:var(--lift-card)}
+.skip:focus{top:12px}
+.lift h1:focus{outline:none}
+.lift h1:focus-visible{outline:3px solid var(--focus);outline-offset:4px;border-radius:4px}
+/* real inputs inside the option component */
+.opt input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+.opt:has(input:focus-visible){outline:3px solid var(--focus);outline-offset:2px}
+.opt.disabled{opacity:.55;cursor:not-allowed}
+fieldset.qg{border:0;margin:0;padding:0;min-width:0}
+fieldset.qg>legend{padding:0;margin:0;width:100%}
+.field+.field{margin-top:var(--s4)}
+.err[hidden],.note[hidden]{display:none}
+.sec-sub{font-size:var(--t-help);color:var(--text-2);margin:-6px 0 var(--s3)}
+/* sheet as a real dialog */
+.scrim{position:fixed;inset:0;z-index:60;max-width:520px;margin:0 auto}
+.sheet{max-height:88dvh;overflow-y:auto;padding-bottom:calc(var(--s5) + env(safe-area-inset-bottom))}
+.sheet .stack+.btn,.sheet .note+.btn{margin-top:var(--s3)}
+.sheet-actions{display:flex;flex-direction:column;gap:4px;margin-top:var(--s4)}
+.sheet details{margin-top:var(--s2)}
+.sheet summary{min-height:var(--touch);display:flex;align-items:center;color:var(--action);font-weight:600;text-decoration:underline;text-underline-offset:4px;cursor:pointer;list-style:none}
+.sheet summary::-webkit-details-marker{display:none}
+.keeplist{margin:var(--s3) 0;padding:var(--s3) var(--s4);border-radius:var(--r-control);background:var(--surface-2);font-size:var(--t-help);line-height:var(--lh-help)}
+/* toast */
+.toast{position:fixed;left:50%;bottom:96px;transform:translate(-50%,12px);z-index:70;max-width:min(480px,calc(100% - 32px));background:var(--text);color:var(--bg);font-size:var(--t-help);line-height:var(--lh-help);font-weight:600;padding:12px 16px;border-radius:var(--r-control);opacity:0;pointer-events:none;transition:opacity var(--m-base) var(--ease),transform var(--m-base) var(--ease)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+/* offline banner */
+.offline-bar{margin:var(--s3) var(--s4) 0}
+/* result card extras */
+.qcard .answers{margin:var(--s2) 0 0}
+.qcard .ans-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.qcard .big{font-size:calc(30*var(--u));line-height:1.15;font-weight:700;font-variant-numeric:tabular-nums;margin:var(--s2) 0 var(--s1)}
+.lift:lang(my) .qcard .big{line-height:1.5}
+.qcard .big.short{color:var(--st-warn)}
+.qcard dl.kv{margin:var(--s3) 0 0;display:grid;grid-template-columns:1fr auto;gap:0;font-size:var(--t-help);line-height:var(--lh-help)}
+.qcard dl.kv dt,.qcard dl.kv dd{padding:8px 0;border-top:1px solid var(--line);margin:0}
+.qcard dl.kv dd{text-align:right;font-weight:600;font-variant-numeric:tabular-nums;padding-left:12px}
+.qcard dl.kv dd.muted{color:var(--text-2);font-weight:400}
+.res-actions{display:flex;flex-direction:column;gap:var(--s3);margin-top:var(--s3)}
+.res-actions .btn.text{margin-top:-4px}
+.ext-list{display:flex;flex-direction:column;gap:var(--s3)}
+.ext .tt small{display:block;font-size:var(--t-help);line-height:var(--lh-help);color:var(--text-2);margin-top:2px}
+.tl-wrap{margin-top:var(--s3)}
+.tl-wrap summary{min-height:var(--touch);display:flex;align-items:center;gap:8px;font-weight:700;color:var(--action);cursor:pointer}
+.tl th{font-size:var(--t-micro);color:var(--text-2);text-align:left;font-weight:700;padding:6px 0}
+table.tl{width:100%;border-collapse:collapse}
+table.tl td{padding:8px 0;border-top:1px solid var(--line);font-size:var(--t-help);font-variant-numeric:tabular-nums}
+table.tl td:not(:first-child),table.tl th:not(:first-child){text-align:right}
+table.tl tr.short td{color:var(--st-warn);font-weight:700}
+.toggle-row{display:flex;gap:8px;flex-wrap:wrap;margin:var(--s3) 0}
+.toggle-row .chipbtn{min-height:var(--touch);padding:0 14px;border-radius:var(--r-pill);box-shadow:inset 0 0 0 1.5px var(--line-strong);font-weight:700;font-size:var(--t-help);color:var(--text-2)}
+.toggle-row .chipbtn[aria-pressed="true"]{background:var(--action-tint-2);color:var(--action);box-shadow:inset 0 0 0 2px var(--action)}
+/* show-large route fills the frame */
+.app.showing .hdr,.app.showing>.sill,.app.showing .nav{display:none}
+/* dev-only copy provenance markers (?copy=dev) */
+.copy-dev .cco::before{content:"CCO · "}
+:not(.copy-dev) .cco{background:none;outline:none}
+:not(.copy-dev) .cco::before{content:none}
+:not(.copy-dev) .unv{text-decoration:none}
+@media print{.hdr,.nav,.dock,.sill{display:none}}
+
+.hdr>a{display:inline-flex;align-items:center;min-height:var(--touch);min-width:var(--touch)}
+.qcard dl.kv.stacked{grid-template-columns:1fr}
+.qcard dl.kv.stacked dt{padding-bottom:0;color:var(--text-2)}
+.qcard dl.kv.stacked dd{text-align:left;border-top:0;padding:2px 0 10px}
