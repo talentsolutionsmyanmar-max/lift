@@ -6,13 +6,17 @@ credentials, no network calls for the core experience.
 
 ## Run locally
 
+Serve the **repository root** so the bundled Padauk fonts resolve:
+
 ```
-python3 -m http.server 4173 --directory redesign
-# open http://localhost:4173/index.html
+python3 -m http.server 4173
+# open http://localhost:4173/redesign/index.html
 ```
 
 No install needed. The deterministic engines (`spending.js`, `cashflow.js`,
 `dates.js`, `family.js`, `community.js`) are reused verbatim from `dist/`.
+The `@font-face` for Padauk tries `redesign/fonts/` first, then `dist/fonts/`
+(the binaries live in `dist/fonts/` on the default branch).
 
 ## What this is
 

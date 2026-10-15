@@ -2,6 +2,14 @@
    Tokens → base → layout → components. Single source of truth.
    Light is default; dark via [data-theme="dark"]. No inversion. */
 
+/* Bundled Padauk (OFL). Prefer the local redesign/fonts/ copy; if the folder is
+   served from the repo root, the dist/fonts/ copy is the fallback source. The
+   font is optional progressive enhancement — a system Myanmar font shows first. */
+@font-face{font-family:'Padauk';src:url('./fonts/Padauk-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap;unicode-range:U+1000-109F,U+A9E0-A9FF,U+AA60-AA7F}
+@font-face{font-family:'Padauk';src:url('./fonts/Padauk-Bold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap;unicode-range:U+1000-109F,U+A9E0-A9FF,U+AA60-AA7F}
+@font-face{font-family:'Padauk';src:url('../dist/fonts/Padauk-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap;unicode-range:U+1000-109F,U+A9E0-A9FF,U+AA60-AA7F}
+@font-face{font-family:'Padauk';src:url('../dist/fonts/Padauk-Bold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap;unicode-range:U+1000-109F,U+A9E0-A9FF,U+AA60-AA7F}
+
 :root{
   /* primitives (light) */
   --green-800:#24392c; --green-700:#2f4a39; --green-600:#3a5a46; --green-100:#e3ebdc;
