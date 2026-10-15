@@ -81,21 +81,23 @@ p{margin:0}
   font-family:var(--font-my); line-height:2.0; letter-spacing:0;
   overflow-wrap:anywhere; word-break:normal;
 }
-[lang="my"] body{font-size:15px}
-[lang="my"] h1{font-size:23px;line-height:1.85;margin-top:6px;margin-bottom:8px}
-[lang="my"] h2{font-size:19px}
-[lang="my"] h3{font-size:16px}
+[lang="my"] body{font-size:14px}
+[lang="my"] h1{font-size:20px;line-height:1.8;margin-top:5px;margin-bottom:7px}
+[lang="my"] h2{font-size:17px}
+[lang="my"] h3{font-size:15px}
+[lang="my"] .pagehead h1{font-size:26px;line-height:1.4}
 [lang="my"] .wordmark{font-family:var(--font-display)!important;line-height:1}
 /* breathing room: Myanmar gets a touch more vertical space between blocks */
-[lang="my"] .card,[lang="my"] .taskrow,[lang="my"] .opt{padding-top:16px;padding-bottom:16px}
-[lang="my"] .kv{padding-top:12px;padding-bottom:12px}
-[lang="my"] .stack{gap:var(--sp-4)}
-[lang="my"] .pagehead p{line-height:1.9}
+[lang="my"] .card,[lang="my"] .taskrow,[lang="my"] .opt{padding-top:15px;padding-bottom:15px}
+[lang="my"] .kv{padding-top:11px;padding-bottom:11px}
+[lang="my"] .stack{gap:var(--sp-3)}
+[lang="my"] .pagehead p{line-height:1.85}
 /* enlarged text */
 html.large-text body{font-size:18px}
-html[lang="my"].large-text body{font-size:18px}
+html[lang="my"].large-text body{font-size:17px}
 html.large-text h1{font-size:34px}
-html[lang="my"].large-text h1{font-size:26px}
+html[lang="my"].large-text h1{font-size:23px}
+html[lang="my"].large-text .pagehead h1{font-size:30px}
 html.large-text .pillbar a,html[lang="my"].large-text .pillbar a{font-size:12px}
 
 /* ---------- app shell ---------- */
