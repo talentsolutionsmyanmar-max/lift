@@ -28,22 +28,29 @@ let state={
 function loadSaved(){
   try{
     const raw=localStorage.getItem(KEY);
-    if(!raw) return {saveOn:false, saved:[]};
+    if(!raw) return {saveOn:false, saved:[], dates:[]};
     const p=JSON.parse(raw);
-    if(!p||p.saveOn!==true||!Array.isArray(p.saved)) return {saveOn:false, saved:[]};
-    return {saveOn:true, saved:p.saved.filter(r=>r&&typeof r.id==='string'&&typeof r.kind==='string').slice(0,50)};
-  }catch{ return {saveOn:false, saved:[]}; }
+    if(!p||p.saveOn!==true) return {saveOn:false, saved:[], dates:[]};
+    return {
+      saveOn:true,
+      saved: Array.isArray(p.saved)? p.saved.filter(r=>r&&typeof r.id==='string'&&typeof r.kind==='string').slice(0,50):[],
+      // dates persist when saving is on — the reminder tool doesn't work otherwise (Opus Q6)
+      dates: Array.isArray(p.dates)? p.dates.filter(d=>d&&typeof d.id==='string'&&typeof d.date==='string').slice(0,6):[]
+    };
+  }catch{ return {saveOn:false, saved:[], dates:[]}; }
 }
 function writeSaved(){
   if(!state.saveOn) { try{localStorage.removeItem(KEY);}catch{} return {ok:true}; }
   try{
-    localStorage.setItem(KEY, JSON.stringify({saveOn:true, saved:state.saved}));
+    // durable payload: standard selection-cards + date reminders ONLY.
+    // never: money amounts, free text, community drafts.
+    localStorage.setItem(KEY, JSON.stringify({saveOn:true, saved:state.saved, dates:state.dates}));
     return {ok:true};
   }catch(e){ return {ok:false, error:e}; }
 }
 function init(){
   const p=loadSaved();
-  state.saveOn=p.saveOn; state.saved=p.saved;
+  state.saveOn=p.saveOn; state.saved=p.saved; state.dates=p.dates||[];
   saveAvailable=storageWorks();
 }
 function storageWorks(){
@@ -92,10 +99,10 @@ function deleteRecord(id){
   return {ok:true, removed: state.saved.length<before};
 }
 function clearAllSaved(){
-  state.saved=[]; state.saveOn=false;
+  state.saved=[]; state.dates=[]; state.saveOn=false;
   try{localStorage.removeItem(KEY); return {ok:true};}catch(e){ return {ok:false,error:e}; }
 }
 
-const api={init,on,get,set,update,emit,setSaveOn,saveRecord,deleteRecord,clearAllSaved,storageWorks:()=>storageWorks(),isSaveAvailable:()=>saveAvailable};
+const api={init,on,get,set,update,emit,setSaveOn,saveRecord,deleteRecord,clearAllSaved,writeSaved,storageWorks:()=>storageWorks(),isSaveAvailable:()=>saveAvailable};
 root.LIFT_STORE=api;
 })(typeof window!=='undefined'?window:globalThis);

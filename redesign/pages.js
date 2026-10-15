@@ -347,8 +347,10 @@ function pgMine(){
  const session=[];
  if(st.everyday.selected.length) session.push({kind:'everyday', title:T('eq.title'), said:st.everyday.selected.map(k=>T('eq.'+k)).join('; '), got:T('eq.resultBig',{count:I().fmtNum(st.everyday.selected.length)}), next:T('eq.resultNext')});
  if(st.family.topics.length) session.push({kind:'family', title:T('fam.title'), said:st.family.topics.map(k=>T('fam.'+k)).join('; '), got:T('fam.resultBig',{count:I().fmtNum(st.family.topics.length)}), next:T('fam.resultNext')});
+ // date reminders (saved when saving is on; session otherwise) — money is deliberately never here (Opus Q6)
+ const dateRecs=(st.dates||[]).map(d=>({kind:'dates', title:T('dt.title'), said:T('dt.'+d.process), got:I().fmtDate(d.date), next:T('dt.resultNext'), updatedAt:null, _date:d}));
  const saved=st.saved;
- const hasAny=session.length||saved.length;
+ const hasAny=session.length||saved.length||dateRecs.length;
  const saveTag = st.saveOn? `<span class="tag done">${T('mine.saved')}</span>` : `<span class="tag neutral">${T('mine.unsaved')}</span>`;
  return `
   ${A.pagehead(T('nav.mine'), T('mine.title'), T('mine.intro'))}
@@ -361,7 +363,7 @@ function pgMine(){
     <p class="help" style="margin-top:14px"><span class="hic">i</span><span>${st.saveOn?T('mine.saved'):T('mine.sessionNote')}</span></p>
   `
   :`
-    ${session.length? `<div class="card"><h2>${T('mine.nextUp')}</h2><div class="stack" style="margin-top:12px">${session.map(r=>recordCard(r,false)).join('')}</div></div>`:''}
+    ${(session.length||dateRecs.length)? `<div class="card"><h2>${T('mine.nextUp')}</h2><div class="stack" style="margin-top:12px">${session.map(r=>recordCard(r,false)).join('')}${dateRecs.map(r=>recordCard(r,st.saveOn)).join('')}</div></div>`:''}
     ${saved.length? `<div class="card"><h2>${T('mine.saved')}</h2><div class="stack" style="margin-top:12px">${saved.map(r=>recordCard(r,true)).join('')}</div></div>`:''}
   `}
   <div class="card" style="margin-top:16px">
@@ -459,6 +461,8 @@ function wire(route,main){
    const rec={id:(crypto.randomUUID?crypto.randomUUID():'d'+Date.now()),date:fd.get('date'),process:fd.get('process'),source:fd.get('source'),confirmed:q('#dt-confirm').checked};
    try{
      S().update(s=>{ s.dates=dates.keep(s.dates,rec); });
+     // dates persist when saving is on (reminder tool requires it — Opus Q6)
+     if(S().get().saveOn) S().writeSaved();
      S().emit();
      renderInto('life/dates', dtResult(S().get().dates.find(x=>x.id===rec.id)||rec));
    }catch(ex){ err('dt-err', T(ex.message==='full'?'dt.full':'dt.error')); }
@@ -467,7 +471,7 @@ function wire(route,main){
    const d=S().get().dates.find(x=>x.id===b.dataset.dtCal); if(!d) return;
    try{ const ics=dates.calendar(d, T('dt.title'), T('dt.resultMean',{date:d.date})); downloadText(ics,'lift-reminder.ics'); }catch{}
  });
- qa('[data-dt-del]').forEach(b=>b.onclick=()=>{ S().update(s=>{ s.dates=s.dates.filter(x=>x.id!==b.dataset.dtDel); }); A.rerender(); });
+ qa('[data-dt-del]').forEach(b=>b.onclick=()=>{ S().update(s=>{ s.dates=s.dates.filter(x=>x.id!==b.dataset.dtDel); }); if(S().get().saveOn) S().writeSaved(); A.rerender(); });
 
  /* MONEY */
  qa('#mn-form input, #mn-form select').forEach(el=>el.oninput=()=>{ S().update(s=>{ if(el.name==='period') s.money.period=el.value; else s.money.values[el.name]=el.value; s.money.error=null; }); });
