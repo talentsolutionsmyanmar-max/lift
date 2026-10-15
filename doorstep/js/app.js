@@ -103,7 +103,11 @@ const ACTIONS={
   'mn-next1':()=>{if(!D.money.period){S.errors.mn1=true;render(true);return;}go('#a/money/2');},
   'mn-next2':()=>{const v=String(D.money.available||'').trim();if(!v){S.errors.mn2='missing';render(true);return;}if(!X.parseField(v).ok){S.errors.mn2='invalid';render(true);return;}S.errors.mn2=null;go('#a/money/3');},
   'mn-finish':()=>{const e=moneyErr(X.COSTS);if(e){S.errors.mn3=e;render(true);return;}S.errors.mn3=null;const c=St.commit('money',{period:D.money.period,values:{...D.money}});go('#c/'+c.id);},
-  'cash-from-money':(e)=>{e.preventDefault();const m=S.cards.find(c=>c.id===e.target.closest('[data-id]').dataset.id);if(m&&!D.cash.cash){const r=root.LiftSpending.calculate(m.data.values);if(r.remaining>0)D.cash.cash=(r.remaining/100).toFixed(r.remaining%100?2:0);}go('#a/cash/intro');},
+  /* A spending remainder is NOT money held now. Offer it only as a clearly labelled proposal that
+     needs explicit acceptance; never fill or overwrite the field automatically. */
+  'cash-from-money':(e)=>{e.preventDefault();const m=S.cards.find(c=>c.id===e.target.closest('[data-id]').dataset.id);S.cashProposal=null;if(m){const r=root.LiftSpending.calculate(m.data.values);if(r.remaining>0)S.cashProposal=r.remaining;}go('#a/cash/intro');},
+  'cf-accept':()=>{if(S.cashProposal&&!String(D.cash.cash||'').trim()){D.cash.cash=(S.cashProposal/100).toFixed(S.cashProposal%100?2:0);}S.cashProposal=null;render(true);const f=app.querySelector('#cash');if(f)f.focus();},
+  'cf-dismiss':()=>{S.cashProposal=null;render(true);},
   'cf-next1':()=>{const d=D.cash,e={};for(const k of ['cash','daily']){const v=String(d[k]||'').trim();if(!v)e[k]='missing';else if(!X.parseField(v).ok)e[k]='invalid';}if(Object.keys(e).length){S.errors.cf1=e;render(true);return;}S.errors.cf1=null;go('#a/cash/2');},
   'cf-finish':()=>{const d=D.cash;const ok=['bill','income'].every(k=>X.parseField(d[k]).ok);const days=parseInt(d.days,10);const billDay=d.billDay?parseInt(d.billDay,10):null;
     if(!ok||(billDay&&billDay>days)){S.errors.cf2=true;render(true);return;}

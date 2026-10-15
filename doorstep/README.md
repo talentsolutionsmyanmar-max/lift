@@ -26,8 +26,8 @@ No install, no build step. Regenerate copy after editing `copy/copy-en.json`:
 
 | Suite | Command | Result (15 Oct 2026, headless Chromium 148) |
 |---|---|---|
-| Unit (store boundaries, copy provenance) | `node --test doorstep/tests/unit.test.mjs` | 7 / 7 pass |
-| End-to-end journeys + overflow matrix + a11y basics | `python3 doorstep/tests/e2e.py` (needs `pip install playwright`) | 60 / 60 pass |
+| Unit (store boundaries, copy provenance, storage-fault regressions) | `node --test doorstep/tests/unit.test.mjs` | 12 / 12 pass |
+| End-to-end journeys + overflow matrix + a11y basics + review regressions | `python3 doorstep/tests/e2e.py` (needs `pip install playwright`) | 70 / 70 pass |
 
 The overflow check covers 320, 360, 430 and 1280px × English and Myanmar × light and dark ×
 normal and A+ × 9 screens (288 combinations). These are **browser checks only**. Physical-phone,
@@ -44,9 +44,9 @@ The repository-wide `npm test` fails on a clean `main` checkout without `npm ci`
 | Everyday questions | Intro → situation (housing / transport / phone / food, plus "Something else" → Community) → questions with Why we ask, per-option reasons, "I am not sure — add all three", and the live card tray → result card with the exact chosen questions, meaning, what is unclear, one next step, Show large, Copy, Download, Edit and optional Save. |
 | Family learning | Intro → topics (each shows the question it adds) → educator question card plus the matching named resources (LearnBig / Google Translate for language or device; UNICEF / UNESCO otherwise), behind an external-link sheet. No child data collected. |
 | Important dates | Process → date + source + "I have checked" confirmation → reminder card ("Date entered by you — not independently confirmed", past-date warning) and a valid `.ics` with a neutral title. **Not saved** in this version. |
-| Money | Period → money available (**required; blank is never treated as zero**) → costs (blank = "Not entered — not included", with a note that the real remainder may be lower) → ≈ result with every input listed. Next step carries the calculated remainder into **Plan the days ahead** (existing `LiftCashflow` engine): first day with a gap, largest shortfall, an "earlier shortfall despite a positive end" lesson, a "what if income is three days late" toggle and a per-day table. **Never saved.** |
+| Money | Period → money available (**required; blank is never treated as zero**) → costs (blank = "Not entered — not included", with a note that the real remainder may be lower) → ≈ result with every input listed. The next step opens **Plan the days ahead**. The spending remainder is **never** used as cash on hand automatically: it can appear only as a labelled proposal ("not money you have now") that the person must accept, it is offered only while the field is blank, and it never overwrites a typed value. The planner itself (existing `LiftCashflow` engine): first day with a gap, largest shortfall, an "earlier shortfall despite a positive end" lesson, a "what if income is three days late" toggle and a per-day table. **Never saved.** |
 | Mine | Empty state; one or several real cards; "What to do next"; Open; Edit (answers restored, same card updated); saved / on this page only / changed since saved; Remove (with confirm); storage-unavailable note. No fictional examples. |
-| Saving | The sheet opens with **no option chosen** and writes nothing. Confirm requires a choice. Shows exactly what is kept. Writes are verified by reading back; a failure keeps the result and says "Could not save". A failed delete never claims success. |
+| Saving | The sheet opens with **no option chosen** and writes nothing. Confirm requires a choice. Shows exactly what is kept. If the stored collection **cannot be read** (exception, unparsable or non-array data), save and remove **abort** without writing, so other saved cards are never overwritten. Mutations keep unrelated raw records byte-for-byte. After a write, the stored **content** (normalised topic/keys or topics) is compared with what's on screen, not just the id; any mismatch shows "Could not save" and the edited result stays, marked "Changed since you saved it". When 20 cards are already saved, a new save is refused rather than dropping an older card. A failed delete never claims success. |
 | Community | Closed. Private preparation from fixed choices; draft marked "Your draft — not reviewed · Not sent · On this page only"; Copy and Download only. No send, post, rating, voting or simulation. |
 | Myanmar | Default language. Padauk is bundled (WOFF2, full glyph set; TTF fallback from `dist/fonts`). Strings with no Myanmar (P) display in English with `lang="en"`, never as fake Myanmar. |
 
@@ -69,7 +69,7 @@ from the repository's CCO-reviewed files, never hand-labelled:
 - **L 42**: inherited Myanmar candidates (from the design package, originally the incumbent's
   working drafts) or shipped-but-unreviewed Myanmar. Shown in the UI and need CCO confirmation.
   Two known errors (ပြိုင်ဘက်, ကျွတ်ပါ) were excluded.
-- **P 83**: new wording with no Myanmar. Shown in English. Needs CCO authoring.
+- **P 87**: new wording with no Myanmar. Shown in English. Needs CCO authoring.
 
 A release candidate for Myanmar users needs CCO to clear L and P first.
 
@@ -80,7 +80,7 @@ doorstep/
   index.html            shell + script order
   css/doorstep.css      approved design system (tokens, components) — from the package
   css/app.css           behaviour-only additions (sticky shell, dialog, toast, focus)
-  fonts/                Padauk WOFF2 + OFL.txt
+  fonts/                Padauk WOFF2 (build: tools/build-fonts.py) + EXPECTED-SHA256.txt + OFL.txt
   js/copy.js            GENERATED keyed copy with provenance
   js/engines/*.js       deterministic engines, verbatim from dist/ (spending, cashflow, dates, family)
   js/i18n.js            t()/txt(), Myanmar digits for counts, Latin ฿ for money
@@ -126,7 +126,8 @@ CTO approves:
 
 ## Not done / remaining work
 
-- CCO authoring for 83 P strings and confirmation of 42 L strings (see `copy/copy-review.md`).
+- **Fonts:** the GitHub integration used for this PR pushes text only (it UTF-8 encodes content), so the two WOFF2 files can't be committed through it without corruption. Until someone commits them, the CSS falls back to `dist/fonts/*.ttf`. To add them: `pip install fonttools brotli && python3 doorstep/tools/build-fonts.py` (deterministic, full glyph set, checks coverage of every Myanmar character in the copy), then confirm against `doorstep/fonts/EXPECTED-SHA256.txt` and commit. The same files are in the delivery archive.
+- CCO authoring for 87 P strings and confirmation of 42 L strings (see `copy/copy-review.md`).
 - Physical low-end Android, TalkBack and offline (service-worker) checks. No service worker is
   included; `dist/sw.js` is not reused.
 - Migrant comprehension test against the acceptance sentence; validating the "about 2 minutes" estimates.

@@ -305,3 +305,7 @@
 "error.retry","Try again","","P","","yes — CCO"
 "eq.meaning1","You chose 1 thing to ask. It is ready to read out or show.","","P","","yes — CCO"
 "eq.count1","1 question","","P","","yes — CCO"
+"cf.proposalTitle","Proposed starting amount: {amount}","","P","","yes — CCO"
+"cf.proposalBody","This is the remainder from your spending calculation, not money you have now. Use it only if it matches the cash you actually have today.","","P","","yes — CCO"
+"cf.proposalUse","Use this amount","","P","","yes — CCO"
+"cf.proposalNo","Enter my own amount","","P","","yes — CCO"

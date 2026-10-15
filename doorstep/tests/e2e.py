@@ -130,6 +130,33 @@ async def main():
         await tap(pg, 'nav a[href="#mine"]'); check('Mine explains storage is unavailable', 'not available' in await pg.inner_text('main'))
         await ctx.close()
 
+        # ---------- Review regressions: stale write and transient read failure (browser)
+        flaky = """(()=>{const g=Storage.prototype.getItem,st=Storage.prototype.setItem;window.__fail={reads:0,drop:false};
+          Storage.prototype.getItem=function(k){if(k==='lift.doorstep.saved.v1'&&window.__fail.reads>0){window.__fail.reads--;throw new Error('transient');}return g.call(this,k)};
+          Storage.prototype.setItem=function(k,v){if(k==='lift.doorstep.saved.v1'&&window.__fail.drop)return;return st.call(this,k,v)};})()"""
+        ctx, pg, errs = await new(b, extra_init=flaky)
+        async def save_current():
+            await tap(pg, '[data-act=open-save]'); await pg.locator('input[name=save-c][value=keep]').check(); await pg.wait_for_timeout(80); await tap(pg, '[data-act=save-confirm]')
+        await everyday(pg, 1); await save_current()
+        await tap(pg, 'nav a[href="#home"]'); await tap(pg, '.task[href="#a/family/intro"]'); await tap(pg, 'text=Start the questions')
+        await pg.locator('input[name=fam-t][value=start]').check(); await pg.wait_for_timeout(80); await tap(pg, '[data-act=fam-finish]'); await save_current()
+        before = await pg.evaluate("localStorage.getItem('lift.doorstep.saved.v1')")
+        check('setup: two saved cards', len(json.loads(before)) == 2)
+        await tap(pg, 'a[href^="#edit/"]'); await pg.locator('input[name=fam-t][value=cost]').check(); await pg.wait_for_timeout(80); await tap(pg, '[data-act=fam-finish]')
+        await pg.evaluate("window.__fail.drop=true"); await save_current()
+        check('stale write: shows Could not save', await pg.locator('.sheet .note.error').is_visible())
+        await tap(pg, '[data-act=sheet-close]')
+        card = await pg.inner_text('.qcard')
+        check('stale write: edited result kept and marked changed, not saved', 'Changed since you saved it' in card and card.count('?') >= 2)
+        await pg.evaluate("window.__fail.drop=false")
+        await tap(pg, 'nav a[href="#mine"]'); await pg.evaluate("window.__fail.reads=1")
+        await pg.locator('[data-act=ask-remove]').first.click(); await pg.wait_for_timeout(100); await tap(pg, '[data-act=remove-confirm]')
+        after = await pg.evaluate("localStorage.getItem('lift.doorstep.saved.v1')")
+        check('transient read failure: remove reports failure', 'Could not remove' in await pg.inner_text('#toast'))
+        check('transient read failure: no saved card lost (bytes unchanged)', after == before and await pg.locator('.rec').count() == 2)
+        check('no console errors (regressions)', not errs, '; '.join(errs))
+        await ctx.close()
+
         # ---------- Money: required amount, unknown costs not zero, interpretable result
         ctx, pg, errs = await new(b)
         await tap(pg, '.task[href="#a/money/intro"]'); await tap(pg, 'text=Start the questions')
@@ -147,7 +174,16 @@ async def main():
         check('money: never saveable', await pg.locator('[data-act=open-save]').count() == 0)
         # days ahead
         await tap(pg, '[data-act=cash-from-money]'); await tap(pg, 'text=Start the questions')
-        check('days ahead: carries calculated remainder as starting money', await pg.input_value('#cash') == '1000')
+        check('days ahead: spending remainder is NOT silently used as cash now', await pg.input_value('#cash') == '')
+        check('days ahead: remainder offered only as a labelled proposal', await pg.locator('[data-act=cf-accept]').is_visible() and 'not money you have now' in await pg.inner_text('main'))
+        await tap(pg, '[data-act=cf-next1]'); check('days ahead: blank cash blocks continuing', await pg.locator('#cash-e').is_visible())
+        await pg.fill('#cash', '640'); await pg.locator('[data-act=cf-accept]').click(); await pg.wait_for_timeout(120)
+        check('days ahead: accepting a proposal never overwrites a manual value', await pg.input_value('#cash') == '640')
+        await pg.fill('#cash', ''); await pg.wait_for_timeout(50)
+        await tap(pg, 'a.crumb'); await tap(pg, '.dock a.btn.primary')
+        if await pg.locator('[data-act=cf-accept]').count(): await tap(pg, '[data-act=cf-accept]')
+        else: await pg.fill('#cash', '1000')
+        check('days ahead: explicit acceptance fills the proposed amount', await pg.input_value('#cash') == '1000')
         await pg.fill('#daily', '80'); await tap(pg, '[data-act=cf-next1]')
         await pg.fill('#bill', '700'); await pg.select_option('#billDay', '5'); await pg.fill('#income', '2000'); await pg.select_option('#incomeDay', '8')
         await tap(pg, '[data-act=cf-finish]'); await shot(pg, 'en-cash-result')

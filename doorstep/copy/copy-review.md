@@ -1,6 +1,6 @@
 # Doorstep copy-review inventory
 
-Generated from `doorstep/copy/copy-en.json` against the repository's reviewed copy. R=181 · L=42 · P=83 (total 306).
+Generated from `doorstep/copy/copy-en.json` against the repository's reviewed copy. R=181 · L=42 · P=87 (total 310).
 
 - **R** — exact English match in CCO-reviewed source. Shown as Myanmar.
 - **L** — Myanmar exists in main's shipped files but is not in the reviewed set. Shown as Myanmar; needs CCO confirmation before release.
@@ -314,3 +314,7 @@ Generated from `doorstep/copy/copy-en.json` against the repository's reviewed co
 | `error.retry` | Try again |  | P |  | yes — CCO |
 | `eq.meaning1` | You chose 1 thing to ask. It is ready to read out or show. |  | P |  | yes — CCO |
 | `eq.count1` | 1 question |  | P |  | yes — CCO |
+| `cf.proposalTitle` | Proposed starting amount: {amount} |  | P |  | yes — CCO |
+| `cf.proposalBody` | This is the remainder from your spending calculation, not money you have now. Use it only if it matches the cash you actually have today. |  | P |  | yes — CCO |
+| `cf.proposalUse` | Use this amount |  | P |  | yes — CCO |
+| `cf.proposalNo` | Enter my own amount |  | P |  | yes — CCO |

@@ -304,5 +304,9 @@
   "error.body": "This screen could not open. Your answers on this page are still here.",
   "error.retry": "Try again",
   "eq.meaning1": "You chose 1 thing to ask. It is ready to read out or show.",
-  "eq.count1": "1 question"
+  "eq.count1": "1 question",
+  "cf.proposalTitle": "Proposed starting amount: {amount}",
+  "cf.proposalBody": "This is the remainder from your spending calculation, not money you have now. Use it only if it matches the cash you actually have today.",
+  "cf.proposalUse": "Use this amount",
+  "cf.proposalNo": "Enter my own amount"
 }

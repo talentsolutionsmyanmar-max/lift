@@ -225,7 +225,9 @@ const cash={
   intro(){return intro({title:t('cf.title'),lines:1,first:'#a/cash/1',limit:'cf.limits',
     facts:[['why','act.why','mn.nextSub'],['get','act.get','cf.receive']],extra:U.note('info','wallet',t('cf.intro'),'style="margin-bottom:12px"')});},
   1(){const d=S.drafts.cash; const e=S.errors.cf1||{};
-    const body=`${U.field({id:'cash',label:t('cf.cash'),value:d.cash,prefix:'฿',placeholder:x('mn.blank'),err:!!e.cash,errKey:e.cash==='missing'?'cf.required':'mn.error'})}
+    const prop=S.cashProposal&&!String(d.cash||'').trim()?`<div class="note info" style="margin-bottom:16px">${ic('info')}<span><b style="display:block">${t('cf.proposalTitle',{amount:I.baht(S.cashProposal)})}</b>${t('cf.proposalBody')}
+        <span class="row2" style="margin-top:10px;display:grid"><button class="btn secondary" type="button" data-act="cf-accept">${t('cf.proposalUse')}</button><button class="btn text" type="button" data-act="cf-dismiss">${t('cf.proposalNo')}</button></span></span></div>`:'';
+    const body=`${prop}${U.field({id:'cash',label:t('cf.cash'),value:d.cash,prefix:'฿',placeholder:x('mn.blank'),err:!!e.cash,errKey:e.cash==='missing'?'cf.required':'mn.error'})}
       ${U.select({id:'days',label:t('cf.days'),value:d.days,options:Array.from({length:31},(_,k)=>[k+1,I.num(k+1)])})}
       ${U.field({id:'daily',label:t('cf.daily'),value:d.daily,prefix:'฿',placeholder:x('mn.blank'),err:!!e.daily,errKey:e.daily==='missing'?'cf.required':'mn.error'})}`;
     return step({back:'#a/cash/intro',n:1,total:2,title:t('cf.title'),whyKey:'cf.cashWhy',body,nextAct:'cf-next1'});},
