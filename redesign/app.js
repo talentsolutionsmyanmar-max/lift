@@ -6,31 +6,42 @@
 const I=LIFT_I18N, S=LIFT_STORE;
 const t=(k,p)=>I.t(k,p);
 
-/* ---------- icons (one family, 1.7 stroke, currentColor) ---------- */
+/* ---------- icons — Lift's own set (geometric, doorway-derived) ----------
+   One coherent family: rounded-square geometry, 1.6 stroke, round joins, 24 grid.
+   Each mark is drawn for its meaning, not pulled from a generic line set. */
 const ICONS={
- home:'<path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"/>',
- life:'<rect x="7" y="3" width="12" height="18" rx="3"/><path d="M10 6h4M10 18h4"/><path d="M10 10h4M10 13h4"/>',
- family:'<path d="m2 9 10-5 10 5-10 5Zm4 3v6c4 3 8 3 12 0v-6"/>',
- community:'<circle cx="9" cy="8" r="3"/><path d="M3 21v-4a6 6 0 0 1 12 0v4m1-16a3 3 0 0 1 0 6m2 3c3 1 3 4 3 7"/>',
- mine:'<path d="M9 6h12M9 12h12M9 18h12M3 6l1 1 2-3M3 12l1 1 2-3M3 18l1 1 2-3"/>',
- money:'<rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="12" cy="12" r="3"/>',
- dates:'<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4m8-4v4"/><circle cx="16" cy="16" r="2"/>',
+ // home — a doorway with a step
+ home:'<path d="M5 20v-9a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v9"/><path d="M5 20h14"/><path d="M9 20v-5a1.6 1.6 0 0 1 1.6-1.6h2.8A1.6 1.6 0 0 1 15 15v5"/><circle cx="12" cy="5.5" r="1.6" fill="currentColor" stroke="none"/>',
+ // daily life — a day: sun over a horizon line
+ life:'<circle cx="12" cy="11" r="3.4"/><path d="M12 4.5v1.6M5.5 11H4m16 0h-1.6M7.2 6.9l1.1 1.1m7.4-1.1-1.1 1.1"/><path d="M4 17.5h16M7 20.5h10"/>',
+ // family — two figures, one sheltered
+ family:'<circle cx="9" cy="8.5" r="2.6"/><path d="M3.5 20v-1.5A4.5 4.5 0 0 1 8 14h2a4.5 4.5 0 0 1 4.5 4.5V20"/><circle cx="16.8" cy="10" r="2.1"/><path d="M15.5 20v-.8a3.6 3.6 0 0 1 5-3.3"/>',
+ // community — two speech marks overlapping
+ community:'<path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h6A2.5 2.5 0 0 1 15 6.5v4a2.5 2.5 0 0 1-2.5 2.5H9l-3.2 2.6c-.4.3-1 0-1-.5V6.5Z"/><path d="M17 9.5h.5A2.5 2.5 0 0 1 20 12v3.4c0 .5-.6.8-1 .5l-1.5-1.2" opacity=".55"/>',
+ // mine — a record card with a checkmark
+ mine:'<rect x="5" y="3.5" width="14" height="17" rx="2.5"/><path d="M8.5 8h7M8.5 11.5h7"/><path d="m8.7 16.2 1.6 1.6 3-3.2"/>',
+ // money — a note with a strong centre mark
+ money:'<rect x="2.5" y="6" width="19" height="12" rx="2.5"/><circle cx="12" cy="12" r="2.6"/><path d="M6 9.5v.01M18 14.5v.01" stroke-width="2"/>',
+ // dates — a calendar with a marked day
+ dates:'<rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 9.5h17M8 3v3.5M16 3v3.5"/><circle cx="15.5" cy="15.5" r="2" fill="currentColor" stroke="none"/>',
+ // arrows / utility
  arrow:'<path d="M4 12h15m-6-6 6 6-6 6"/>',
  back:'<path d="M20 12H5m6 6-6-6 6-6"/>',
- check:'<path d="m5 12 4 4L19 6"/>',
- globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c6 6 6 12 0 18-6-6-6-12 0-18Z"/>',
- shield:'<path d="M12 3 3 7v6c0 5 9 9 9 9s9-4 9-9V7Zm-4 9 3 3 5-6"/>',
- sprout:'<path d="M12 22V12M12 15C4 15 2 9 3 4c6-1 10 3 9 9 0-8 4-11 10-10 1 6-3 11-10 10"/>',
- copy:'<rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/>',
- download:'<path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4"/>',
- ext:'<path d="M14 4h6v6M20 4 10 14M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/>',
- sun:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
- moon:'<path d="M21 13A9 9 0 1 1 11 3a7 7 0 0 0 10 10Z"/>',
- info:'<circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v.01"/>'
+ check:'<path d="m4.5 12.5 4.5 4.5L19.5 6.5"/>',
+ globe:'<circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c5.8 5.8 5.8 11.2 0 17-5.8-5.8-5.8-11.2 0-17Z"/>',
+ shield:'<path d="M12 2.8 3.5 6.8v5.4c0 4.6 8.5 8.4 8.5 8.4s8.5-3.8 8.5-8.4V6.8Z"/><path d="m8.6 12 2.3 2.3 4.5-4.8"/>',
+ sprout:'<path d="M12 21.5v-9"/><path d="M12 12.5C5 12.5 3.2 7.5 4 3.5c5.5-.9 9 2.6 8 9 0-7 3.6-9.8 9-8.8.9 5.4-2.7 9.8-9 8.8" fill="none"/>',
+ copy:'<rect x="8.5" y="8.5" width="11" height="12" rx="2"/><path d="M15.5 8.5V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v7.5a2 2 0 0 0 2 2h2.5"/>',
+ download:'<path d="M12 3.5v11m-4.5-4.5L12 14.5l4.5-4.5M4.5 17v3.5h15V17"/>',
+ ext:'<path d="M14 4.5h5.5V10M19.5 4.5 10.5 13.5M18 13v5.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 4 18.5v-11A1.5 1.5 0 0 1 5.5 6H11"/>',
+ sun:'<circle cx="12" cy="12" r="3.6"/><path d="M12 2.5v2m0 15v2M4.2 4.2l1.4 1.4m12.8 12.8 1.4 1.4M2.5 12h2m15 0h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/>',
+ moon:'<path d="M20.5 13.5A8.5 8.5 0 1 1 10.5 3a6.8 6.8 0 0 0 10 10.5Z"/>',
+ info:'<circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.5"/><circle cx="12" cy="7.8" r="1.1" fill="currentColor" stroke="none"/>'
 };
-function icon(name,cls){return `<svg class="${cls||'ic'}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name]||ICONS.sprout}</svg>`;}
+function icon(name,cls){return `<svg class="${cls||'ic'}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name]||ICONS.sprout}</svg>`;}
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
-function wordmark(){return `<span class="wordmark">l<i>ı</i>ft</span>`;}
+/* Lift wordmark — the red dot sits ON the dotless ı (tight, optically centred) */
+function wordmark(){return `<span class="wordmark">l<span class="wl">ı</span>ft</span>`;}
 
 /* ---------- navigation (single source) ---------- */
 const SECTIONS=[
@@ -166,10 +177,10 @@ function PgHome(){
  const cont=(hasEq||hasFam)?`<a class="taskrow" href="${hasEq?'#life/everyday':'#family'}"><span class="tic">${icon(hasEq?'life':'family')}</span><span class="tt"><b>${t('home.continue')}</b><span>${hasEq?t('eq.selected'):t('fam.questions','')||t('fam.choose')}</span></span><span class="chev">›</span></a>`:'';
  return `
  ${pagehead(t('home.eyebrow'), t('home.title'), t('home.intro'))}
- <div class="card wm-host" style="background:var(--action-soft);border-color:color-mix(in srgb,var(--action) 20%,transparent)">
-   <b style="font-size:14px">${t('home.start.title')}</b>
-   <p style="margin-top:3px">${t('home.start.sub')}</p>
-   <a class="btn primary block" style="margin-top:12px" href="#life/everyday">${t('home.start.cta')} ${icon('arrow')}</a>
+ <div class="card wm-host hero-card">
+   <b style="font-size:15px">${t('home.start.title')}</b>
+   <p style="margin-top:4px">${t('home.start.sub')}</p>
+   <a class="btn primary block" style="margin-top:14px" href="#life/everyday">${t('home.start.cta')} ${icon('arrow')}</a>
  </div>
  ${cont}
  <div class="stack" style="margin-top:16px">
