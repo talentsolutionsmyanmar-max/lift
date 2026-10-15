@@ -97,7 +97,7 @@ const everyday={
       <ol>${keys.map(k=>`<li>${t('eq.'+k)}</li>`).join('')}</ol>
       <div class="meta">${U.stateLabel(St.status(card))}<span class="help micro">${t('result.made',{date:madeOn(card)})}</span></div></article>`;
     return resultShell(card,{title:t(eqTitleKey(topic)),cardHtml,
-      meaning:t('eq.meaning',{count:I.num(keys.length)}),uncertain:t('eq.uncertain'),
+      meaning:keys.length===1?t('eq.meaning1'):t('eq.meaning',{count:I.num(keys.length)}),uncertain:t('eq.uncertain'),
       nextHtml:U.next('eq.nextTitle','eq.nextSub',`<a class="btn primary" href="#show/${card.id}">${ic('show','sm')} ${t('result.show')}</a>`),
       actions:`<div class="row2"><button class="btn secondary" type="button" data-act="copy" data-id="${card.id}">${ic('copy','sm')} ${t('eq.copy')}</button><button class="btn secondary" type="button" data-act="download" data-id="${card.id}">${ic('get','sm')} ${t('eq.download')}</button></div>
         ${saveControls(card)}<a class="btn text" href="#edit/${card.id}">${t('act.edit')}</a>`});
@@ -268,14 +268,14 @@ function nextFor(card){return {everyday:'eq.nextTitle',family:'fam.nextTitle',da
 function titleFor(card){return {everyday:eqTitleKey(card.data.topic),family:'fam.title',dates:'dt.title',money:'mn.title',cash:'cf.title'}[card.kind];}
 function youSaid(card){
   const d=card.data;
-  if(card.kind==='everyday') return `<span class="chip">${t('eq.'+d.topic)}</span><span class="chip">${t('eq.count',{count:I.num(d.keys.length)})}</span>`;
+  if(card.kind==='everyday') return `<span class="chip">${t('eq.'+d.topic)}</span><span class="chip">${d.keys.length===1?t('eq.count1'):t('eq.count',{count:I.num(d.keys.length)})}</span>`;
   if(card.kind==='family') return d.topics.map(k=>`<span class="chip">${t('fam.'+k)}</span>`).join('');
   if(card.kind==='dates') return `<span class="chip">${t('dt.'+d.process)}</span><span class="chip">${esc(d.date)}</span>`;
   if(card.kind==='money') return `<span class="chip">${t('mn.'+d.period)}</span>`;
   return `<span class="chip">${I.num(d.days)} · ${t('cf.days')}</span>`;
 }
 function youGot(card){
-  if(card.kind==='everyday') return t('eq.meaning',{count:I.num(card.data.keys.length)});
+  if(card.kind==='everyday') return card.data.keys.length===1?t('eq.meaning1'):t('eq.meaning',{count:I.num(card.data.keys.length)});
   if(card.kind==='family') return t('fam.'+card.data.topics[0]+'Q')+(card.data.topics.length>1?` <span class="chip">+${I.num(card.data.topics.length-1)}</span>`:'');
   if(card.kind==='dates') return t('state.reminder');
   if(card.kind==='money'){const r=root.LiftSpending.calculate(card.data.values);return `<span class="num" style="font-weight:700">≈ ${I.baht(Math.abs(r.remaining))}</span> · ${t(r.remaining<0?'mn.shortfall':'mn.remaining')}`;}

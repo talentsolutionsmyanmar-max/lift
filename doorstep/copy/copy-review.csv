@@ -303,3 +303,5 @@
 "error.title","Something went wrong","","P","","yes — CCO"
 "error.body","This screen could not open. Your answers on this page are still here.","","P","","yes — CCO"
 "error.retry","Try again","","P","","yes — CCO"
+"eq.meaning1","You chose 1 thing to ask. It is ready to read out or show.","","P","","yes — CCO"
+"eq.count1","1 question","","P","","yes — CCO"

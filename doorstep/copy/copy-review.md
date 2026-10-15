@@ -1,6 +1,6 @@
 # Doorstep copy-review inventory
 
-Generated from `doorstep/copy/copy-en.json` against the repository's reviewed copy. R=181 · L=42 · P=81 (total 304).
+Generated from `doorstep/copy/copy-en.json` against the repository's reviewed copy. R=181 · L=42 · P=83 (total 306).
 
 - **R** — exact English match in CCO-reviewed source. Shown as Myanmar.
 - **L** — Myanmar exists in main's shipped files but is not in the reviewed set. Shown as Myanmar; needs CCO confirmation before release.
@@ -312,3 +312,5 @@ Generated from `doorstep/copy/copy-en.json` against the repository's reviewed co
 | `error.title` | Something went wrong |  | P |  | yes — CCO |
 | `error.body` | This screen could not open. Your answers on this page are still here. |  | P |  | yes — CCO |
 | `error.retry` | Try again |  | P |  | yes — CCO |
+| `eq.meaning1` | You chose 1 thing to ask. It is ready to read out or show. |  | P |  | yes — CCO |
+| `eq.count1` | 1 question |  | P |  | yes — CCO |

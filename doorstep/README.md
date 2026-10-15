@@ -69,7 +69,7 @@ from the repository's CCO-reviewed files, never hand-labelled:
 - **L 42**: inherited Myanmar candidates (from the design package, originally the incumbent's
   working drafts) or shipped-but-unreviewed Myanmar. Shown in the UI and need CCO confirmation.
   Two known errors (ပြိုင်ဘက်, ကျွတ်ပါ) were excluded.
-- **P 81**: new wording with no Myanmar. Shown in English. Needs CCO authoring.
+- **P 83**: new wording with no Myanmar. Shown in English. Needs CCO authoring.
 
 A release candidate for Myanmar users needs CCO to clear L and P first.
 
@@ -126,7 +126,7 @@ CTO approves:
 
 ## Not done / remaining work
 
-- CCO authoring for 81 P strings and confirmation of 42 L strings (see `copy/copy-review.md`).
+- CCO authoring for 83 P strings and confirmation of 42 L strings (see `copy/copy-review.md`).
 - Physical low-end Android, TalkBack and offline (service-worker) checks. No service worker is
   included; `dist/sw.js` is not reused.
 - Migrant comprehension test against the acceptance sentence; validating the "about 2 minutes" estimates.

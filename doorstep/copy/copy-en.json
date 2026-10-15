@@ -302,5 +302,7 @@
   "offline": "You are offline. Saved Lift pages can still work. External websites need a connection.",
   "error.title": "Something went wrong",
   "error.body": "This screen could not open. Your answers on this page are still here.",
-  "error.retry": "Try again"
+  "error.retry": "Try again",
+  "eq.meaning1": "You chose 1 thing to ask. It is ready to read out or show.",
+  "eq.count1": "1 question"
 }
