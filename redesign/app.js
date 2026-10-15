@@ -42,6 +42,19 @@ function icon(name,cls){return `<svg class="${cls||'ic'}" viewBox="0 0 24 24" fi
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 /* Lift wordmark — the red dot sits ON the dotless ı (tight, optically centred) */
 function wordmark(){return `<span class="wordmark">l<span class="wl">ı</span>ft</span>`;}
+/* Signature brand moment: the doorway opening onto a sunrise with a green shoot.
+   Drawn fresh as a focal illustration (not the faint watermark). */
+function doorwayArt(){return `<svg viewBox="0 0 200 220" fill="none" aria-hidden="true">
+  <defs><linearGradient id="hg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3d9a8"/><stop offset="1" stop-color="#e9b98a"/></linearGradient>
+  <linearGradient id="hg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e6eee0"/><stop offset="1" stop-color="#cddabb"/></linearGradient></defs>
+  <circle cx="150" cy="58" r="34" fill="url(#hg)"/>
+  <path d="M60 220V110c0-46 26-66 60-66s60 20 60 66v110" fill="url(#hg2)"/>
+  <path d="M78 220V114c0-32 18-48 42-48s42 16 42 48v106" fill="#f5f4ee"/>
+  <path d="M0 200c56-72 120-52 200-100v120H0Z" fill="#a9bd8f" opacity=".8"/>
+  <path d="M0 220c70-40 110-4 200-56v56H0Z" fill="#7d9660" opacity=".8"/>
+  <path d="M150 176v-58m0 26c-20 0-26-14-23-29 19 1 25 12 23 29Z" fill="#5d7a45"/>
+  <path d="M152 167c16 0 22-12 20-24-17 1-23 11-20 24Z" fill="#6d8a52"/>
+  </svg>`;}
 
 /* ---------- navigation (single source) ---------- */
 const SECTIONS=[
@@ -177,10 +190,13 @@ function PgHome(){
  const cont=(hasEq||hasFam)?`<a class="taskrow" href="${hasEq?'#life/everyday':'#family'}"><span class="tic">${icon(hasEq?'life':'family')}</span><span class="tt"><b>${t('home.continue')}</b><span>${hasEq?t('eq.selected'):t('fam.questions','')||t('fam.choose')}</span></span><span class="chev">›</span></a>`:'';
  return `
  ${pagehead(t('home.eyebrow'), t('home.title'), t('home.intro'))}
- <div class="card wm-host hero-card">
-   <b style="font-size:15px">${t('home.start.title')}</b>
-   <p style="margin-top:4px">${t('home.start.sub')}</p>
-   <a class="btn primary block" style="margin-top:14px" href="#life/everyday">${t('home.start.cta')} ${icon('arrow')}</a>
+ <div class="card hero-card hero-focal">
+   <div class="hero-focal-body">
+     <b class="hero-focal-title">${t('home.start.title')}</b>
+     <p class="hero-focal-sub">${t('home.start.sub')}</p>
+     <a class="btn primary block" href="#life/everyday">${t('home.start.cta')} ${icon('arrow')}</a>
+   </div>
+   <div class="hero-focal-art" aria-hidden="true">${doorwayArt()}</div>
  </div>
  ${cont}
  <div class="stack" style="margin-top:16px">

@@ -26,9 +26,9 @@
   --action:var(--green-700); --action-press:var(--green-800); --action-soft:var(--green-100);
   --on-action:#fffdf8;
   --focus:#9a621f;
-  /* type */
-  --font-display:Georgia,'Times New Roman',serif;
-  --font-body:ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  /* type — distinctive 2026 pairing with graceful fallbacks (system if webfont absent) */
+  --font-display:'Bricolage Grotesque','Bricolage',Georgia,'Times New Roman',serif;
+  --font-body:'Inter',ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   --font-my:'Padauk','Pyidaungsu','Myanmar Text',sans-serif;
   /* space / radius / elevation / motion */
   --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px; --sp-5:24px; --sp-6:32px;
@@ -140,6 +140,7 @@ main{flex:1;width:100%;max-width:760px;margin:0 auto;padding:var(--sp-5) var(--s
   .sidebar{display:none}
   .topbar{position:sticky;top:0;z-index:30}
   .topbar .mobile-brand{display:inline-flex}
+  main{padding-top:var(--sp-4);scroll-margin-top:64px}
   .topbar .context{display:none}
   .pillbar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;gap:4px;background:color-mix(in srgb,var(--card) 88%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--border);padding:8px 10px calc(10px + env(safe-area-inset-bottom));}
   .pillbar a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:54px;padding:7px 2px;border-radius:var(--r-md);text-decoration:none;color:var(--text-2);font:600 10px/1.25 var(--font-body);text-align:center;transition:background var(--motion-fast) var(--ease),color var(--motion-fast) var(--ease)}
@@ -152,11 +153,11 @@ main{flex:1;width:100%;max-width:760px;margin:0 auto;padding:var(--sp-5) var(--s
 
 /* ---------- shared components ---------- */
 .pagehead{margin-bottom:var(--sp-5)}
-.eyebrow{font:600 11px/1 var(--font-body);letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:8px}
+.eyebrow{font:600 11px/1 var(--font-body);letter-spacing:.18em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:8px}
 .eyebrow::before{content:"";width:16px;height:1px;background:currentColor}
 [lang="my"] .eyebrow{font-family:var(--font-my);letter-spacing:.04em;font-size:12px}
-.pagehead h1{font-size:clamp(27px,4vw,36px);line-height:1.12;letter-spacing:-.9px;margin:8px 0 6px}
-.pagehead p{font-size:14.5px;color:var(--text-2);line-height:1.65;max-width:56ch}
+.pagehead h1{font-size:clamp(30px,5vw,42px);line-height:1.04;letter-spacing:-.02em;font-weight:700;margin:10px 0 8px;font-variation-settings:'opsz' 96}
+.pagehead p{font-size:15px;color:var(--text-2);line-height:1.6;max-width:56ch}
 
 .card{background:var(--card);border:1px solid var(--border);border-radius:var(--r-md);padding:var(--sp-5);box-shadow:var(--elev-card)}
 .card + .card{margin-top:var(--sp-4)}
@@ -198,6 +199,19 @@ main{flex:1;width:100%;max-width:760px;margin:0 auto;padding:var(--sp-5) var(--s
 .hero-card{background:linear-gradient(135deg,var(--green-100),var(--green-50) 60%,var(--card));border-color:color-mix(in srgb,var(--action) 24%,var(--border));box-shadow:var(--elev-lift)}
 .hero-card::after{opacity:calc(var(--wm-opacity) + .06)}
 [data-theme="dark"] .hero-card{background:linear-gradient(135deg,#22302a,#1b241e 60%,var(--card))}
+
+/* signature branded hero — doorway focal illustration beside the start action */
+.hero-focal{display:flex;align-items:center;gap:var(--sp-5);padding:var(--sp-5);overflow:hidden;position:relative}
+.hero-focal-body{flex:1;min-width:0;position:relative;z-index:1}
+.hero-focal-title{display:block;font-size:18px;font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.hero-focal-sub{display:block;font-size:13px;color:var(--text-2);line-height:1.55;margin:5px 0 14px}
+.hero-focal-art{flex:none;width:120px;height:132px;margin:-8px -10px -14px 0;position:relative;z-index:0}
+.hero-focal-art svg{width:100%;height:100%;filter:drop-shadow(0 8px 20px rgba(30,42,35,.15))}
+@media(max-width:420px){.hero-focal-art{width:96px;height:106px}}
+@media(prefers-reduced-motion:no-preference){
+  .hero-focal-art svg{animation:heroFloat 5s var(--ease) infinite}
+  @keyframes heroFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+}
 
 /* option cards (radio/checkbox) */
 .opt{display:flex;align-items:flex-start;gap:12px;background:var(--card);border:1.5px solid var(--border);border-radius:var(--r-md);padding:14px 15px;min-height:54px;cursor:pointer;transition:border-color var(--motion-fast) var(--ease),background var(--motion-fast) var(--ease)}
@@ -243,6 +257,13 @@ main{flex:1;width:100%;max-width:760px;margin:0 auto;padding:var(--sp-5) var(--s
 .nextact .cap{font:600 10px/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase;color:var(--warn);margin-bottom:6px}
 .nextact b{display:block;font-size:14px;color:var(--text)}
 .nextact span{display:block;font-size:12px;color:var(--text-2);line-height:1.5;margin-top:2px}
+
+/* result reveal — a calm, satisfying entrance (reduced-motion safe) */
+@media(prefers-reduced-motion:no-preference){
+  .resultband,.nextact{animation:rise var(--motion-med) var(--ease) both}
+  .nextact{animation-delay:90ms}
+  @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+}
 
 /* key-value */
 .kv{display:flex;justify-content:space-between;gap:var(--sp-3);padding:10px 0;border-bottom:1px solid var(--border);font-size:13px}
