@@ -1,0 +1,11 @@
+{
+ "intro":"No account or identity documents are needed. Your plans and optional spending calculations run on your device. Separate online tools explain what they send before you submit.",
+ "assurance":"No account needed. Saving your plan on this browser is optional.",
+ "title":"How each tool handles your information",
+ "plans":"Plans, dates and family checklists",
+ "plansText":"These follow the Remember setting below. Saving is off by default. Anyone using this browser may see information you choose to save.",
+ "daily":"Spending amounts and everyday question choices",
+ "dailyText":"These stay only in this open page, even when Remember is on. Clearing your Lift plan also clears them. Copied text and downloaded files remain outside Lift.",
+ "online":"Research survey and experimental checker",
+ "onlineText":"These have separate notices. Read the notice before submitting anything. They need internet access."
+}

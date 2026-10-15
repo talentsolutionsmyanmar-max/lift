@@ -1,0 +1,6 @@
+const {test}=require('node:test'),assert=require('node:assert/strict');
+const spending=require('../dist/spending.js');
+test('accepts Myanmar digits and correctly grouped amounts in integer satang',()=>{assert.equal(spending.parse(' ၁,၂၃၄.၅၀ '),123450);assert.equal(spending.parse('0.01'),1);assert.equal(spending.parse('၀'),0);assert.equal(spending.parse(''),null);});
+test('rejects ambiguous, negative, nonfinite and excessive amounts',()=>{for(const s of ['-1','1e3','Infinity','12,34','1.234','1 000','10000000','<script>','၀.၀၀၁'])assert.throws(()=>spending.parse(s));assert.equal(spending.parse('9,999,999.99'),999999999);});
+test('calculates remainder and shortfall without floating-point rounding',()=>{assert.deepEqual(spending.calculate({available:'၀.၃',food:'0.1',phone:'0.2'}),{available:30,costs:30,remaining:0});assert.equal(spending.calculate({available:'100',food:'75',travel:'50'}).remaining,-2500);assert.equal(spending.calculate({available:'100',food:'20'}).remaining,8000);});
+test('requires entered amounts and never silently treats invalid input as zero',()=>{assert.throws(()=>spending.calculate({}),/empty/);assert.throws(()=>spending.calculate({available:'100',food:'bad'}),/invalid/);assert.equal(spending.calculate({available:'0'}).remaining,0);});

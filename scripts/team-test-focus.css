@@ -1,0 +1,17 @@
+/* Test-only layout: one app viewport; isolation and network policies stay intact. */
+body{background:#f7f7f1}h1,h2,h3{font-family:system-ui,sans-serif;font-weight:650;letter-spacing:-.025em}
+html:lang(my) h1,html:lang(my) h2,html:lang(my) h3{font-family:Padauk,sans-serif;letter-spacing:0}
+.companion-welcome{min-height:108px!important;padding:20px!important;margin-bottom:16px;border:0;box-shadow:none;border-radius:20px}
+.companion-welcome h1{font-size:26px;line-height:1.35}html:lang(my) .companion-welcome h1{font-size:21px;line-height:1.8}
+.companion-welcome .landscape{width:110px;opacity:.24}.companion-welcome>div:first-child{width:78%}
+.companion-tasks{gap:12px}.companion-task{min-height:136px!important;padding:16px!important;border-radius:18px;box-shadow:none;gap:8px;--card-art-opacity:.1}
+.companion-task strong{font-size:15px}.task-art,.task-vector{width:32px!important;height:32px!important}.task-art{padding:4px!important;border-radius:10px!important}
+.companion-topics{margin-block:16px}.companion-secondary{margin-top:16px}.companion-secondary>a{padding-block:16px}
+.content-card{box-shadow:none!important}.page-heading h1{font-size:27px}.page-heading{margin-bottom:20px!important}
+@media(max-width:600px){main{padding:20px 16px 112px!important}.topbar{min-height:68px;padding-inline:16px}.companion-task strong{font-size:14px}html:lang(my) .companion-task strong{font-size:13px;line-height:2.1}.mobile-nav{padding-bottom:env(safe-area-inset-bottom)}.prototype-badge{display:none}.content-card{padding:18px!important}}
+@media(max-width:600px){.companion-tasks{grid-template-columns:1fr;gap:10px}.companion-task{display:grid;grid-template-columns:44px minmax(0,1fr) 24px;align-items:center;min-height:80px!important;padding:14px!important;gap:12px}.companion-task strong{max-width:100%;line-height:1.7}.companion-task .task-direction{align-self:center;margin:0;padding:0}.companion-task .task-art{margin:0}.companion-task::before{background-size:auto 120px}.mobile-nav{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:2px}.mobile-nav a{min-width:0;overflow-wrap:anywhere;text-align:center;padding:6px 2px;font-size:11px!important;line-height:1.6!important}.mobile-nav a svg{width:20px;height:20px}}
+/* Founder-requested compact Myanmar body size; A+ remains an explicit override. */
+html:lang(my) body,html:lang(my) main p,html:lang(my) main li,html:lang(my) main label,html:lang(my) main select,html:lang(my) main textarea,html:lang(my) .companion-task strong{font-size:12.5px;line-height:2.1}
+html:lang(my).large-myanmar body,html:lang(my).large-myanmar main p,html:lang(my).large-myanmar main li,html:lang(my).large-myanmar main label,html:lang(my).large-myanmar main select,html:lang(my).large-myanmar main textarea,html:lang(my).large-myanmar .companion-task strong{font-size:16px}
+
+@media(max-width:600px){main{padding-bottom:max(112px,var(--workflow-nav-space,112px))!important}.mobile-nav a{font-size:12px!important;line-height:1.8!important}}

@@ -1,0 +1,14 @@
+lift-site*.tar.gz
+.DS_Store
+
+.vercel
+.env*
+
+node_modules/
+
+# Local runtime, review captures and private environment files
+.openai/
+qa/
+__pycache__/
+*.pyc
+**/*approved-staging.txt

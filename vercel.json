@@ -1,0 +1,31 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": null,
+  "installCommand": "npm ci",
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/survey",
+      "destination": "/survey.html"
+    },
+    {
+      "source": "/check",
+      "destination": "/check.html"
+    }
+  ],
+  "crons": [
+    {
+      "path": "/api/survey-cleanup",
+      "schedule": "0 2 * * *"
+    }
+  ],
+  "functions": {
+    "api/check.js": {
+      "maxDuration": 120
+    },
+    "api/check-evaluation.js": {
+      "maxDuration": 120
+    }
+  }
+}

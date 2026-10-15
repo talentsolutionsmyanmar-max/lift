@@ -1,0 +1,7 @@
+const fs=require('node:fs'),crypto=require('node:crypto');
+const en=JSON.parse(fs.readFileSync('docs/community/copy-en.json')),my=JSON.parse(fs.readFileSync('docs/community/copy-my.json'));
+if(JSON.stringify(Object.keys(en).sort())!==JSON.stringify(Object.keys(my).sort()))throw Error('Copy keys differ');
+for(const value of Object.values(my))if(typeof value!=='string'||!/[\u1000-\u109f]/.test(value)||/[<>]/.test(value))throw Error('Invalid Myanmar copy');
+let ui=fs.readFileSync('dist/community-ui.js','utf8');ui=ui.replace(/\/\* community-copy:start \*\/[\s\S]*?\/\* community-copy:end \*\//,'/* community-copy:start */\nconst communityCopy='+JSON.stringify(en)+';\nconst communityMyanmar='+JSON.stringify(my)+';\nObject.assign(window.LiftMyanmar,'+JSON.stringify(Object.fromEntries(Object.keys(en).map(k=>[en[k],my[k]])))+');\n/* community-copy:end */');fs.writeFileSync('dist/community-ui.js',ui);
+const f='dist/myanmar.js',s=fs.readFileSync(f,'utf8'),offset=s.indexOf('window.LiftMyanmar=')+'window.LiftMyanmar='.length,d=JSON.parse(s.slice(offset).trim().replace(/;$/,''));for(const k of Object.keys(en))d[en[k]]=my[k];fs.writeFileSync(f,s.slice(0,offset)+JSON.stringify(d,null,2)+';\n');
+fs.writeFileSync('docs/community/copy-provenance.json',JSON.stringify({date:'2026-10-14',review:'Founder-designated CCO AI language review; not human field validation',englishHash:crypto.createHash('sha256').update(JSON.stringify(en)).digest('hex'),myanmarHash:crypto.createHash('sha256').update(JSON.stringify(my)).digest('hex')},null,2));

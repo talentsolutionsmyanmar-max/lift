@@ -1,0 +1,15 @@
+[
+  {
+    "id": "tm47-warning",
+    "title": "Department of Employment \u2014 blank TM.47 form",
+    "url": "https://www.doe.go.th/prd/assets/upload/files/ar7_th/680d6d6e85a97027fbba8e2f5ae2f2a4.pdf",
+    "checkedAt": "2026-10-14",
+    "reviewBy": "2026-10-21",
+    "scope": "The blank TM.47 form explicitly distinguishes its receipt from an extension of stay. It does not establish personal applicability, work permission, individual dates or fees.",
+    "excerpt": "THIS IS NOT AN EXTENSION OF STAY.",
+    "format": "pdf",
+    "sha256": "2208dc2aa65f82dc8e2129759d6eb2e8bf1185b271c4e02c3803a527dd5ccbac",
+    "markers": [],
+    "discoveryUrl": "https://www.doe.go.th/prd/download/download_by_pool_file/112248"
+  }
+]

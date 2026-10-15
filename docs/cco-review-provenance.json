@@ -1,0 +1,13 @@
+{
+  "source": "CCO-private-review",
+  "review_date": "2026-10-14",
+  "scope": "413 static UI entries plus a follow-up review of five concise mobile labels",
+  "status": "Translated and reviewed in the founder-provided CCO conversation; participant validation remains outstanding.",
+  "catalogue_sha256": "b2268dd50348a852dc033e846e7b004d93cd3d20b501c02c0d515f48aedccc95",
+  "not_established_by_language_review": [
+    "partner availability",
+    "participant comprehension",
+    "legal accuracy",
+    "programme eligibility"
+  ]
+}

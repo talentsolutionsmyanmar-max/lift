@@ -1,0 +1,4 @@
+const {list,del}=require('@vercel/blob');
+const {cleanupCommunity}=require('../lib/community-cleanup.cjs');
+const {makeStore}=require('../lib/community-blob.cjs');
+module.exports=async(req,res)=>{res.setHeader('Cache-Control','no-store');if(!process.env.CRON_SECRET||req.headers.authorization!==`Bearer ${process.env.CRON_SECRET}`)return res.status(401).end();let removed=0;for(const [prefix,age] of [['limits/',86400000],['check-limits/',2*86400000],['responses/',89*86400000]]){let cursor;do{const page=await list({prefix,cursor,limit:1000});const stale=page.blobs.filter(b=>Date.now()-new Date(b.uploadedAt).getTime()>age);if(stale.length){await del(stale.map(b=>b.url));removed+=stale.length}cursor=page.hasMore?page.cursor:undefined}while(cursor)}removed+=await cleanupCommunity({list,del,store:makeStore()});return res.status(200).json({removed})};

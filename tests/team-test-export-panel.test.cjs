@@ -1,0 +1,7 @@
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
+test('outer export panel ignores foreign frames and never shares automatically',async()=>{
+ const els={},events={},source={},get=id=>els[id]??=(id==='test-app'?{contentWindow:source}:{hidden:true,value:'',textContent:'',setAttribute(){},scrollIntoView(){},addEventListener(type,fn){this[type]=fn},focus(){},select(){}});let shares=0,copied='';
+ const ctx={window:{addEventListener:(name,fn)=>events[name]=fn},document:{getElementById:get},navigator:{share:async()=>shares++,clipboard:{writeText:async t=>copied=t}},exportCopy:{en:{external:'Outside Lift',externalHelp:'Choose a recipient',copy:'Copy',share:'Share',download:'Download',back:'Back',copied:'Copied'},my:{}}};
+ vm.runInNewContext(fs.readFileSync(require.resolve('../scripts/team-test-export-panel.js'),'utf8'),ctx);
+ const data={type:'lift-test-export',language:'en',text:'Fictional selected questions'};events.message({source:{},data});assert.equal(get('export-panel').hidden,true);events.message({source,data});assert.equal(get('export-panel').hidden,false);assert.equal(get('export-text').value,data.text);assert.equal(shares,0);await get('export-copy').onclick();assert.equal(copied,data.text);assert.equal(shares,0);get('reset').click();assert.equal(get('export-text').value,'');assert.equal(get('export-panel').hidden,true);
+});

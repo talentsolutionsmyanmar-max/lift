@@ -1,0 +1,10 @@
+**
+!dist
+!dist/**
+!api
+!api/**
+!lib
+!lib/**
+!package.json
+!package-lock.json
+!vercel.json

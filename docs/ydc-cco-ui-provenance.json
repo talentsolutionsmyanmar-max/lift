@@ -1,0 +1,14 @@
+{
+  "scope": "56 core interface strings only",
+  "inputSha256": "762e719ad71ccb75e45a963a542b7075402f58c28ff144d8379e1a1f1a117657",
+  "copySha256": "b9d07b5283c238fec205d6ccc2c503b29ee8be9be19b85b2537193e6e7b2b83a",
+  "source": "Authorised CCO ChatGPT conversation",
+  "approval": "AI wording candidate, not independent human approval",
+  "remainingEnglish": "Lesson goals, assessments, research descriptions and some labels remain English. The interface selector is labelled Myanmar + English.",
+  "browserVerification": {
+    "languageSwitchBothDirections": true,
+    "observedWidth": 891,
+    "observedScrollWidth": 891
+  },
+  "readyForChildren": false
+}

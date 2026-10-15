@@ -1,0 +1,23 @@
+{
+  "status": "founder_direction_research_only",
+  "decisionDate": "2026-10-14",
+  "platform": "YDC",
+  "preserveGeneralLearningPlatform": true,
+  "optionalModuleCollection": {
+    "id": "life-learning-thailand",
+    "workingTitle": "Life & Learning in Thailand",
+    "productionStatus": "not_implemented",
+    "areas": ["Practical Thai", "Everyday culture and communication", "School participation", "Everyday information skills", "Caregiver support"],
+    "ageAdaptation": {
+      "0to2": "Caregiver support only; no infant device task",
+      "3to5": "Caregiver-led play and optional oral participation",
+      "6to11": "Classroom and everyday foundational participation",
+      "12to17": "Age-respectful school and community scenarios"
+    },
+    "entry": "Optional; no immigration-status check, English gate or nationality-based language assumption",
+    "reviewStatus": "research_before_lesson_production"
+  },
+  "adultLearningHome": "Lift",
+  "crossPlatformDataTransfer": "none_by_default",
+  "existingProductionYDCModified": false
+}

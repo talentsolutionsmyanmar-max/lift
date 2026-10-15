@@ -1,0 +1,10 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),root=path.resolve(__dirname,'..');
+const prototype=fs.readFileSync(path.join(root,'docs/ux/community-intake-prototype.html'),'utf8');
+let svg=Buffer.from(prototype.match(/data:image\/svg\+xml;base64,([A-Za-z0-9+/=]+)/)[1],'base64').toString();
+svg=svg.replace('<svg ','<svg xmlns="http://www.w3.org/2000/svg" ');
+fs.writeFileSync(path.join(root,'dist/brand-watermark.svg'),svg+'\n');
+const url='data:image/svg+xml;base64,'+Buffer.from(svg).toString('base64');
+const template=fs.readFileSync(path.join(root,'docs/ux/brand-cards.template.css'),'utf8');
+fs.writeFileSync(path.join(root,'dist/brand-cards.css'),template.replace('WATERMARK_URL',url));
+console.log('Built shared doorway/sunrise/plant card system');

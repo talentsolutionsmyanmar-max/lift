@@ -1,0 +1,13 @@
+{
+  "project": "lift-team-test",
+  "sourceBase": "baae47a2f4c33bf72f399f0104e4ac06ec7dd06b",
+  "files": {
+    "index.html": "98243b7a30cb7bdf650d3b12e84b2c7923ec6badfaf624089c50e1c27eb61692",
+    "survey.html": "af88ef5c8343c96ccee023f6a456c2fd664801c8c5bb0175d8367eea7950d097",
+    "icon.svg": "b7588817ef126643b2112b55c844f0ef39118000f170969cc6785b3960eb921d",
+    "robots.txt": "331ea9090db0c9f6f597bd9840fd5b171830f6e0b3ba1cb24dfa91f0c95aedc1",
+    "vercel.json": "e72b746c1b27a1275770b5b9002354eb191df940415a2ba5cecf8873d18b3e66"
+  },
+  "backend": "none; static-only simulation",
+  "rollback": "Pause newly created team-test project; existing lift-next-step deployment and domains remain unchanged."
+}

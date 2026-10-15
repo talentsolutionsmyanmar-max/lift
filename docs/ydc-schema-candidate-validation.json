@@ -1,0 +1,56 @@
+{
+  "candidate": "docs/ydc-schema-review-candidate.json",
+  "validExistingLessons": 6,
+  "negativeChecks": [
+    {
+      "scope": "title",
+      "language": "my",
+      "case": "missing",
+      "rejected": true
+    },
+    {
+      "scope": "title",
+      "language": "my",
+      "case": "wrong",
+      "rejected": true
+    },
+    {
+      "scope": "step",
+      "language": "my",
+      "case": "missing",
+      "rejected": true
+    },
+    {
+      "scope": "step",
+      "language": "my",
+      "case": "wrong",
+      "rejected": true
+    },
+    {
+      "scope": "title",
+      "language": "th",
+      "case": "missing",
+      "rejected": true
+    },
+    {
+      "scope": "title",
+      "language": "th",
+      "case": "wrong",
+      "rejected": true
+    },
+    {
+      "scope": "step",
+      "language": "th",
+      "case": "missing",
+      "rejected": true
+    },
+    {
+      "scope": "step",
+      "language": "th",
+      "case": "wrong",
+      "rejected": true
+    }
+  ],
+  "readyForChildren": false,
+  "note": "Original ZCode files are unchanged; this candidate only enforces metadata pairing, not content quality."
+}

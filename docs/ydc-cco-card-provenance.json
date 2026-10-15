@@ -1,0 +1,73 @@
+{
+  "checkedAt": "2026-10-14T12:12:49.060744+00:00",
+  "reviewer": "CCO AI conversation, GPT-5.5 as shown in UI",
+  "conversation": "CCO-private-review",
+  "scope": "Nine complete learner/caregiver activity cards only; not the whole curriculum or every activity instruction.",
+  "cardsApplied": [
+    "u6-l01-counting-prompt",
+    "u6-l02-caregiver-card",
+    "b-l01-message-card",
+    "b-l02-story-text",
+    "a-l01-notice-card",
+    "a-l01-forwarded-message-card",
+    "a-l02-timetable-card",
+    "a-l02-picture-row-cards",
+    "a-l02-phrase-card"
+  ],
+  "inputHash": "cd9ff5db3cce136a2d1b7ad248de378b10f7edd85ecde55e240dec2ae8266c8f",
+  "copyFileHash": "ff7b6ca521424889df761e4a4eec2b3a7c18d928074437487af9b36c6cf85f47",
+  "priorMaterialCopy": {
+    "u6-l01-counting-prompt": {
+      "my": "တစ်… နှစ်… သုံး…",
+      "provenance_note": null
+    },
+    "u6-l02-caregiver-card": {
+      "my": "ကလေး လုပ်တာ/ထုတ်တာ မြင်ရင် စကားလုံးနဲ့ ပြန်ပြောပြီး ခဏ စောင့်ပါ။",
+      "provenance_note": null
+    },
+    "b-l01-message-card": {
+      "my": "မနက်ဖြန် ခဲတံ တစ်ချောင်းနဲ့ စာအုပ် တစ်အုပ် ယူလာပါ။ နံနက် ၉ နာရီမှာ စပါမည်။",
+      "provenance_note": null
+    },
+    "b-l02-story-text": {
+      "my": "မောင်သုံးယောက်က သရက်သီး ၁၂ လုံး စုဆောင်းရမိကြသည်။ တန်းတူ ခွဲဝေကြမည်။",
+      "provenance_note": "Original fiction; no real family finances. Known draft defect flagged for CCO: the Myanmar draft says 'three male friends' while the English names 'Nwe and her two friends' — character set must be reconciled by CCO, not assumed."
+    },
+    "a-l01-notice-card": {
+      "my": null,
+      "provenance_note": "Original fiction; the issuer and date are explicitly fictional and marked as such on the card so the provenance contrast with Card B is factual. Myanmar version withheld pending CCO rewording: the earlier machine draft contained a known mistranslation of 'market ground' (ဇယားကွက်); it was removed and no substitute wording is offered until CCO drafts and reviews new wording."
+    },
+    "a-l01-forwarded-message-card": {
+      "my": null,
+      "provenance_note": "Original fiction; unattributed by design — the lesson's point is that this card names no source. Myanmar version withheld on the same grounds as Card A (known 'market' mistranslation removed, pending CCO)."
+    },
+    "a-l02-timetable-card": {
+      "my": null,
+      "provenance_note": "Original fiction; explicitly marked 'practice card — not a real route' on the card face. Thai-script header line is not drafted; it will be authored only with the Thai educator. Myanmar version withheld pending CCO (known 'market' mistranslation removed, no substitute offered)."
+    },
+    "a-l02-picture-row-cards": {
+      "my": null,
+      "provenance_note": null
+    },
+    "a-l02-phrase-card": {
+      "my": null,
+      "provenance_note": "Thai wording is machine-drafted and must be re-authored or confirmed by a Thai educator (register matters). Myanmar gloss withheld pending CCO: the earlier machine draft used a known mistranslation of 'market' (ဇယားကွက်); removed, no substitute wording offered until CCO drafts and reviews it."
+    }
+  },
+  "withheldInstructions": [
+    {
+      "lessonId": "B-L02",
+      "step": 1,
+      "priorMyanmar": "မောင်သုံးယောက်က သရက်သီး ၁၂ လုံး စုဆောင်းရမိကြသည်။ တန်းတူ ခွဲဝေကြမည်။",
+      "reason": "Earlier draft changes Nwe and her two friends into three male siblings; wording withheld pending complete instruction translation."
+    }
+  ],
+  "independentHumanReviewed": false,
+  "educatorApproved": false,
+  "readyForChildren": false,
+  "remaining": [
+    "Complete instruction-level Myanmar translation/review.",
+    "Native-human comprehension and Thai educator review.",
+    "Pedagogy, rights, safety and real-device review."
+  ]
+}

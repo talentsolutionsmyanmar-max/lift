@@ -1,0 +1,77 @@
+{
+  "contractVersion": "0.1-research",
+  "status": "unimplemented_design_contract",
+  "firstPrototypeAudience": "adults_in_Lift",
+  "futurePlacement": "optional Life & Learning in Thailand collection within general YDC, with separate child adaptations",
+  "exampleCard": {
+    "id": "adult-clarification-001",
+    "scenarioIntent": "Ask someone to repeat or show what they mean",
+    "context": "fictional everyday interaction; not legal or clinical guidance",
+    "thaiText": null,
+    "thaiTextVersion": null,
+    "thaiTextReview": null,
+    "meaningLanguage": null,
+    "meaningText": null,
+    "meaningReview": null,
+    "picture": null,
+    "audio": {
+      "thaiNormal": null,
+      "thaiClear": null,
+      "thaiChunks": [],
+      "homeLanguageMeaning": null
+    },
+    "optionalSoundGuide": null,
+    "rightsEvidence": [],
+    "readyForLearners": false
+  },
+  "audioAssetFields": [
+    "path",
+    "mimeType",
+    "durationSeconds",
+    "bytes",
+    "sha256",
+    "textVersion",
+    "adultSpeakerAgreementReference",
+    "pronunciationReviewReference",
+    "rightsReviewReference",
+    "status",
+    "textSha256"
+  ],
+  "releaseConditions": [
+    "Approved original wording and understood home-language meaning",
+    "Every required recording exists and matches its text version",
+    "File hashes, formats and exact rights scope recorded",
+    "Thai pronunciation and context reviewed",
+    "Home-language meaning reviewed",
+    "Playback and downloaded assets tested on target phones",
+    "Separate safeguarding and age review before any child adaptation"
+  ],
+  "interfacePrinciples": [
+    "No Thai reading prerequisite",
+    "No English prerequisite",
+    "Replay without microphone or account",
+    "No automated pronunciation pass/fail",
+    "Guide optional and hidden by default in the comparison baseline",
+    "Do not present missing audio as available",
+    "Offer suitable non-audio alternatives; audio-first is not universally accessible"
+  ],
+  "estimatedAudioBudget": {
+    "unit": "decimal_bytes",
+    "bitrateBitsPerSecond": 24000,
+    "thaiSecondsPerCard": 11,
+    "oneMeaningLanguageSecondsPerCard": 3,
+    "audioBytesPerCard": 42000,
+    "tenCardsAudioBytes": 420000,
+    "twoHundredCardsAudioBytes": 8400000,
+    "excludes": [
+      "images",
+      "container overhead",
+      "metadata",
+      "additional voices/languages",
+      "video"
+    ],
+    "measured": false
+  },
+  "noAssetsProduced": true,
+  "noProductionChange": true
+}

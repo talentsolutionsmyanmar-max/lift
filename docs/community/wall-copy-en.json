@@ -1,0 +1,12 @@
+{
+ "wall":"Lift community wall",
+ "send":"Share with the Lift community",
+ "sendHelp":"Your post goes for review before it can appear on Lift’s community wall. Do not include names, contact details or identifying stories. No response or publication is guaranteed.",
+ "testPending":"Test only — awaiting review. This example stays on this open test page; nothing was submitted or published.",
+ "pending":"Awaiting review",
+ "external":"Share outside Lift",
+ "externalHelp":"Choose an installed app and recipient from your phone’s share menu, or copy and paste into an app such as LINE, Messenger, WhatsApp or Telegram. These are examples, not Lift partners. Nothing is posted to Lift by this action.",
+ "reviewSteps":"Remove private details, check the information, then decide whether it can be published. AI suggestions are not human or qualified review.",
+ "helpful":"Helpful",
+ "rewardPlan":"Helpful votes and reward points are planned for a later phase. No points, money or earnings are available in this test."
+}

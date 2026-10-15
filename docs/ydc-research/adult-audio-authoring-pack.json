@@ -1,0 +1,216 @@
+{
+  "status": "research_to_authoring_handoff",
+  "source": "Scenario intentions from supplied Opus report; no Thai wording or recordings created",
+  "cards": [
+    {
+      "id": "adult-thai-001",
+      "audience": "adult",
+      "scenarioIntent": "Greet someone in a familiar setting",
+      "status": "authoring_draft",
+      "thaiText": null,
+      "thaiTextVersion": null,
+      "thaiTextReview": null,
+      "meaningLanguage": null,
+      "meaningText": null,
+      "meaningTextVersion": null,
+      "meaningReview": null,
+      "rightsReview": null,
+      "audio": {
+        "thaiNormal": null,
+        "thaiClear": null,
+        "homeLanguageMeaning": null
+      },
+      "optionalSoundGuide": null,
+      "readyForLearners": false
+    },
+    {
+      "id": "adult-thai-002",
+      "audience": "adult",
+      "scenarioIntent": "Explain that you do not understand yet",
+      "status": "authoring_draft",
+      "thaiText": null,
+      "thaiTextVersion": null,
+      "thaiTextReview": null,
+      "meaningLanguage": null,
+      "meaningText": null,
+      "meaningTextVersion": null,
+      "meaningReview": null,
+      "rightsReview": null,
+      "audio": {
+        "thaiNormal": null,
+        "thaiClear": null,
+        "homeLanguageMeaning": null
+      },
+      "optionalSoundGuide": null,
+      "readyForLearners": false
+    },
+    {
+      "id": "adult-thai-003",
+      "audience": "adult",
+      "scenarioIntent": "Ask someone to repeat or speak clearly",
+      "status": "authoring_draft",
+      "thaiText": null,
+      "thaiTextVersion": null,
+      "thaiTextReview": null,
+      "meaningLanguage": null,
+      "meaningText": null,
+      "meaningTextVersion": null,
+      "meaningReview": null,
+      "rightsReview": null,
+      "audio": {
+        "thaiNormal": null,
+        "thaiClear": null,
+        "homeLanguageMeaning": null
+      },
+      "optionalSoundGuide": null,
+      "readyForLearners": false
+    },
+    {
+      "id": "adult-thai-004",
+      "audience": "adult",
+      "scenarioIntent": "Ask someone to show the meaning another way",
+      "status": "authoring_draft",
+      "thaiText": null,
+      "thaiTextVersion": null,
+      "thaiTextReview": null,
+      "meaningLanguage": null,
+      "meaningText": null,
+      "meaningTextVersion": null,
+      "meaningReview": null,
+      "rightsReview": null,
+      "audio": {
+        "thaiNormal": null,
+        "thaiClear": null,
+        "homeLanguageMeaning": null
+      },
+      "optionalSoundGuide": null,
+      "readyForLearners": false
+    },
+    {
+      "id": "adult-thai-005",
+      "audience": "adult",
+      "scenarioIntent": "Ask where a familiar place is",
+      "status": "authoring_draft",
+      "thaiText": null,
+      "thaiTextVersion": null,
+      "thaiTextReview": null,
+      "meaningLanguage": null,
+      "meaningText": null,
+      "meaningTextVersion": null,
+      "meaningReview": null,
+      "rightsReview": null,
+      "audio": {
+        "thaiNormal": null,
+        "thaiClear": null,
+        "homeLanguageMeaning": null
+      },
+      "optionalSoundGuide": null,
+      "readyForLearners": false
+    },
+    {
+      "id": "adult-thai-006",
+      "audience": "adult",
+      "scenarioIntent": "Ask a price and check a shown number",
+      "status": "authoring_draft",
+      "thaiText": null,
+      "thaiTextVersion": null,
+      "thaiTextReview": null,
+      "meaningLanguage": null,
+      "meaningText": null,
+      "meaningTextVersion": null,
+      "meaningReview": null,
+      "rightsReview": null,
+      "audio": {
+        "thaiNormal": null,
+        "thaiClear": null,
+        "homeLanguageMeaning": null
+      },
+      "optionalSoundGuide": null,
+      "readyForLearners": false
+    },
+    {
+      "id": "adult-thai-007",
+      "audience": "adult",
+      "scenarioIntent": "Ask someone to wait a moment",
+      "status": "authoring_draft",
+      "thaiText": null,
+      "thaiTextVersion": null,
+      "thaiTextReview": null,
+      "meaningLanguage": null,
+      "meaningText": null,
+      "meaningTextVersion": null,
+      "meaningReview": null,
+      "rightsReview": null,
+      "audio": {
+        "thaiNormal": null,
+        "thaiClear": null,
+        "homeLanguageMeaning": null
+      },
+      "optionalSoundGuide": null,
+      "readyForLearners": false
+    },
+    {
+      "id": "adult-thai-008",
+      "audience": "adult",
+      "scenarioIntent": "Express thanks or apologise in context",
+      "status": "authoring_draft",
+      "thaiText": null,
+      "thaiTextVersion": null,
+      "thaiTextReview": null,
+      "meaningLanguage": null,
+      "meaningText": null,
+      "meaningTextVersion": null,
+      "meaningReview": null,
+      "rightsReview": null,
+      "audio": {
+        "thaiNormal": null,
+        "thaiClear": null,
+        "homeLanguageMeaning": null
+      },
+      "optionalSoundGuide": null,
+      "readyForLearners": false
+    },
+    {
+      "id": "adult-thai-009",
+      "audience": "adult",
+      "scenarioIntent": "Explain which language you understand best",
+      "status": "authoring_draft",
+      "thaiText": null,
+      "thaiTextVersion": null,
+      "thaiTextReview": null,
+      "meaningLanguage": null,
+      "meaningText": null,
+      "meaningTextVersion": null,
+      "meaningReview": null,
+      "rightsReview": null,
+      "audio": {
+        "thaiNormal": null,
+        "thaiClear": null,
+        "homeLanguageMeaning": null
+      },
+      "optionalSoundGuide": null,
+      "readyForLearners": false
+    },
+    {
+      "id": "adult-thai-010",
+      "audience": "adult",
+      "scenarioIntent": "Politely decline or express uncertainty",
+      "status": "authoring_draft",
+      "thaiText": null,
+      "thaiTextVersion": null,
+      "thaiTextReview": null,
+      "meaningLanguage": null,
+      "meaningText": null,
+      "meaningTextVersion": null,
+      "meaningReview": null,
+      "rightsReview": null,
+      "audio": {
+        "thaiNormal": null,
+        "thaiClear": null,
+        "homeLanguageMeaning": null
+      },
+      "optionalSoundGuide": null,
+      "readyForLearners": false
+    }
+  ]
+}

@@ -1,0 +1,458 @@
+{
+  "status": "research_draft_not_an_approved_curriculum",
+  "created_at": "2026-10-14",
+  "tracks": [
+    "under6",
+    "6to11",
+    "12to17"
+  ],
+  "units": [
+    {
+      "id": "E01",
+      "track": "under6",
+      "strand": "communication",
+      "title": "Take turns together",
+      "proposed_outcome": "Caregiver practises responsive back-and-forth communication.",
+      "original_activity_concept": "Follow a child-led gesture or sound and respond in a familiar language.",
+      "proposed_check": "Caregiver describes what they noticed and how they responded.",
+      "under3_variant": "Caregiver interaction only; no child screen task or milestone score.",
+      "source_ids": [
+        "S02",
+        "S03"
+      ],
+      "alignment_status": "proposed_not_validated",
+      "content_status": "research_draft_not_for_children",
+      "educator_review": false,
+      "language_review": false,
+      "rights_review": false
+    },
+    {
+      "id": "E02",
+      "track": "under6",
+      "strand": "language",
+      "title": "Talk about a picture",
+      "proposed_outcome": "Child can express an idea about a familiar picture in a comfortable mode.",
+      "original_activity_concept": "Caregiver and child discuss an original picture; pointing or gestures count.",
+      "proposed_check": "Observe participation without ranking speech ability.",
+      "under3_variant": "Caregiver names familiar things during ordinary interaction.",
+      "source_ids": [
+        "S02",
+        "S04"
+      ],
+      "alignment_status": "proposed_not_validated",
+      "content_status": "research_draft_not_for_children",
+      "educator_review": false,
+      "language_review": false,
+      "rights_review": false
+    },
+    {
+      "id": "E03",
+      "track": "under6",
+      "strand": "early_numeracy",
+      "title": "Match and sort",
+      "proposed_outcome": "Child explores sameness and difference.",
+      "original_activity_concept": "Sort educator-approved safe large objects by one visible feature.",
+      "proposed_check": "Child explains or indicates a match.",
+      "under3_variant": "Caregiver describes one object; no sorting demand for infants.",
+      "source_ids": [
+        "S02"
+      ],
+      "alignment_status": "proposed_not_validated",
+      "content_status": "research_draft_not_for_children",
+      "educator_review": false,
+      "language_review": false,
+      "rights_review": false
+    },
+    {
+      "id": "E04",
+      "track": "under6",
+      "strand": "early_numeracy",
+      "title": "Count while playing",
+      "proposed_outcome": "Child connects a small spoken number with a visible quantity when ready.",
+      "original_activity_concept": "Count safe large objects during a caregiver-led game.",
+      "proposed_check": "Try a new small group without a timed test.",
+      "under3_variant": "Caregiver narrates quantities; no required counting performance.",
+      "source_ids": [
+        "S02"
+      ],
+      "alignment_status": "proposed_not_validated",
+      "content_status": "research_draft_not_for_children",
+      "educator_review": false,
+      "language_review": false,
+      "rights_review": false
+    },
+    {
+      "id": "E05",
+      "track": "under6",
+      "strand": "relationships",
+      "title": "Take a turn",
+      "proposed_outcome": "Child practises waiting and choosing during shared play.",
+      "original_activity_concept": "Use a simple cooperative turn-taking game without competition.",
+      "proposed_check": "Notice whether the activity remains comfortable and enjoyable.",
+      "under3_variant": "Caregiver follows the child’s timing and signals.",
+      "source_ids": [
+        "S02",
+        "S03"
+      ],
+      "alignment_status": "proposed_not_validated",
+      "content_status": "research_draft_not_for_children",
+      "educator_review": false,
+      "language_review": false,
+      "rights_review": false
+    },
+    {
+      "id": "E06",
+      "track": "under6",
+      "strand": "language",
+      "title": "Tell what happened",
+      "proposed_outcome": "Child communicates a simple event sequence when ready.",
+      "original_activity_concept": "Arrange original picture cards and describe a story together.",
+      "proposed_check": "Invite a retell using speech, gesture or pictures.",
+      "under3_variant": "Caregiver narrates an everyday routine; no sequence test.",
+      "source_ids": [
+        "S02",
+        "S04"
+      ],
+      "alignment_status": "proposed_not_validated",
+      "content_status": "research_draft_not_for_children",
+      "educator_review": false,
+      "language_review": false,
+      "rights_review": false
+    },
+    {
+      "id": "E07",
+      "track": "under6",
+      "strand": "exploration",
+      "title": "Notice and compare",
+      "proposed_outcome": "Child explores shape, size or position through play.",
+      "original_activity_concept": "Describe and compare two safe familiar objects with a caregiver.",
+      "proposed_check": "Child shows a difference in their chosen mode.",
+      "under3_variant": "Caregiver offers supervised exploration; no quiz.",
+      "source_ids": [
+        "S02"
+      ],
+      "alignment_status": "proposed_not_validated",
+      "content_status": "research_draft_not_for_children",
+      "educator_review": false,
+      "language_review": false,
+      "rights_review": false
+    },
+    {
+      "id": "E08",
+      "track": "under6",
+      "strand": "learning_routine",
+      "title": "Choose a favourite activity",
+      "proposed_outcome": "Caregiver can repeat an enjoyable learning interaction.",
+      "original_activity_concept": "Let the child choose an activity to repeat, adapt or stop.",
+      "proposed_check": "Caregiver records an optional private note outside the app.",
+      "under3_variant": "Caregiver card only; no independent device use.",
+      "source_ids": [
+        "S02",
+        "S03"
+      ],
+      "alignment_status": "proposed_not_validated",
+      "content_status": "research_draft_not_for_children",
+      "educator_review": false,
+      "language_review": false,
+      "rights_review": false
+    },
+    {
+      "id": "B01",
+      "track": "6to11",
+      "strand": "oral_comprehension",
+      "title": "Listen and make meaning",
+      "proposed_outcome": "Learner identifies an event in a short familiar-language story.",
+      "original_activity_concept": "Discuss an original or rights-cleared story, with audio/text/picture choices.",
+      "proposed_check": "Ask one new meaning question in the learner’s comfortable language.",
+      "under3_variant": "",
+      "source_ids": [
+        "S01",
+        "S04"
+      ],
+      "alignment_status": "proposed_not_validated",
+      "content_status": "research_draft_not_for_children",
+      "educator_review": false,
+      "language_review": false,
+      "rights_review": false
+    },
+    {
+      "id": "B02",
+      "track": "6to11",
+      "strand": "early_reading",
+      "title": "Connect symbols and sounds",
+      "proposed_outcome": "Learner practises language-appropriate print/sound patterns at their starting level.",
+      "original_activity_concept": "Use educator-selected familiar words; do not impose an English phonics sequence on Myanmar.",
+      "proposed_check": "Try a different word or symbol pattern.",
+      "under3_variant": "",
+      "source_ids": [
+        "S01",
+        "S04"
+      ],
+      "alignment_status": "proposed_not_validated",
+      "content_status": "research_draft_not_for_children",
+      "educator_review": false,
+      "language_review": false,
+      "rights_review": false
+    },
+    {
+      "id": "B03",
+      "track": "6to11",
+      "strand": "reading",
+      "title": "Read a short message",
+      "proposed_outcome": "Learner finds explicitly stated information in a suitable text.",
+      "original_activity_concept": "Read an age-respectful original classroom message.",
+      "proposed_check": "Point to the evidence for an answer.",
+      "under3_variant": "",
+      "source_ids": [
+        "S01"
+      ],
+      "alignment_status": "proposed_not_validated",
+      "content_status": "research_draft_not_for_children",
+      "educator_review": false,
+      "language_review": false,
+      "rights_review": false
+    },
+    {
+      "id": "B04",
+      "track": "6to11",
+      "strand": "writing",
+      "title": "Say it, then write it",
+      "proposed_outcome": "Learner communicates a short idea at their writing level.",
+      "original_activity_concept": "Tell, draw or write an original sentence with educator support.",
+      "proposed_check": "Explain how the picture or words convey the idea.",
+      "under3_variant": "",
+      "source_ids": [
+        "S01",
+        "S04"
+      ],
+      "alignment_status": "proposed_not_validated",
+      "content_status": "research_draft_not_for_children",
+      "educator_review": false,
+      "language_review": false,
+      "rights_review": false
+    },
+    {
+      "id": "B05",
+      "track": "6to11",
+      "strand": "number",
+      "title": "Make sense of quantities",
+      "proposed_outcome": "Learner represents and compares quantities at their starting level.",
+      "original_activity_concept": "Use objects or original pictures; extend to place value if ready.",
+      "proposed_check": "Solve a similar task with different quantities.",
+      "under3_variant": "",
+      "source_ids": [
+        "S01"
+      ],
+      "alignment_status": "proposed_not_validated",
+      "content_status": "research_draft_not_for_children",
+      "educator_review": false,
+      "language_review": false,
+      "rights_review": false
+    },
+    {
+      "id": "B06",
+      "track": "6to11",
+      "strand": "number",
+      "title": "Solve an everyday problem",
+      "proposed_outcome": "Learner chooses an operation or representation to solve a suitable problem.",
+      "original_activity_concept": "Discuss a fictional sharing or shopping example with no personal finances.",
+      "proposed_check": "Show the reasoning, not just the answer.",
+      "under3_variant": "",
+      "source_ids": [
+        "S01"
+      ],
+      "alignment_status": "proposed_not_validated",
+      "content_status": "research_draft_not_for_children",
+      "educator_review": false,
+      "language_review": false,
+      "rights_review": false
+    },
+    {
+      "id": "B07",
+      "track": "6to11",
+      "strand": "measurement_data",
+      "title": "Measure and organise",
+      "proposed_outcome": "Learner compares measures or reads a simple data display.",
+      "original_activity_concept": "Create a picture tally or compare classroom objects.",
+      "proposed_check": "Interpret one new display or comparison.",
+      "under3_variant": "",
+      "source_ids": [
+        "S01"
+      ],
+      "alignment_status": "proposed_not_validated",
+      "content_status": "research_draft_not_for_children",
+      "educator_review": false,
+      "language_review": false,
+      "rights_review": false
+    },
+    {
+      "id": "B08",
+      "track": "6to11",
+      "strand": "thai_bridge",
+      "title": "Ask for learning help",
+      "proposed_outcome": "Learner practises a locally reviewed Thai classroom phrase with first-language support.",
+      "original_activity_concept": "Hear an approved human recording and role-play with a caregiver or teacher.",
+      "proposed_check": "Use the phrase appropriately in a second fictional situation.",
+      "under3_variant": "",
+      "source_ids": [
+        "S04",
+        "S11"
+      ],
+      "alignment_status": "proposed_not_validated",
+      "content_status": "research_draft_not_for_children",
+      "educator_review": false,
+      "language_review": false,
+      "rights_review": false
+    },
+    {
+      "id": "A01",
+      "track": "12to17",
+      "strand": "reading",
+      "title": "Read for evidence",
+      "proposed_outcome": "Learner finds and connects information in an age-respectful text at their current level.",
+      "original_activity_concept": "Compare short original information cards; provide simpler text without childish artwork.",
+      "proposed_check": "Explain an answer using text evidence.",
+      "under3_variant": "",
+      "source_ids": [
+        "S01",
+        "S05"
+      ],
+      "alignment_status": "proposed_not_validated",
+      "content_status": "research_draft_not_for_children",
+      "educator_review": false,
+      "language_review": false,
+      "rights_review": false
+    },
+    {
+      "id": "A02",
+      "track": "12to17",
+      "strand": "numeracy",
+      "title": "Reason with quantities",
+      "proposed_outcome": "Learner practises arithmetic or proportional reasoning at an appropriate entry level.",
+      "original_activity_concept": "Use fictional quantities; offer foundational and extending variants.",
+      "proposed_check": "Explain a new example with changed values.",
+      "under3_variant": "",
+      "source_ids": [
+        "S01",
+        "S05"
+      ],
+      "alignment_status": "proposed_not_validated",
+      "content_status": "research_draft_not_for_children",
+      "educator_review": false,
+      "language_review": false,
+      "rights_review": false
+    },
+    {
+      "id": "A03",
+      "track": "12to17",
+      "strand": "numeracy_data",
+      "title": "Read a table or chart",
+      "proposed_outcome": "Learner interprets a suitable data display.",
+      "original_activity_concept": "Discuss a fictional timetable or chart, with a non-reading entry option.",
+      "proposed_check": "Identify what the data do and do not show.",
+      "under3_variant": "",
+      "source_ids": [
+        "S01"
+      ],
+      "alignment_status": "proposed_not_validated",
+      "content_status": "research_draft_not_for_children",
+      "educator_review": false,
+      "language_review": false,
+      "rights_review": false
+    },
+    {
+      "id": "A04",
+      "track": "12to17",
+      "strand": "language",
+      "title": "Communicate a learning need",
+      "proposed_outcome": "Learner practises explaining a school or learning question in reviewed Thai.",
+      "original_activity_concept": "Use a bilingual script with optional role-play; no audio upload.",
+      "proposed_check": "Choose an appropriate response in a different situation.",
+      "under3_variant": "",
+      "source_ids": [
+        "S04",
+        "S11"
+      ],
+      "alignment_status": "proposed_not_validated",
+      "content_status": "research_draft_not_for_children",
+      "educator_review": false,
+      "language_review": false,
+      "rights_review": false
+    },
+    {
+      "id": "A05",
+      "track": "12to17",
+      "strand": "digital_judgment",
+      "title": "Check an online claim",
+      "proposed_outcome": "Learner distinguishes an unsupported post from evidence.",
+      "original_activity_concept": "Compare synthetic harmless information cards with clear provenance.",
+      "proposed_check": "Name a useful checking step; no immigration-case judgment.",
+      "under3_variant": "",
+      "source_ids": [
+        "S07"
+      ],
+      "alignment_status": "proposed_not_validated",
+      "content_status": "research_draft_not_for_children",
+      "educator_review": false,
+      "language_review": false,
+      "rights_review": false
+    },
+    {
+      "id": "A06",
+      "track": "12to17",
+      "strand": "collaboration",
+      "title": "Plan a small project",
+      "proposed_outcome": "Learner contributes to an achievable shared learning project.",
+      "original_activity_concept": "Plan a fictional or safe supervised project with roles and materials.",
+      "proposed_check": "Explain choices and adapt the plan after feedback.",
+      "under3_variant": "",
+      "source_ids": [
+        "S06",
+        "S07"
+      ],
+      "alignment_status": "proposed_not_validated",
+      "content_status": "research_draft_not_for_children",
+      "educator_review": false,
+      "language_review": false,
+      "rights_review": false
+    },
+    {
+      "id": "A07",
+      "track": "12to17",
+      "strand": "communication",
+      "title": "Ask, listen and decide",
+      "proposed_outcome": "Learner practises respectful questions and considering another view.",
+      "original_activity_concept": "Facilitator-led role-play about a low-stakes everyday decision.",
+      "proposed_check": "Reflect privately without disclosure of difficult personal experiences.",
+      "under3_variant": "",
+      "source_ids": [
+        "S06",
+        "S07"
+      ],
+      "alignment_status": "proposed_not_validated",
+      "content_status": "research_draft_not_for_children",
+      "educator_review": false,
+      "language_review": false,
+      "rights_review": false
+    },
+    {
+      "id": "A08",
+      "track": "12to17",
+      "strand": "learning_continuity",
+      "title": "Choose a next learning step",
+      "proposed_outcome": "Learner can discuss a next step with a trusted educator.",
+      "original_activity_concept": "Create a private learning portfolio sample and list questions about continuing education.",
+      "proposed_check": "Educator helps identify an appropriate next activity, not a certified grade.",
+      "under3_variant": "",
+      "source_ids": [
+        "S05",
+        "S06"
+      ],
+      "alignment_status": "proposed_not_validated",
+      "content_status": "research_draft_not_for_children",
+      "educator_review": false,
+      "language_review": false,
+      "rights_review": false
+    }
+  ]
+}

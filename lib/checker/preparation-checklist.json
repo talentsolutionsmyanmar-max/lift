@@ -1,0 +1,26 @@
+{
+  "en": {
+    "actions": [
+      "Compare each extracted date and amount with the original message. This does not confirm that the message is official.",
+      "Ask a trusted adviser which process the message is about and what needs checking.",
+      "Read the linked original source and its stated scope before relying on it."
+    ],
+    "questions": [
+      "Which process does this message refer to?",
+      "Who can confirm the stated date and amount for my situation?",
+      "What does the original source establish, and what remains unverified?"
+    ]
+  },
+  "my": {
+    "actions": [
+      "ထုတ်ယူထားသော ရက်စွဲနှင့် ငွေပမာဏတစ်ခုချင်းစီကို မူရင်းစာနှင့် နှိုင်းယှဉ်ပါ။ ဤလုပ်ဆောင်ချက်သည် စာသည် တရားဝင်ဖြစ်ကြောင်း အတည်ပြုခြင်း မဟုတ်ပါ။",
+      "ဤစာသည် မည်သည့်လုပ်ငန်းစဉ်အကြောင်းဖြစ်ပြီး မည်သည့်အရာများကို စစ်ဆေးရန် လိုအပ်သည်ကို ယုံကြည်ရသော အကြံပေးသူတစ်ဦးကို မေးမြန်းပါ။",
+      "၎င်းကို မမှီခိုမီ ချိတ်ဆက်ထားသော မူရင်းရင်းမြစ်နှင့် ၎င်းဖော်ပြထားသော လွှမ်းခြုံမှုကို ဖတ်ရှုပါ။"
+    ],
+    "questions": [
+      "ဤစာသည် မည်သည့်လုပ်ငန်းစဉ်ကို ရည်ညွှန်းပါသလဲ။",
+      "ဖော်ပြထားသော ရက်စွဲနှင့် ငွေပမာဏသည် ကျွန်ုပ်၏အခြေအနေနှင့် သက်ဆိုင်ကြောင်း မည်သူက အတည်ပြုနိုင်ပါသလဲ။",
+      "မူရင်းရင်းမြစ်က မည်သည့်အရာကို အတည်ပြုထားပြီး မည်သည့်အရာများ မအတည်ပြုရသေးပါသလဲ။"
+    ]
+  }
+}

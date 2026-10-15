@@ -1,0 +1,119 @@
+{
+  "checkedAt": "2026-10-14T13:19:32.691288+00:00",
+  "scope": "Independent structural validation only, not educator, language, rights or safety approval.",
+  "hashes": {
+    "docs/ydc-zcode-drafts/lesson-schema.json": "04137e71c9f867e2870cfcc17adeec1a1ba2b09a09a765c9c57c43ea1c8afc4d",
+    "docs/ydc-zcode-drafts/sample-lessons.json": "051cc9e5a34c2f45f9652e1e09c3adc589f7962ea018de067857e49a81fbf03c"
+  },
+  "coverage": {
+    "allThreePathways": true,
+    "counts": {
+      "under6": 2,
+      "6to11": 2,
+      "12to17": 2
+    }
+  },
+  "lessons": [
+    {
+      "id": "U6-L01",
+      "pathway": "under6",
+      "schemaErrors": [],
+      "reviewFlags": {
+        "educator_review": false,
+        "language_review": false,
+        "rights_review": false
+      }
+    },
+    {
+      "id": "U6-L02",
+      "pathway": "under6",
+      "schemaErrors": [],
+      "reviewFlags": {
+        "educator_review": false,
+        "language_review": false,
+        "rights_review": false
+      }
+    },
+    {
+      "id": "B-L01",
+      "pathway": "6to11",
+      "schemaErrors": [],
+      "reviewFlags": {
+        "educator_review": false,
+        "language_review": false,
+        "rights_review": false
+      }
+    },
+    {
+      "id": "B-L02",
+      "pathway": "6to11",
+      "schemaErrors": [],
+      "reviewFlags": {
+        "educator_review": false,
+        "language_review": false,
+        "rights_review": false
+      }
+    },
+    {
+      "id": "A-L01",
+      "pathway": "12to17",
+      "schemaErrors": [],
+      "reviewFlags": {
+        "educator_review": false,
+        "language_review": false,
+        "rights_review": false
+      }
+    },
+    {
+      "id": "A-L02",
+      "pathway": "12to17",
+      "schemaErrors": [],
+      "reviewFlags": {
+        "educator_review": false,
+        "language_review": false,
+        "rights_review": false
+      }
+    }
+  ],
+  "pairedSchemaNegativeChecks": [
+    {
+      "case": "title_my_missing_status",
+      "rejected": true
+    },
+    {
+      "case": "title_my_wrong_status",
+      "rejected": true
+    },
+    {
+      "case": "step_my_missing_status",
+      "rejected": true
+    },
+    {
+      "case": "step_my_wrong_status",
+      "rejected": true
+    },
+    {
+      "case": "title_th_missing_status",
+      "rejected": true
+    },
+    {
+      "case": "title_th_wrong_status",
+      "rejected": true
+    },
+    {
+      "case": "step_th_missing_status",
+      "rejected": true
+    },
+    {
+      "case": "step_th_wrong_status",
+      "rejected": true
+    }
+  ],
+  "pairedStatusSchemaEnforced": true,
+  "readyForChildren": false,
+  "limits": [
+    "Schema cannot establish semantic correctness, age suitability or translation quality.",
+    "Card/story/timetable completeness and source-answer consistency require content review.",
+    "Independent educator, native-language, rights and safeguarding reviews remain pending."
+  ]
+}

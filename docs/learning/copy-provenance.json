@@ -1,0 +1,10 @@
+{
+  "englishHash": "2351ce623dd37a2d37e3e8b0ef80fe1ec6d71b9da4c8f12e91c026f3185f4457",
+  "myanmarHash": "35fb9950c7987985daacf1107c30199e6cbf89c61937ce65b27829a5580de713",
+  "reviewer": "CCO ChatGPT AI wording review",
+  "reviewed": "2026-10-15",
+  "source": "CCO-private-review",
+  "scope": "97 exact UI, example and learning keys; not human comprehension, legal or financial qualification",
+  "humanValidated": false,
+  "amendment": "CCO single-key correction: cash_gap measures largest projected gap anywhere within horizon, including after expected income."
+}

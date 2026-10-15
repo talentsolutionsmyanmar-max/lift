@@ -1,0 +1,5 @@
+const test=require('node:test'),assert=require('node:assert/strict'),{project}=require('../dist/cashflow.js');
+test('shows a timing gap even if the final balance is positive',()=>{const r=project({cash:10000,days:7,daily:2000,income:20000,incomeDay:7});assert.equal(r.firstGap,6);assert.equal(r.gap,4000);assert.equal(r.closing,16000)});
+test('shows impact of due bills and late pay without changing original scenario',()=>{const input={cash:10000,days:7,daily:1000,bills:[{day:3,amount:5000}],income:10000,incomeDay:5};assert.equal(project(input).gap,0);assert.equal(project({...input,delay:3}).gap,2000);assert.equal(project({...input,reduction:500}).closing,11500);assert.equal(input.daily,1000)});
+test('never treats missing expected income as money received',()=>{assert.equal(project({cash:0,days:2,daily:100,income:500}).closing,-200);assert.equal(project({cash:0,days:1,daily:100,income:500,incomeDay:1}).gap,100)});
+test('validates bounds and exact integer money',()=>{for(const bad of [{daily:-1},{cash:1.1},{days:0},{days:32},{bills:[{day:0,amount:1}]}])assert.throws(()=>project({cash:0,days:7,daily:100,...bad}));});

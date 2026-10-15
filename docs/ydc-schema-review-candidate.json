@@ -1,0 +1,656 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ydc-review-candidate/lesson-schema-0.1-paired-status.json",
+  "title": "YDC draft lesson record",
+  "description": "Structured record for YDC curriculum research drafts. Everything validated by this schema is research_draft_not_for_children. Myanmar text carries DRAFT FOR CCO REVIEW status; Thai text carries DRAFT FOR THAI EDUCATOR REVIEW status. GPF references are crosswalk notes marked proposed_not_validated. No third-party assets are permitted in this version. Materials policy: no small loose objects; no numeric safety thresholds; physical items (where any) are intact everyday items selected by a responsible adult and stay pending qualified safety review; supervision is never recorded as sufficient by itself.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "lesson_id",
+    "title",
+    "pathway",
+    "age_band",
+    "presentation_tier",
+    "duration_minutes",
+    "status",
+    "educator_review",
+    "language_review",
+    "rights_review",
+    "starter_unit_refs",
+    "source_refs",
+    "learning_goal",
+    "entry_levels",
+    "gpf_crosswalk",
+    "prerequisites",
+    "materials",
+    "materials_safety",
+    "activity_steps",
+    "observable_assessment",
+    "caregiver_teacher_notes",
+    "language_policy",
+    "audio_transcript",
+    "rights",
+    "offline_delivery",
+    "safeguarding",
+    "formal_schooling_note",
+    "version",
+    "created_at",
+    "review_due"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1-draft"
+    },
+    "version": {
+      "const": "0.1-draft"
+    },
+    "lesson_id": {
+      "type": "string",
+      "pattern": "^(U6|B|A)-L[0-9]{2}$"
+    },
+    "title": {
+      "$ref": "#/$defs/localizedText"
+    },
+    "pathway": {
+      "enum": [
+        "under6",
+        "6to11",
+        "12to17"
+      ]
+    },
+    "age_band": {
+      "enum": [
+        "0-2",
+        "3-5",
+        "6-11",
+        "12-14",
+        "15-17",
+        "12-17"
+      ]
+    },
+    "presentation_tier": {
+      "enum": [
+        "caregiver_card",
+        "facilitator_card",
+        "learner_print",
+        "learner_print_audio"
+      ],
+      "description": "Text/picture first; audio is optional and only ever human-recorded with transcript."
+    },
+    "duration_minutes": {
+      "type": "integer",
+      "minimum": 10,
+      "maximum": 15
+    },
+    "status": {
+      "const": "research_draft_not_for_children"
+    },
+    "educator_review": {
+      "const": false
+    },
+    "language_review": {
+      "const": false
+    },
+    "rights_review": {
+      "const": false
+    },
+    "starter_unit_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "enum": [
+          "E01",
+          "E02",
+          "E03",
+          "E04",
+          "E05",
+          "E06",
+          "E07",
+          "E08",
+          "B01",
+          "B02",
+          "B03",
+          "B04",
+          "B05",
+          "B06",
+          "B07",
+          "B08",
+          "A01",
+          "A02",
+          "A03",
+          "A04",
+          "A05",
+          "A06",
+          "A07",
+          "A08"
+        ]
+      }
+    },
+    "source_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "pattern": "^S[0-9]{2}$"
+      },
+      "description": "References into docs/ydc-research/sources.json. Source use limits apply as recorded there and in 01-source-evidence-audit.md."
+    },
+    "learning_goal": {
+      "type": "string",
+      "minLength": 10
+    },
+    "entry_levels": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "dimension",
+          "levels"
+        ],
+        "properties": {
+          "dimension": {
+            "enum": [
+              "home_language_oral",
+              "home_language_literacy",
+              "numeracy",
+              "thai_participation"
+            ]
+          },
+          "levels": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "gpf_crosswalk": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "descriptor_code",
+          "edition",
+          "validation"
+        ],
+        "properties": {
+          "descriptor_code": {
+            "type": "string",
+            "minLength": 2,
+            "description": "e.g. R1.2 or 'Table 2B: Add and subtract whole numbers within 20 (grade 2)' \u2014 as named in the cited edition."
+          },
+          "edition": {
+            "type": "string",
+            "minLength": 4,
+            "description": "Exact document edition, e.g. 'GPF Reading Grades 1-9, Dec 2020' or 'GPF Reading and Mathematics Grades 2-6, Oct 2019'."
+          },
+          "note": {
+            "type": "string"
+          },
+          "validation": {
+            "const": "proposed_not_validated"
+          }
+        }
+      }
+    },
+    "prerequisites": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "materials": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "item",
+          "kind"
+        ],
+        "properties": {
+          "item": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "enum": [
+              "none_needed",
+              "printed_or_handwritten_card",
+              "drawing_writing_supplies",
+              "gesture_only",
+              "paper_tokens_learner_made",
+              "intact_everyday_item_selected_by_adult"
+            ]
+          },
+          "safety_note": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "materials_safety": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "numeric_thresholds_claimed",
+        "small_loose_objects_used",
+        "supervision_claimed_as_sufficient",
+        "physical_items_selected_by",
+        "review_status",
+        "note"
+      ],
+      "properties": {
+        "numeric_thresholds_claimed": {
+          "const": false,
+          "description": "No 'bigger than X cm' style rules \u2014 unsupported thresholds create false confidence."
+        },
+        "small_loose_objects_used": {
+          "const": false,
+          "description": "Stones, beans, caps, beads and similar small loose objects are not used in child activities in this draft."
+        },
+        "supervision_claimed_as_sufficient": {
+          "const": false,
+          "description": "Supervision is good practice but is never recorded as removing risk by itself."
+        },
+        "physical_items_selected_by": {
+          "enum": [
+            "responsible_adult",
+            "not_applicable_paper_only"
+          ]
+        },
+        "review_status": {
+          "const": "pending_qualified_safety_review"
+        },
+        "note": {
+          "type": "string",
+          "minLength": 10
+        }
+      }
+    },
+    "activity_steps": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "step_no",
+          "who",
+          "instruction"
+        ],
+        "properties": {
+          "step_no": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "who": {
+            "enum": [
+              "caregiver",
+              "child",
+              "facilitator",
+              "learner",
+              "together",
+              "caregiver_and_child",
+              "facilitator_and_learner"
+            ]
+          },
+          "instruction": {
+            "type": "string",
+            "minLength": 10
+          },
+          "instruction_my": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Myanmar draft wording",
+            "minLength": 1
+          },
+          "instruction_my_status": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "const": "DRAFT FOR CCO REVIEW"
+          },
+          "instruction_th": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Thai draft wording",
+            "minLength": 1
+          },
+          "instruction_th_status": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "const": "DRAFT FOR THAI EDUCATOR REVIEW"
+          },
+          "accessible_alternatives": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "required": [
+                "instruction_my"
+              ],
+              "properties": {
+                "instruction_my": {
+                  "type": "string"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "instruction_my_status"
+              ],
+              "properties": {
+                "instruction_my_status": {
+                  "const": "DRAFT FOR CCO REVIEW"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "required": [
+                "instruction_th"
+              ],
+              "properties": {
+                "instruction_th": {
+                  "type": "string"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "instruction_th_status"
+              ],
+              "properties": {
+                "instruction_th_status": {
+                  "const": "DRAFT FOR THAI EDUCATOR REVIEW"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "observable_assessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "check",
+        "evidence_modes",
+        "explicitly_avoided"
+      ],
+      "properties": {
+        "check": {
+          "type": "string",
+          "minLength": 10
+        },
+        "transfer_task": {
+          "type": "string"
+        },
+        "evidence_modes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "enum": [
+              "speech",
+              "gesture_or_pointing",
+              "drawing",
+              "writing",
+              "arrangement_of_items_or_marks",
+              "demonstration",
+              "caregiver_report",
+              "portfolio_note"
+            ]
+          }
+        },
+        "explicitly_avoided": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "caregiver_teacher_notes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 10
+      }
+    },
+    "language_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "home_language_first",
+        "english_role",
+        "myanmar_text_status",
+        "thai_text_status"
+      ],
+      "properties": {
+        "home_language_first": {
+          "const": true
+        },
+        "english_role": {
+          "const": "optional_never_entry_barrier"
+        },
+        "myanmar_text_status": {
+          "const": "DRAFT FOR CCO REVIEW"
+        },
+        "thai_text_status": {
+          "const": "DRAFT FOR THAI EDUCATOR REVIEW"
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "audio_transcript": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Transcript of any audio. Null in this package: no audio exists yet; only human-recorded, reviewed audio with transcript may ever fill this."
+    },
+    "rights": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "original_content",
+        "third_party_assets"
+      ],
+      "properties": {
+        "original_content": {
+          "const": true
+        },
+        "third_party_assets": {
+          "type": "array",
+          "maxItems": 0
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    },
+    "offline_delivery": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "works_without_internet",
+        "printable_alternative",
+        "audio_required",
+        "data_note"
+      ],
+      "properties": {
+        "works_without_internet": {
+          "const": true
+        },
+        "printable_alternative": {
+          "const": true
+        },
+        "audio_required": {
+          "const": false
+        },
+        "data_note": {
+          "type": "string"
+        }
+      }
+    },
+    "safeguarding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "no_child_identifiable_data",
+        "prohibitions"
+      ],
+      "properties": {
+        "no_child_identifiable_data": {
+          "const": true
+        },
+        "prohibitions": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "type": "string"
+          },
+          "description": "Lesson-specific statements of the standing prohibitions: no child names/IDs/immigration status/photos/voice recordings/public profiles/unmoderated chat; no personalised legal or medical advice; no recruitment or employer linkage; no developmental diagnosis."
+        }
+      }
+    },
+    "formal_schooling_note": {
+      "type": "string",
+      "minLength": 10,
+      "description": "How this lesson relates to real schooling: YDC complements school/learning centres; recognition runs through parents/educators and real providers; no equivalence or admission is promised."
+    },
+    "created_at": {
+      "const": "2026-10-14"
+    },
+    "review_due": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    }
+  },
+  "$defs": {
+    "localizedText": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "en"
+      ],
+      "properties": {
+        "en": {
+          "type": "string",
+          "minLength": 3
+        },
+        "my": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "my_status": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            null,
+            "DRAFT FOR CCO REVIEW"
+          ]
+        },
+        "th": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "th_status": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            null,
+            "DRAFT FOR THAI EDUCATOR REVIEW"
+          ]
+        }
+      },
+      "description": "Non-null Myanmar/Thai text requires the corresponding draft review label, enforced by conditional schema rules. Labels do not establish semantic or educator approval.",
+      "allOf": [
+        {
+          "if": {
+            "required": [
+              "my"
+            ],
+            "properties": {
+              "my": {
+                "type": "string"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "my_status"
+            ],
+            "properties": {
+              "my_status": {
+                "const": "DRAFT FOR CCO REVIEW"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "th"
+            ],
+            "properties": {
+              "th": {
+                "type": "string"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "th_status"
+            ],
+            "properties": {
+              "th_status": {
+                "const": "DRAFT FOR THAI EDUCATOR REVIEW"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

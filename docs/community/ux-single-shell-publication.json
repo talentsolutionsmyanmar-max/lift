@@ -1,0 +1,19 @@
+{
+  "project": {
+    "projectId": "prj_aRUPkvh6y5JuXppYLZuY4Vqjt3l2",
+    "orgId": "team_hJDx6cMlZ4NVv1nXFnIaiX6T",
+    "projectName": "lift-team-test"
+  },
+  "manifestHash": "3304f8f1c7f603c4c35f94390ed99e46ac131bc86bb652f7f79c81e2ee51261a",
+  "sourceBase": "baae47a2f4c33bf72f399f0104e4ac06ec7dd06b",
+  "authorization": "Founder approved publishing this interface update to lift-team-test with smaller Myanmar font, real submissions closed.",
+  "font": "12.5px Myanmar body, A+16px",
+  "rollback": "Pause lift-team-test only; main Lift unchanged.",
+  "files": {
+    "index.html": "4484aa3cc8138a09fc458fcc0971f220b8dcf2ddf893b60ae0f6fda788ed58c4",
+    "survey.html": "db15dce2fed55d88813636da2aa48be284484a4493095c75535fd2a10bff61ae",
+    "icon.svg": "b7588817ef126643b2112b55c844f0ef39118000f170969cc6785b3960eb921d",
+    "robots.txt": "331ea9090db0c9f6f597bd9840fd5b171830f6e0b3ba1cb24dfa91f0c95aedc1",
+    "vercel.json": "e72b746c1b27a1275770b5b9002354eb191df940415a2ba5cecf8873d18b3e66"
+  }
+}

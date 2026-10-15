@@ -1,0 +1,13 @@
+{
+  "project": "lift-team-test",
+  "sourceBase": "baae47a2f4c33bf72f399f0104e4ac06ec7dd06b",
+  "files": {
+    "index.html": "a14089553f9e72da7dbdf787ead447058869f375846e4b055972d8be1662fe46",
+    "survey.html": "5e26d879057f3ded918dfc6695d87a1424f531e0484b9e411d54bae75d549da4",
+    "icon.svg": "b7588817ef126643b2112b55c844f0ef39118000f170969cc6785b3960eb921d",
+    "robots.txt": "331ea9090db0c9f6f597bd9840fd5b171830f6e0b3ba1cb24dfa91f0c95aedc1",
+    "vercel.json": "e72b746c1b27a1275770b5b9002354eb191df940415a2ba5cecf8873d18b3e66"
+  },
+  "backend": "none; static-only simulation",
+  "rollback": "Restore only lift-team-test.vercel.app to dpl_2jDtqvzrzuTwYq7Qk9p9qns7HQ4e (lift-team-test-bros5664d-tommy-burmans-projects.vercel.app). Main Lift and its research survey remain unchanged."
+}

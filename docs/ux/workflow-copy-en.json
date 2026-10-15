@@ -1,0 +1,19 @@
+{
+  "navHome": "Home",
+  "navLife": "Daily life",
+  "navFamily": "Family",
+  "navCommunity": "Community",
+  "navMine": "Mine",
+  "mineIntro": "Your plans, history and privacy choices.",
+  "chooseStarter": "Choose a starting point",
+  "externalTitle": "Open another website",
+  "externalHelp": "This opens outside Lift. The other website has its own privacy terms. Lift does not add your draft, plan or document to this link.",
+  "externalOpen": "Open website",
+  "externalCancel": "Stay in Lift",
+  "saveReceipt": "Remember this receipt on this browser",
+  "receiptSaveHelp": "Optional. Anyone using this browser may be able to check or withdraw this request. Save only on a device you trust. This is separate from saving your plan.",
+  "forgetReceipt": "Forget the receipt on this browser",
+  "receiptSaved": "Receipt remembered on this browser.",
+  "receiptNotSaved": "The receipt could not be remembered. Copy or download it instead.",
+  "testReceiptLimit": "Test only. This receipt works only while this test stays open. Reloading or resetting removes the simulated request, even if you keep its receipt."
+}

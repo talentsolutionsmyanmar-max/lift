@@ -1,0 +1,12 @@
+{
+  "id": "/",
+  "name": "Lift — your next step, together",
+  "short_name": "Lift",
+  "description": "A personal next-step planner for a steadier livelihood.",
+  "start_url": "/#home",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f6f5ee",
+  "theme_color": "#344e3e",
+  "icons": [{"src":"/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any"}]
+}

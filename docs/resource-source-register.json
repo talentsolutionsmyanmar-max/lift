@@ -1,0 +1,36 @@
+{
+  "status": "source_review_not_service_verification",
+  "sources": [
+    {
+      "id": "map-media",
+      "name": "MAP Foundation",
+      "url": "https://www.mapfoundationcm.org/en/",
+      "checkedDate": "2026-10-14",
+      "scope": "Migrant information, multimedia and community programmes",
+      "languageEvidence": "Official homepage links separate Burmese and Shan communication channels. English landing page.",
+      "limitations": "Website emits technical warnings. Social channels were identified from the official page, not independently tested. No guarantee of a response, stream or current programme schedule.",
+      "secondaryLink": "https://www.facebook.com/MICMAPBURMESE/",
+      "partnership": false
+    },
+    {
+      "id": "hrdf",
+      "name": "Human Rights and Development Foundation (HRDF)",
+      "url": "https://hrdfoundation.org/?lang=en&page_id=7042",
+      "checkedDate": "2026-10-14",
+      "scope": "Published contact channels for asking about available assistance",
+      "languageEvidence": "Contact page offers English and Thai. Myanmar assistance not confirmed.",
+      "limitations": "No contact made. Capacity, language support, eligibility and response time remain unconfirmed. Do not promise legal assistance or repeat case-specific legal conclusions.",
+      "partnership": false
+    },
+    {
+      "id": "golden-dreams",
+      "name": "Issara Golden Dreams",
+      "url": "https://www.issarainstitute.org/empowerment-incubator",
+      "checkedDate": "2026-10-14",
+      "scope": "Official description of migration information and worker-support tools",
+      "languageEvidence": "Issara materials describe multilingual app interfaces including Burmese.",
+      "limitations": "No app account created, workflow tested or job checked. No employer/recruiter endorsement. Third-party data practices apply.",
+      "partnership": false
+    }
+  ]
+}

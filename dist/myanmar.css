@@ -1,0 +1,59 @@
+/* Padauk is bundled locally for readable Myanmar, including the offline copy. */
+@font-face{font-family:Padauk;src:url('./fonts/Padauk-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap;unicode-range:U+1000-109F,U+A9E0-A9FF,U+AA60-AA7F}
+@font-face{font-family:Padauk;src:url('./fonts/Padauk-Bold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap;unicode-range:U+1000-109F,U+A9E0-A9FF,U+AA60-AA7F}
+:lang(my),[data-user-content]{font-family:Padauk,Arial,sans-serif}
+html[lang=my] body{font-family:Padauk,Arial,sans-serif;line-height:2.1}
+html[lang=my] :is(h1,h2,h3,p,span,small,strong,a,button,label,summary,input,textarea,pre,div){font-family:Padauk,Arial,sans-serif;line-height:2.1;letter-spacing:normal}
+html[lang=my] :is(small,.eyebrow,.card-kicker,.pilot-label,.prototype-badge,.muted-label,.field-caption,.inline-notice,.dialog-note,.mobile-nav a){font-size:14px}
+html[lang=my] h1{font-size:clamp(24px,2.4vw,30px)}
+html[lang=my] h2{font-size:22px}
+html[lang=my] h3{font-size:18px}
+html[lang=my] .hero-content{max-width:100%}
+html[lang=my] .hero .landscape{opacity:.4}
+html[lang=my] .brand,html[lang=my] .brand span,html[lang=my] .mobile-brand{font-family:Georgia,serif;line-height:1}
+html[lang=my] .mobile-nav{align-items:stretch}
+html[lang=my] .mobile-nav a{white-space:normal;overflow-wrap:anywhere;min-width:0}
+html[lang=my] .nav-link{align-items:center;white-space:normal}
+.language-choices{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0}
+.language-choices button{flex:1;min-height:48px}
+[data-language-name][lang=my],#current-language{font-family:Padauk,Arial,sans-serif;line-height:2.1}
+[data-user-content]{overflow-wrap:anywhere}
+@media(max-width:640px){html[lang=my] .mobile-nav{min-height:90px}html[lang=my] .workspace{padding-bottom:110px}html[lang=my] .prototype-badge{display:none}html[lang=my] .hero-content{padding-right:0}html[lang=my] .topbar{min-height:76px}html[lang=my] .hero h1{font-size:24px}html[lang=my] .task-row{gap:8px}html[lang=my] .edit-step{min-width:52px}}
+html[lang=my] :is(p,button,label,summary,input,textarea,pre,.nav-link,.plan-progress-label,.small-assurance,.private-note,.trust-strip,.language-button){font-size:14px}
+html[lang=my] small,html[lang=my] .side-note a,html[lang=my] .main-footer a{font-size:14px}
+html[lang=my] .mobile-nav a{font-size:14px;flex:1}
+html[lang=my] .primary,html[lang=my] .secondary{white-space:normal;text-align:center}
+html[lang=my] .plan-progress-label{gap:12px;flex-wrap:wrap}
+html[lang=my] :is(.home-grid,.page-grid,.need-grid,.journey,.side-column)>*{min-width:0}
+html[lang=my] :is(p,h1,h2,h3,button,a,label,summary,small,.small-assurance){overflow-wrap:anywhere}
+html[lang=my] .privacy-row{flex-wrap:wrap}
+@media(max-width:720px){html[lang=my] .home-grid,html[lang=my] .page-grid,html[lang=my] .side-column{grid-template-columns:minmax(0,1fr)}html[lang=my] .need-grid{grid-template-columns:minmax(0,1fr)}html[lang=my] .journey{grid-template-columns:repeat(2,minmax(0,1fr))}html[lang=my] .mobile-nav{min-height:86px}html[lang=my] .mobile-nav a{overflow-wrap:normal;word-break:normal}html[lang=my] .workspace{padding-bottom:110px}}
+
+/* Compact Myanmar hierarchy; keep Padauk at 14px or larger. */
+html[lang=my] .hero h1{font-size:30px}
+html[lang=my] .plan-card h2,html[lang=my] .side-note h3{font-size:22px}
+html[lang=my] .nav-link{padding-top:9px;padding-bottom:9px}
+@media(max-width:720px){html[lang=my] .hero h1{font-size:24px}html[lang=my] .page-heading h1{font-size:26px}}
+
+/* Founder feedback: smaller Myanmar headings, with readable 14px body copy. */
+html[lang=my] h1,html[lang=my] .page-heading h1 { font-size:22px; }
+html[lang=my] h2,html[lang=my] .plan-card h2 { font-size:18px; }
+html[lang=my] h3,html[lang=my] .side-note h3 { font-size:16px; }
+html[lang=my] .hero h1 { font-size:24px; }
+html[lang=my] .mobile-brand span { font-family:Georgia,serif; line-height:1; }
+@media(max-width:720px){
+ html[lang=my] h1,html[lang=my] .page-heading h1,html[lang=my] .hero h1 { font-size:20px; }
+ html[lang=my] .nav-link { padding-top:7px; padding-bottom:7px; }
+}
+
+/* Founder-requested compact Myanmar default; optional larger text, large touch targets. */
+html[lang=my] body,html[lang=my] :is(p,span,small,strong,a,button,label,summary,input,select,textarea,pre,.mobile-nav a,.nav-link){font-size:13px;line-height:2.1}
+html[lang=my] :is(h1,.page-heading h1,.hero h1){font-size:18px;line-height:1.9}
+html[lang=my] h2,html[lang=my] .plan-card h2{font-size:16px}
+html[lang=my] h3{font-size:14px}
+html[lang=my] .mobile-brand{font-size:32px;line-height:1}html[lang=my] .brand span,html[lang=my] .mobile-brand span{font-size:inherit;line-height:1}
+html[lang=my].large-myanmar body,html[lang=my].large-myanmar :is(p,span,small,strong,a,button,label,summary,input,select,textarea,pre,.mobile-nav a,.nav-link){font-size:16px}
+html[lang=my].large-myanmar h1{font-size:22px}html[lang=my].large-myanmar h2{font-size:20px}
+#text-size-button{min-width:48px;min-height:48px;padding:8px;flex-shrink:0}.topbar-actions{flex-wrap:wrap}
+
+html[lang=my].large-myanmar .mobile-brand{font-size:32px}html[lang=my].large-myanmar .brand span,html[lang=my].large-myanmar .mobile-brand span{font-size:inherit}

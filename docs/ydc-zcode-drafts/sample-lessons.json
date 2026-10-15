@@ -1,0 +1,1060 @@
+{
+  "package": {
+    "name": "YDC migrant-child curriculum — draft sample lessons",
+    "schema_version": "0.1-draft",
+    "status": "research_draft_not_for_children",
+    "created_at": "2026-10-14",
+    "note": "Six original worked samples, one per pathway pair, for educator/language/rights review. Not for children. No platform code uses this file yet. Myanmar text is DRAFT FOR CCO REVIEW; Thai text is DRAFT FOR THAI EDUCATOR REVIEW. GPF crosswalks are proposed_not_validated. No endorsement, accreditation or partnership is claimed by any source cited."
+  },
+  "lessons": [
+    {
+      "schema_version": "0.1-draft",
+      "version": "0.1-draft",
+      "lesson_id": "U6-L01",
+      "title": {
+        "en": "Count what we can hold",
+        "my": "ကိုင်ထားနိုင်သောအရာများကို ရေတွက်ပါ",
+        "my_status": "DRAFT FOR CCO REVIEW"
+      },
+      "pathway": "under6",
+      "age_band": "3-5",
+      "presentation_tier": "caregiver_card",
+      "duration_minutes": 12,
+      "status": "research_draft_not_for_children",
+      "educator_review": false,
+      "language_review": false,
+      "rights_review": false,
+      "starter_unit_refs": [
+        "E04"
+      ],
+      "source_refs": [
+        "S02"
+      ],
+      "learning_goal": "The child connects small spoken number words with visible quantities during a shared clap-and-marks game, when ready — joining counts, touching marks one-by-one, or showing 'how many' in any mode. Not a goal: perfect recitation or counting under test conditions.",
+      "entry_levels": [
+        {
+          "dimension": "home_language_oral",
+          "levels": [
+            "any — no requirement"
+          ],
+          "note": "Counting happens in the caregiver's strongest shared language."
+        }
+      ],
+      "gpf_crosswalk": [],
+      "prerequisites": [
+        "Child can attend to a shared game for a few minutes",
+        "No counting skill required"
+      ],
+      "materials": [
+        {
+          "item": "Paper (or ground) and something to make marks with",
+          "kind": "drawing_writing_supplies"
+        },
+        {
+          "item": "Caregiver's hands for claps",
+          "kind": "gesture_only"
+        },
+        {
+          "item": "Optional variant only: whole intact spoons or cups selected by the responsible adult — pending qualified early-childhood safety review",
+          "kind": "intact_everyday_item_selected_by_adult",
+          "safety_note": "Not for use until a qualified ECE safety review approves the items; supervision is not claimed to remove risk by itself."
+        }
+      ],
+      "materials_safety": {
+        "numeric_thresholds_claimed": false,
+        "small_loose_objects_used": false,
+        "supervision_claimed_as_sufficient": false,
+        "physical_items_selected_by": "responsible_adult",
+        "review_status": "pending_qualified_safety_review",
+        "note": "Default version uses only drawing and gesture. No numeric size threshold is offered as a safety rule; the optional intact-items variant stays pending qualified review."
+      },
+      "learner_materials": [
+        {
+          "material_id": "u6-l01-counting-prompt",
+          "kind": "counting_prompt",
+          "content": {
+            "en": "one… two… three… (count aloud together, one clap per mark)",
+            "my": "တစ်… နှစ်… သုံး… (အမှတ်တစ်ခုစီအတွက် လက်ခုပ်တစ်ချက်တီးရင်း အတူတူ အသံထွက်ရေတွက်ပါ)",
+            "my_status": "DRAFT FOR CCO REVIEW"
+          },
+          "usage_note": "Spoken, not printed for the child; the caregiver says the words in the strongest shared language.",
+          "provenance_note": "Original practice material. Myanmar candidate received a CCO AI wording pass on 14 October 2026; independent human language, educator and safety reviews remain pending. See ../ydc-cco-card-provenance.json."
+        }
+      ],
+      "activity_steps": [
+        {
+          "step_no": 1,
+          "who": "caregiver_and_child",
+          "instruction": "Caregiver claps once and draws one mark on the paper; count aloud in the home language: one, two, three.",
+          "instruction_my": "စောင့်ရှောက်သူက လက်ခုပ်တစ်ချက်တီးပြီး စာရွက်ပေါ်တွင် အမှတ်တစ်ခုဆွဲပါ။ အိမ်သုံးဘာသာစကားဖြင့် အသံထွက်ရေတွက်ပါ: တစ်၊ နှစ်၊ သုံး။",
+          "instruction_my_status": "DRAFT FOR CCO REVIEW",
+          "accessible_alternatives": [
+            "Child may tap the paper instead of clapping"
+          ]
+        },
+        {
+          "step_no": 2,
+          "who": "together",
+          "instruction": "Touch each dot and count them again together; repeat while the child enjoys it — repetition is the point, not an error.",
+          "instruction_my": "အမှတ်တစ်ခုချင်းစီကို ထိပြီး အတူတူ ထပ်ရေတွက်ပါ။ ကလေးပျော်နေသရွေ့ ထပ်လုပ်ပါ — ထပ်ခါထပ်ခါလုပ်ခြင်းက အဓိကဖြစ်ပြီး အမှားမဟုတ်ပါ။",
+          "instruction_my_status": "DRAFT FOR CCO REVIEW"
+        },
+        {
+          "step_no": 3,
+          "who": "child",
+          "instruction": "Child claps, caregiver draws the marks; then swap. Caregiver counts along without correcting mid-count.",
+          "instruction_my": "ကလေးက လက်ခုပ်တီးပြီး စောင့်ရှောက်သူက အမှတ်များဆွဲပါ။ ထို့နောက် အလှည့်ပြောင်းပါ။ စောင့်ရှောက်သူက ရေတွက်နေစဉ် အလယ်မှာ မပြင်ဘဲ အတူလိုက်ရေတွက်ပါ။",
+          "instruction_my_status": "DRAFT FOR CCO REVIEW"
+        },
+        {
+          "step_no": 4,
+          "who": "together",
+          "instruction": "New small group (2, then 4 claps): 'How many now?' Accept pointing at dots, saying a number, or re-drawing as full answers.",
+          "instruction_my": "အုပ်စုငယ်အသစ် (ပထမ 2 ချက်၊ ထို့နောက် 4 ချက်): အခု ဘယ်နှခုရှိသလဲ။ အမှတ်များကို လက်ညှိုးထိုးပြခြင်း၊ နံပါတ်ပြောခြင်း သို့မဟုတ် ပြန်ဆွဲပြခြင်းတို့ကို ပြည့်စုံသောအဖြေများအဖြစ် လက်ခံပါ။",
+          "instruction_my_status": "DRAFT FOR CCO REVIEW"
+        },
+        {
+          "step_no": 5,
+          "who": "together",
+          "instruction": "Magic fold: fold the paper, open, count again — or stop warmly whenever the child is done; stopping early is a success.",
+          "instruction_my": "မက်ဂျစ်ခေါက်ခြင်း: စာရွက်ကို ခေါက်ပါ၊ ပြန်ဖွင့်ပါ၊ ထပ်ရေတွက်ပါ — သို့မဟုတ် ကလေးပြီးချင်သည့်အချိန်တိုင်း နွေးထွေးစွာ ရပ်ပါ။ စောစောရပ်ခြင်းလည်း အောင်မြင်မှုဖြစ်ပါသည်။",
+          "instruction_my_status": "DRAFT FOR CCO REVIEW"
+        }
+      ],
+      "observable_assessment": {
+        "check": "On the new clap/dot group, the child joins the count (touching each mark, clapping along, or saying number words roughly in order). A memorised count of the same group is not evidence.",
+        "transfer_task": "Later in the week: count the cups at meal setup, or claps on the walk.",
+        "evidence_modes": [
+          "gesture_or_pointing",
+          "speech",
+          "arrangement_of_items_or_marks",
+          "demonstration"
+        ],
+        "explicitly_avoided": [
+          "timed tests",
+          "pass/fail labels",
+          "scores or streaks",
+          "comparing children"
+        ]
+      },
+      "caregiver_teacher_notes": [
+        "Counting along, not quizzing, is the adult's job; one clap per mark, slowly, is the model.",
+        "Reciting numbers while scribbling many dots is normal at 3 — shrink the group to 2.",
+        "Stop signals: looking away, standing up, wanting a different game — end warmly, try tomorrow."
+      ],
+      "language_policy": {
+        "home_language_first": true,
+        "english_role": "optional_never_entry_barrier",
+        "myanmar_text_status": "DRAFT FOR CCO REVIEW",
+        "thai_text_status": "DRAFT FOR THAI EDUCATOR REVIEW",
+        "notes": [
+          "No Thai or English required anywhere in this lesson.",
+          "Karen and other home-language card versions require their own reviewers before authoring."
+        ]
+      },
+      "audio_transcript": null,
+      "rights": {
+        "original_content": true,
+        "third_party_assets": [],
+        "note": "Entirely original activity; informed by S02 play principles as guidance, with no copied content."
+      },
+      "offline_delivery": {
+        "works_without_internet": true,
+        "printable_alternative": true,
+        "audio_required": false,
+        "data_note": "Works from a printed card with no device; if shown on a phone, one static card, no data use after download."
+      },
+      "safeguarding": {
+        "no_child_identifiable_data": true,
+        "prohibitions": [
+          "No child names, IDs, photos, voice recordings or immigration status collected or displayed.",
+          "No developmental screening, milestone scoring or diagnosis — concerns are referred to qualified health/education services.",
+          "No public profiles, sharing, streaks or rankings for children."
+        ]
+      },
+      "formal_schooling_note": "This pathway builds shared-learning enjoyment, not school entry criteria. When the child nears school age, parents use the Lift family page to prepare questions for a real school or migrant learning centre; YDC never replaces or promises schooling.",
+      "created_at": "2026-10-14",
+      "review_due": "2027-01-31"
+    },
+    {
+      "schema_version": "0.1-draft",
+      "version": "0.1-draft",
+      "lesson_id": "U6-L02",
+      "title": {
+        "en": "Your turn, my turn",
+        "my": "သင့်အလှည့်၊ ကျွန်ုပ်အလှည့်",
+        "my_status": "DRAFT FOR CCO REVIEW"
+      },
+      "pathway": "under6",
+      "age_band": "0-2",
+      "presentation_tier": "caregiver_card",
+      "duration_minutes": 15,
+      "status": "research_draft_not_for_children",
+      "educator_review": false,
+      "language_review": false,
+      "rights_review": false,
+      "starter_unit_refs": [
+        "E01"
+      ],
+      "source_refs": [
+        "S02",
+        "S03"
+      ],
+      "learning_goal": "The caregiver practises noticing the child's sound or gesture, responding promptly, and pausing for the child's turn — caregiver self-development only. The child has no device task and is never scored; no developmental judgment is made.",
+      "entry_levels": [
+        {
+          "dimension": "home_language_oral",
+          "levels": [
+            "any"
+          ],
+          "note": "Card usable by a caregiver who cannot read (picture strip) or prefers a person reading it aloud."
+        }
+      ],
+      "gpf_crosswalk": [],
+      "prerequisites": [],
+      "materials": [
+        {
+          "item": "Printed card (optional) — daily routines are the real materials",
+          "kind": "printed_or_handwritten_card"
+        }
+      ],
+      "materials_safety": {
+        "numeric_thresholds_claimed": false,
+        "small_loose_objects_used": false,
+        "supervision_claimed_as_sufficient": false,
+        "physical_items_selected_by": "not_applicable_paper_only",
+        "review_status": "pending_qualified_safety_review",
+        "note": "Paper-only lesson; ordinary-routine supervision applies as normal good practice and is not claimed as a risk-removal mechanism."
+      },
+      "learner_materials": [
+        {
+          "material_id": "u6-l02-caregiver-card",
+          "kind": "caregiver_prompt_card",
+          "content": {
+            "en": "Notice — respond — pause. (1) When your baby makes a sound or movement, answer with a short phrase and wait, as if the baby will answer. (2) Copy the sound once, then add the real word. Evening, for yourself only: What did my child 'say' today? What did I say back?",
+            "my": "သတိပြုပါ — တုံ့ပြန်ပါ — ခဏရပ်ပါ။ (1) သင့်ကလေးငယ် အသံထွက်သောအခါ သို့မဟုတ် လှုပ်ရှားသောအခါ စကားတိုတစ်ခွန်းဖြင့် ပြန်တုံ့ပြန်ပြီး ကလေးပြန်ဖြေမည်ဟု စောင့်သလို ခဏစောင့်ပါ။ (2) ထိုအသံကို တစ်ကြိမ်လိုက်ဆိုပြီးနောက် အမှန်တကယ်စကားလုံးကို ထည့်ပြောပါ။ ညနေတွင် သင်ကိုယ်တိုင်အတွက်သာ: ယနေ့ ကျွန်ုပ်၏ကလေး ဘာ “ပြော” ခဲ့သနည်း။ ကျွန်ုပ် ဘာပြန်ပြောခဲ့သနည်း။",
+            "my_status": "DRAFT FOR CCO REVIEW"
+          },
+          "usage_note": "The adult is the user; a picture-strip version for caregivers with limited literacy is to be designed with the accessibility reviewer.",
+          "provenance_note": "Original practice material. Myanmar candidate received a CCO AI wording pass on 14 October 2026; independent human language, educator and safety reviews remain pending. See ../ydc-cco-card-provenance.json."
+        }
+      ],
+      "activity_steps": [
+        {
+          "step_no": 1,
+          "who": "caregiver",
+          "instruction": "During feeding or dressing: when the baby makes a sound or movement, respond with a short phrase in your language and pause, waiting as if the baby will answer.",
+          "instruction_my": "နို့တိုက်နေစဉ် သို့မဟုတ် အဝတ်အစားဝတ်ပေးနေစဉ်: ကလေးငယ် အသံထွက်သောအခါ သို့မဟုတ် လှုပ်ရှားသောအခါ သင့်ဘာသာစကားဖြင့် စကားတိုတစ်ခွန်းဖြင့် ပြန်တုံ့ပြန်ပြီး ကလေးပြန်ဖြေမည်ဟု စောင့်သလို ခဏရပ်ပါ။",
+          "instruction_my_status": "DRAFT FOR CCO REVIEW"
+        },
+        {
+          "step_no": 2,
+          "who": "caregiver",
+          "instruction": "During play: copy the baby's sound once, then add one real word for it (ba-ba, then 'bottle' in your language).",
+          "instruction_my": "ကစားနေစဉ်: ကလေးငယ်၏အသံကို တစ်ကြိမ်လိုက်ဆိုပြီးနောက် ၎င်းအတွက် အမှန်တကယ်စကားလုံးတစ်လုံး ထည့်ပြောပါ (ဘာဘာ၊ ထို့နောက် သင့်ဘာသာစကားဖြင့် နို့ဘူး)။",
+          "instruction_my_status": "DRAFT FOR CCO REVIEW"
+        },
+        {
+          "step_no": 3,
+          "who": "caregiver",
+          "instruction": "Evening, without the child: answer the card's two questions to yourself — what did my child 'say' today, what did I say back? Nothing is written into any app; an optional private paper note is fine.",
+          "instruction_my": "ညနေတွင် ကလေးမပါဘဲ: ကတ်ပေါ်ရှိ မေးခွန်းနှစ်ခုကို သင့်ကိုယ်သင် ဖြေပါ — ယနေ့ ကျွန်ုပ်၏ကလေး ဘာ ပြောခဲ့သနည်း၊ ကျွန်ုပ် ဘာပြန်ပြောခဲ့သနည်း။ မည်သည့်အက်ပ်ထဲသို့မျှ မရေးသွင်းပါ။ ရွေးချယ်လိုပါက ကိုယ်ပိုင်စာရွက်မှတ်စုတစ်ခု ရေးနိုင်ပါသည်။",
+          "instruction_my_status": "DRAFT FOR CCO REVIEW"
+        }
+      ],
+      "observable_assessment": {
+        "check": "Caregiver self-report only: the caregiver can describe one serve from the child and their own return. The child is never measured.",
+        "transfer_task": "The same serve-and-return during bathing or a walk.",
+        "evidence_modes": [
+          "caregiver_report"
+        ],
+        "explicitly_avoided": [
+          "milestone checklists",
+          "delay or diagnosis wording",
+          "screen tasks for the child",
+          "scoring"
+        ]
+      },
+      "caregiver_teacher_notes": [
+        "Pauses feel long — count five heartbeats before filling the silence; the wait is the conversation.",
+        "Any language the family loves is the right language; first-language interaction is the foundation (S04 principle).",
+        "If a caregiver worries about development, the card points to a health worker or ECE service — never to in-app judgment."
+      ],
+      "language_policy": {
+        "home_language_first": true,
+        "english_role": "optional_never_entry_barrier",
+        "myanmar_text_status": "DRAFT FOR CCO REVIEW",
+        "thai_text_status": "DRAFT FOR THAI EDUCATOR REVIEW",
+        "notes": [
+          "Zero Thai, zero English in this strand by design."
+        ]
+      },
+      "audio_transcript": null,
+      "rights": {
+        "original_content": true,
+        "third_party_assets": [],
+        "note": "Original caregiver prompt; S02/S03 facilitation principles used as guidance only, no clinical components adopted."
+      },
+      "offline_delivery": {
+        "works_without_internet": true,
+        "printable_alternative": true,
+        "audio_required": false,
+        "data_note": "Printable card; usable with no phone at all."
+      },
+      "safeguarding": {
+        "no_child_identifiable_data": true,
+        "prohibitions": [
+          "No child data of any kind collected; the card contains no questions about the child's name, age or status.",
+          "No photos, recordings or uploads.",
+          "No developmental diagnosis; referral to qualified services only."
+        ]
+      },
+      "formal_schooling_note": "Not applicable at 0–2; when the child nears school age the parent route runs through real schools/learning centres via the Lift family page.",
+      "created_at": "2026-10-14",
+      "review_due": "2027-01-31"
+    },
+    {
+      "schema_version": "0.1-draft",
+      "version": "0.1-draft",
+      "lesson_id": "B-L01",
+      "title": {
+        "en": "The classroom message",
+        "my": "သင်ခန်းစာခန်း စာတို",
+        "my_status": "DRAFT FOR CCO REVIEW"
+      },
+      "pathway": "6to11",
+      "age_band": "6-11",
+      "presentation_tier": "learner_print",
+      "duration_minutes": 15,
+      "status": "research_draft_not_for_children",
+      "educator_review": false,
+      "language_review": false,
+      "rights_review": false,
+      "starter_unit_refs": [
+        "B03"
+      ],
+      "source_refs": [
+        "S01",
+        "S04"
+      ],
+      "learning_goal": "The learner finds explicitly stated information in a short age-respectful message and points to or says the words that show it, at their own print level, with a full oral-supported route for learners not yet reading.",
+      "entry_levels": [
+        {
+          "dimension": "home_language_literacy",
+          "levels": [
+            "L0 pre-print (oral route)",
+            "L1 emerging print",
+            "L2 connected text"
+          ]
+        },
+        {
+          "dimension": "home_language_oral",
+          "levels": [
+            "understands short spoken instructions in the lesson language"
+          ]
+        }
+      ],
+      "gpf_crosswalk": [
+        {
+          "descriptor_code": "C2.1 (grade 1, Meets)",
+          "edition": "GPF Reading Grades 1-9, Dec 2020",
+          "note": "Anchor for the oral route: retrieve explicit info from a 2-3 sentence continuous text read aloud, who/what/when/where.",
+          "validation": "proposed_not_validated"
+        },
+        {
+          "descriptor_code": "R1.1 (grade 2)",
+          "edition": "GPF Reading Grades 1-9, Dec 2020",
+          "note": "Word-meaning anchor for L1.",
+          "validation": "proposed_not_validated"
+        },
+        {
+          "descriptor_code": "R1.2 (grade 2)",
+          "edition": "GPF Reading Grades 1-9, Dec 2020",
+          "note": "Explicit-information anchor for L2; message written to roughly this demand; levelling unvalidated.",
+          "validation": "proposed_not_validated"
+        }
+      ],
+      "prerequisites": [
+        "Oral comprehension of a short instruction in the lesson language",
+        "No reading required to start"
+      ],
+      "materials": [
+        {
+          "item": "One hand-written or printed message card, large clear text",
+          "kind": "printed_or_handwritten_card"
+        },
+        {
+          "item": "Paper and pencil",
+          "kind": "drawing_writing_supplies"
+        }
+      ],
+      "materials_safety": {
+        "numeric_thresholds_claimed": false,
+        "small_loose_objects_used": false,
+        "supervision_claimed_as_sufficient": false,
+        "physical_items_selected_by": "not_applicable_paper_only",
+        "review_status": "pending_qualified_safety_review",
+        "note": "Paper-only lesson."
+      },
+      "learner_materials": [
+        {
+          "material_id": "b-l01-message-card",
+          "kind": "message_card",
+          "content": {
+            "en": "Tomorrow, bring a pencil and one notebook. We start at nine o'clock.",
+            "my": "မနက်ဖြန် ခဲတံတစ်ချောင်းနှင့် မှတ်စုစာအုပ်တစ်အုပ် ယူလာပါ။ ကျွန်ုပ်တို့ နံနက် ၉ နာရီတွင် စပါမည်။",
+            "my_status": "DRAFT FOR CCO REVIEW"
+          },
+          "usage_note": "Hand-written large clear text; transfer message ('Bring two pencils.') is facilitator-written in the same shape.",
+          "provenance_note": "Original practice material. Myanmar candidate received a CCO AI wording pass on 14 October 2026; independent human language, educator and safety reviews remain pending. See ../ydc-cco-card-provenance.json."
+        }
+      ],
+      "activity_steps": [
+        {
+          "step_no": 1,
+          "who": "facilitator_and_learner",
+          "instruction": "Oral entry (L0): facilitator reads the message aloud twice; learner says or shows what to bring (mime, pointing to a real pencil/notebook, or speech).",
+          "instruction_my": "နှုတ်ဖြင့်စတင်နိုင်သော နည်းလမ်း: ကူညီပို့ချသူက စာတိုကို အသံထွက် နှစ်ကြိမ်ဖတ်ပါ။ သင်ယူသူက ဘာယူလာရမည်ကို ပြောပါ သို့မဟုတ် ပြပါ (အမူအရာဖြင့်၊ တကယ့်ခဲတံ/မှတ်စုစာအုပ်ကို လက်ညှိုးထိုးပြခြင်းဖြင့်၊ သို့မဟုတ် စကားပြောခြင်းဖြင့်)။",
+          "instruction_my_status": "DRAFT FOR CCO REVIEW"
+        },
+        {
+          "step_no": 2,
+          "who": "learner",
+          "instruction": "L1-L2: read the message; answer 'What do you bring?' by pointing to the exact words first, then saying the answer.",
+          "instruction_my": "ဖတ်ရှု၍စတင်နိုင်သော နည်းလမ်း: စာတိုကို ဖတ်ပါ။ ဘာယူလာမလဲဟူသော မေးခွန်းကို အရင်ဆုံး တိကျသောစကားလုံးများကို လက်ညှိုးထိုးပြပြီးနောက် အဖြေပြောပါ။",
+          "instruction_my_status": "DRAFT FOR CCO REVIEW"
+        },
+        {
+          "step_no": 3,
+          "who": "together",
+          "instruction": "Second question: 'What time does it start?' Learner points to the time words, answers, and shows how they know — pointing is the accepted proof.",
+          "instruction_my": "ဒုတိယမေးခွန်း: ဘယ်အချိန် စမလဲ။ သင်ယူသူက အချိန်ဖော်ပြသော စကားလုံးများကို လက်ညှိုးထိုးပြပါ၊ အဖြေပြောပါ၊ ဘယ်လိုသိသည်ကို ပြပါ — လက်ညှိုးထိုးပြခြင်းကို လက်ခံနိုင်သော သက်သေအဖြစ် သတ်မှတ်ပါသည်။",
+          "instruction_my_status": "DRAFT FOR CCO REVIEW"
+        },
+        {
+          "step_no": 4,
+          "who": "learner",
+          "instruction": "Transfer: facilitator writes a brand-new one-line message ('Bring two pencils.'); learner answers and points to the evidence — or uses the oral route on a new spoken message.",
+          "instruction_my": "ပြောင်းလဲအသုံးချခြင်း: ကူညီပို့ချသူက စာကြောင်းတစ်ကြောင်းပါ စာတိုအသစ်တစ်ခု ရေးပါ (ခဲတံနှစ်ချောင်း ယူလာပါ။)။ သင်ယူသူက အဖြေပြောပြီး သက်သေကို လက်ညှိုးထိုးပြပါ — သို့မဟုတ် နှုတ်ဖြင့်ပြောသော စာတိုအသစ်အတွက် နှုတ်ဖြင့်ဖြေသည့်နည်းလမ်းကို အသုံးပြုပါ။",
+          "instruction_my_status": "DRAFT FOR CCO REVIEW"
+        },
+        {
+          "step_no": 5,
+          "who": "learner",
+          "instruction": "Close: learner folds the card into a letter and delivers/retells it to a family member. Real reading purpose; no scoring.",
+          "instruction_my": "အဆုံးသတ်: သင်ယူသူက ကတ်ကို စာတစ်စောင်လို ခေါက်ပြီး မိသားစုဝင်တစ်ဦးထံ ပေးပါ သို့မဟုတ် ပြန်ပြောပြပါ။ တကယ့်ဖတ်ရှုရသည့် ရည်ရွယ်ချက်ဖြစ်ပြီး အမှတ်ပေးခြင်း မရှိပါ။",
+          "instruction_my_status": "DRAFT FOR CCO REVIEW"
+        }
+      ],
+      "observable_assessment": {
+        "check": "On the transfer message, learner finds the stated fact and shows the evidence (pointing counts); L0 does the same with the oral route on a new spoken message.",
+        "evidence_modes": [
+          "gesture_or_pointing",
+          "speech",
+          "demonstration",
+          "writing"
+        ],
+        "explicitly_avoided": [
+          "timed reading",
+          "error counts",
+          "ranking",
+          "reading-age labels"
+        ]
+      },
+      "caregiver_teacher_notes": [
+        "Distinguish a task-language barrier from a concept gap: re-ask in the home language before concluding anything about reading ability (S04).",
+        "Pointing to evidence before answering builds the show-me-in-the-text habit used for years afterwards.",
+        "Karen and other home-language card versions need their own authored and reviewed text before use."
+      ],
+      "language_policy": {
+        "home_language_first": true,
+        "english_role": "optional_never_entry_barrier",
+        "myanmar_text_status": "DRAFT FOR CCO REVIEW",
+        "thai_text_status": "DRAFT FOR THAI EDUCATOR REVIEW",
+        "notes": [
+          "Message text runs in the language facilitator and learner share; the card can be re-written by hand."
+        ]
+      },
+      "audio_transcript": null,
+      "rights": {
+        "original_content": true,
+        "third_party_assets": [],
+        "note": "Original fictional message."
+      },
+      "offline_delivery": {
+        "works_without_internet": true,
+        "printable_alternative": true,
+        "audio_required": false,
+        "data_note": "One hand-written card; zero data."
+      },
+      "safeguarding": {
+        "no_child_identifiable_data": true,
+        "prohibitions": [
+          "No child names, IDs, photos, recordings or status data.",
+          "No public sharing, streaks or rankings.",
+          "Fictional classroom only; no real school names or claims about actual admission."
+        ]
+      },
+      "formal_schooling_note": "The lesson rehearses classroom-participation skills; real schooling decisions belong to parents, educators and providers via the Lift family page route — no equivalence or admission implied.",
+      "created_at": "2026-10-14",
+      "review_due": "2027-01-31"
+    },
+    {
+      "schema_version": "0.1-draft",
+      "version": "0.1-draft",
+      "lesson_id": "B-L02",
+      "title": {
+        "en": "The sharing problem",
+        "my": "မျှဝေခြင်းပြဿနာ",
+        "my_status": "DRAFT FOR CCO REVIEW"
+      },
+      "pathway": "6to11",
+      "age_band": "6-11",
+      "presentation_tier": "learner_print",
+      "duration_minutes": 14,
+      "status": "research_draft_not_for_children",
+      "educator_review": false,
+      "language_review": false,
+      "rights_review": false,
+      "starter_unit_refs": [
+        "B05",
+        "B06"
+      ],
+      "source_refs": [
+        "S01"
+      ],
+      "learning_goal": "The learner represents a fair-sharing situation with learner-made paper tokens or drawings, connects it to an addition/subtraction or early 'groups of' idea at their level, shows the reasoning, then solves a changed-numbers version.",
+      "entry_levels": [
+        {
+          "dimension": "numeracy",
+          "levels": [
+            "N1 early operations (counts small groups, adds/subtracts within 20 with objects or drawings)",
+            "N2 growing operations (predicts, checks, spots '3 fours')"
+          ]
+        }
+      ],
+      "gpf_crosswalk": [
+        {
+          "descriptor_code": "Table 2B: Add and subtract whole numbers within 20 (grade 2); Solve addition and subtraction problems within 20 (grade 2)",
+          "edition": "GPF Reading and Mathematics Grades 2-6, Oct 2019",
+          "note": "Foundational variant anchor.",
+          "validation": "proposed_not_validated"
+        },
+        {
+          "descriptor_code": "Table 2B: Solve multiplication and division problems up to 10 x 10 (grade 3)",
+          "edition": "GPF Reading and Mathematics Grades 2-6, Oct 2019",
+          "note": "'Groups of' language is a bridge toward this; mapping needs maths-educator confirmation.",
+          "validation": "proposed_not_validated"
+        }
+      ],
+      "prerequisites": [
+        "Counts small groups reliably (N1)"
+      ],
+      "materials": [
+        {
+          "item": "Paper and pencil; 12 small paper squares drawn and cut by learners (palm-sized or larger)",
+          "kind": "paper_tokens_learner_made",
+          "safety_note": "Nothing edible; nothing smaller than a learner's palm; drawing the tokens is part of the lesson."
+        }
+      ],
+      "materials_safety": {
+        "numeric_thresholds_claimed": false,
+        "small_loose_objects_used": false,
+        "supervision_claimed_as_sufficient": false,
+        "physical_items_selected_by": "not_applicable_paper_only",
+        "review_status": "pending_qualified_safety_review",
+        "note": "Tokens are learner-made paper squares; no loose small objects, no food items."
+      },
+      "learner_materials": [
+        {
+          "material_id": "b-l02-story-text",
+          "kind": "story_text",
+          "content": {
+            "en": "Nwe and her two friends picked 12 mangoes. They want everyone to get a fair share.",
+            "my": "နွယ်နှင့် သူမ၏ သူငယ်ချင်းနှစ်ဦးသည် သရက်သီး 12 လုံး ခူးခဲ့သည်။ သူတို့သည် လူတိုင်း မျှမျှတတ ရစေချင်သည်။",
+            "my_status": "DRAFT FOR CCO REVIEW"
+          },
+          "provenance_note": "Original practice material. Myanmar candidate received a CCO AI wording pass on 14 October 2026; independent human language, educator and safety reviews remain pending. See ../ydc-cco-card-provenance.json.",
+          "usage_note": "Told aloud by the facilitator; learners cut or tear 12 palm-sized paper tokens."
+        }
+      ],
+      "activity_steps": [
+        {
+          "step_no": 1,
+          "who": "facilitator",
+          "instruction": "Tell the story: Nwe and two friends picked 12 mangoes (paper tokens) and want a fair share. Learners cut or tear 12 tokens.",
+          "instruction_my": "ဇာတ်လမ်းကို ပြောပြပါ: နွယ်နှင့် သူငယ်ချင်းနှစ်ဦးသည် သရက်သီး 12 လုံး (စာရွက်တိုကင်များ) ခူးပြီး မျှမျှတတ ဝေမျှလိုကြသည်။ သင်ယူသူများက တိုကင် 12 ခုကို ဖြတ်ပါ သို့မဟုတ် ဆုတ်ပါ။",
+          "instruction_my_status": "DRAFT FOR CCO REVIEW"
+        },
+        {
+          "step_no": 2,
+          "who": "learner",
+          "instruction": "Deal tokens one-by-one into three drawn circles. Foundational: deal then count each circle. Developing: predict first, then deal to check.",
+          "instruction_my": "တိုကင်များကို ဆွဲထားသော စက်ဝိုင်း 3 ခုထဲသို့ တစ်ခုချင်းစီ ဝေပါ။ အခြေခံနည်း: ဝေပြီးနောက် စက်ဝိုင်းတစ်ခုစီကို ရေတွက်ပါ။ ပိုမိုတိုးချဲ့နည်း: အရင်ခန့်မှန်းပြီးနောက် ဝေ၍ စစ်ဆေးပါ။",
+          "instruction_my_status": "DRAFT FOR CCO REVIEW"
+        },
+        {
+          "step_no": 3,
+          "who": "learner",
+          "instruction": "Say or show the answer and how they know (dealing order, counting runs, '3 fours'). All modes accepted.",
+          "instruction_my": "အဖြေနှင့် ဘယ်လိုသိသည်ကို ပြောပါ သို့မဟုတ် ပြပါ (ဝေသည့်အစဉ်၊ ရေတွက်သည့်အကြိမ်များ၊ 4 ခုစီရှိသော အုပ်စု 3 ခု)။ နည်းလမ်းအားလုံးကို လက်ခံပါ။",
+          "instruction_my_status": "DRAFT FOR CCO REVIEW"
+        },
+        {
+          "step_no": 4,
+          "who": "learner",
+          "instruction": "Transfer with new numbers: 10 tokens and 2 friends (foundational) or 15 tokens and 3 friends, then 'what if one more friend comes?' (developing; remainder idea, no division algorithm expected).",
+          "instruction_my": "နံပါတ်အသစ်များဖြင့် ပြောင်းလဲအသုံးချခြင်း: တိုကင် 10 ခုနှင့် သူငယ်ချင်း 2 ဦး (အခြေခံနည်း) သို့မဟုတ် တိုကင် 15 ခုနှင့် သူငယ်ချင်း 3 ဦး၊ ထို့နောက် နောက်ထပ်သူငယ်ချင်းတစ်ဦး လာလျှင် ဘာဖြစ်မလဲ (ပိုမိုတိုးချဲ့နည်း; ကျန်ရှိမှုအယူအဆ၊ စားခြင်းနည်းစနစ် မမျှော်လင့်ပါ)။",
+          "instruction_my_status": "DRAFT FOR CCO REVIEW"
+        },
+        {
+          "step_no": 5,
+          "who": "learner",
+          "instruction": "Close: write or draw the number story (12 to 3 groups of 4, or a picture); it goes into the private portfolio only if the learner chooses.",
+          "instruction_my": "အဆုံးသတ်: နံပါတ်ဇာတ်လမ်းကို ရေးပါ သို့မဟုတ် ပုံဆွဲပါ (12 ကို 4 ခုစီရှိသော အုပ်စု 3 ခုအဖြစ်၊ သို့မဟုတ် ပုံတစ်ပုံ)။ သင်ယူသူ ရွေးချယ်မှသာ ကိုယ်ပိုင်မှတ်တမ်းဖိုင်ထဲ ထည့်ပါ။",
+          "instruction_my_status": "DRAFT FOR CCO REVIEW"
+        }
+      ],
+      "observable_assessment": {
+        "check": "New-numbers round solved with a visible strategy (tokens dealt, drawing, counted skips) plus a how-I-know explanation.",
+        "evidence_modes": [
+          "arrangement_of_items_or_marks",
+          "drawing",
+          "speech",
+          "writing"
+        ],
+        "explicitly_avoided": [
+          "worksheet drills",
+          "speed pressure",
+          "marks or grades",
+          "shame about remainders"
+        ]
+      },
+      "caregiver_teacher_notes": [
+        "Fair sharing precedes the division symbol; the goal is reasoning the learner can show.",
+        "Keep the story fictional and money-free: friends and mangoes, never the family's actual shopping.",
+        "Remainders are a discovery, not an error."
+      ],
+      "language_policy": {
+        "home_language_first": true,
+        "english_role": "optional_never_entry_barrier",
+        "myanmar_text_status": "DRAFT FOR CCO REVIEW",
+        "thai_text_status": "DRAFT FOR THAI EDUCATOR REVIEW",
+        "notes": [
+          "Story runs in the shared language; no gender or role stereotyping in characters."
+        ]
+      },
+      "audio_transcript": null,
+      "rights": {
+        "original_content": true,
+        "third_party_assets": [],
+        "note": "Original story and activity."
+      },
+      "offline_delivery": {
+        "works_without_internet": true,
+        "printable_alternative": true,
+        "audio_required": false,
+        "data_note": "Paper and pencil; zero data."
+      },
+      "safeguarding": {
+        "no_child_identifiable_data": true,
+        "prohibitions": [
+          "No child names, IDs, photos, recordings or status data.",
+          "No real family finances or shopping scenarios.",
+          "No competition, ranking or public comparison."
+        ]
+      },
+      "formal_schooling_note": "Numeracy practice complements school learning; recognition of any level remains a matter for real schools and providers, never a YDC claim.",
+      "created_at": "2026-10-14",
+      "review_due": "2027-01-31"
+    },
+    {
+      "schema_version": "0.1-draft",
+      "version": "0.1-draft",
+      "lesson_id": "A-L01",
+      "title": {
+        "en": "Two texts, one question",
+        "my": "စာနှစ်ခု၊ မေးခွန်းတစ်ခု",
+        "my_status": "DRAFT FOR CCO REVIEW"
+      },
+      "pathway": "12to17",
+      "age_band": "12-17",
+      "presentation_tier": "learner_print",
+      "duration_minutes": 15,
+      "status": "research_draft_not_for_children",
+      "educator_review": false,
+      "language_review": false,
+      "rights_review": false,
+      "starter_unit_refs": [
+        "A01"
+      ],
+      "source_refs": [
+        "S01",
+        "S05"
+      ],
+      "learning_goal": "The learner answers a question about a short informational topic from the texts rather than memory or guesswork: Foundation — identify which text supports the answer and point to or read the supporting line; Extension — combine two texts, note what remains unanswered, and name a checking step.",
+      "entry_levels": [
+        {
+          "dimension": "home_language_literacy",
+          "levels": [
+            "Foundation (short notice at a comfortable demand)",
+            "Extension (two-text synthesis)"
+          ],
+          "note": "Oral presentation of both cards is a full alternative route."
+        }
+      ],
+      "gpf_crosswalk": [
+        {
+          "descriptor_code": "R1.2 (explicit information, limited competing information)",
+          "edition": "GPF Reading Grades 1-9, Dec 2020",
+          "note": "Foundation cards written to roughly this demand; levelling unvalidated.",
+          "validation": "proposed_not_validated"
+        },
+        {
+          "descriptor_code": "R2.2 / R3.3 (inference; credibility cues, grade-9 wording verified as existing)",
+          "edition": "GPF Reading Grades 1-9, Dec 2020",
+          "note": "Extension inspiration only; not cited as alignment.",
+          "validation": "proposed_not_validated"
+        }
+      ],
+      "prerequisites": [],
+      "materials": [
+        {
+          "item": "Two hand-written or printed cards (community notice; forwarded friend message) — original fiction",
+          "kind": "printed_or_handwritten_card"
+        },
+        {
+          "item": "Paper and pencil",
+          "kind": "drawing_writing_supplies"
+        }
+      ],
+      "materials_safety": {
+        "numeric_thresholds_claimed": false,
+        "small_loose_objects_used": false,
+        "supervision_claimed_as_sufficient": false,
+        "physical_items_selected_by": "not_applicable_paper_only",
+        "review_status": "pending_qualified_safety_review",
+        "note": "Paper-only lesson."
+      },
+      "learner_materials": [
+        {
+          "material_id": "a-l01-notice-card",
+          "kind": "notice_card",
+          "content": {
+            "en": "Mobile library van — this week: Tuesday and Thursday, 13:00–16:00, at the market ground. Bring any card you already have. New cards are made on site, free. Issued by: Mayin Township Mobile Library Team (fictional issuer for this practice card), 10 October 2026.",
+            "my": "ရွေ့လျားစာကြည့်တိုက်ကား — ဒီအပတ်: အင်္ဂါနေ့နှင့် ကြာသပတေးနေ့, 13:00–16:00, ဈေးကွင်းတွင်။ သင်ရှိပြီးသား ကတ်တစ်ခုခု ယူလာပါ။ ကတ်အသစ်များကို နေရာတွင် အခမဲ့ ပြုလုပ်ပေးပါသည်။ ထုတ်ပြန်သူ: မယင်းမြို့နယ် ရွေ့လျားစာကြည့်တိုက်အဖွဲ့ (ဤလေ့ကျင့်မှုကတ်အတွက် ဖန်တီးထားသော ထုတ်ပြန်သူ), 10 အောက်တိုဘာ 2026.",
+            "my_status": "DRAFT FOR CCO REVIEW"
+          },
+          "provenance_note": "Original practice material. Myanmar candidate received a CCO AI wording pass on 14 October 2026; independent human language, educator and safety reviews remain pending. See ../ydc-cco-card-provenance.json.",
+          "usage_note": "Print or hand-write on one card; the issuer/date line is part of the evidence learners point to."
+        },
+        {
+          "material_id": "a-l01-forwarded-message-card",
+          "kind": "forwarded_message_card",
+          "content": {
+            "en": "\"My cousin says the library van comes on Saturday now. Someone told her at the market.\"",
+            "my": "ကျွန်မရဲ့ ဝမ်းကွဲက စာကြည့်တိုက်ကား စနေနေ့မှာ လာတော့မယ်လို့ ပြောတယ်။ ဈေးမှာ တစ်ယောက်ယောက်က သူမကို ပြောလိုက်တာတဲ့။",
+            "my_status": "DRAFT FOR CCO REVIEW"
+          },
+          "provenance_note": "Original practice material. Myanmar candidate received a CCO AI wording pass on 14 October 2026; independent human language, educator and safety reviews remain pending. See ../ydc-cco-card-provenance.json.",
+          "usage_note": "Read-aloud support available; learners may hold up A/B cards to answer."
+        }
+      ],
+      "activity_steps": [
+        {
+          "step_no": 1,
+          "who": "facilitator",
+          "instruction": "Hand out both cards (read-aloud support for anyone, no stigma). Ask: what is different about these two texts? Expected: Card A names an issuer and a date; Card B is unattributed hearsay.",
+          "instruction_my": "ကတ်နှစ်ခုစလုံးကို ပေးပါ (လိုအပ်သူ မည်သူမဆိုအတွက် အသံထွက်ဖတ်ပေးနိုင်သည်၊ ခွဲခြားမထားပါ)။ မေးပါ: ဤစာနှစ်ခုတွင် ဘာကွာခြားသလဲ။ မျှော်မှန်းအဖြေ: ကတ် က တွင် ထုတ်ပြန်သူနှင့် ရက်စွဲပါသည်။ ကတ် ခ သည် မည်သူကပြောသည် မသိရသော ကြားဖူးစကားဖြစ်သည်။",
+          "instruction_my_status": "DRAFT FOR CCO REVIEW"
+        },
+        {
+          "step_no": 2,
+          "who": "learner",
+          "instruction": "Foundation: 'On which days does the van come according to Card A?' Answer and point to or read the exact line — the pointing is the point.",
+          "instruction_my": "အခြေခံနည်း: ကတ် က အရ စာကြည့်တိုက်ကားသည် မည်သည့်နေ့များတွင် လာသလဲ။ အဖြေပြောပြီး တိကျသောစာကြောင်းကို လက်ညှိုးထိုးပြပါ သို့မဟုတ် ဖတ်ပါ — လက်ညှိုးထိုးပြခြင်းက အဓိကဖြစ်ပါသည်။",
+          "instruction_my_status": "DRAFT FOR CCO REVIEW"
+        },
+        {
+          "step_no": 3,
+          "who": "learner",
+          "instruction": "Extension: 'Can these two cards tell you whether the van comes on Saturday?' Explain: Card B is unattributed hearsay; Card A is silent on Saturday; the cards cannot settle it — checking Card A's issuing source is the next step.",
+          "instruction_my": "ပိုမိုတိုးချဲ့နည်း: ဤကတ်နှစ်ခုက စာကြည့်တိုက်ကား စနေနေ့တွင် လာမလာ ပြောနိုင်ပါသလား။ ရှင်းပြရန်: ကတ် ခ သည် မည်သူကပြောသည် မသိရသော ကြားဖူးစကားဖြစ်သည်။ ကတ် က တွင် စနေနေ့အကြောင်း မဖော်ပြထားပါ။ ကတ်များက ၎င်းကို အပြီးသတ်မဆုံးဖြတ်နိုင်ပါ — ကတ် က ၏ ထုတ်ပြန်သည့်ရင်းမြစ်ကို စစ်ဆေးခြင်းက နောက်တစ်ဆင့်ဖြစ်သည်။",
+          "instruction_my_status": "DRAFT FOR CCO REVIEW"
+        },
+        {
+          "step_no": 4,
+          "who": "learner",
+          "instruction": "Transfer: 'Your neighbour asks when the van comes. What do you say, based on which card?' The answer must cite the source, not only the fact.",
+          "instruction_my": "ပြောင်းလဲအသုံးချခြင်း: သင့်အိမ်နီးချင်းက ကားဘယ်နေ့လာသလဲ မေးလျှင် မည်သည့်ကတ်အပေါ် အခြေခံ၍ ဘာပြောမလဲ။ အဖြေတွင် အချက်အလက်တစ်ခုတည်းသာ မဟုတ်ဘဲ ရင်းမြစ်ကိုလည်း ကိုးကားရမည်။",
+          "instruction_my_status": "DRAFT FOR CCO REVIEW"
+        },
+        {
+          "step_no": 5,
+          "who": "learner",
+          "instruction": "Close: two-minute pair/family share — one thing you would check before forwarding a message like Card B. No real messages brought into the room.",
+          "instruction_my": "အဆုံးသတ်: နှစ်မိနစ်ကြာ အတွဲလိုက်/မိသားစုလိုက် မျှဝေခြင်း — ကတ် ခ ကဲ့သို့သော စာတစ်စောင်ကို မပို့မီ သင်စစ်ဆေးမည့်အရာတစ်ခု။ တကယ့်စာများကို အခန်းထဲသို့ မယူလာပါ။",
+          "instruction_my_status": "DRAFT FOR CCO REVIEW"
+        }
+      ],
+      "observable_assessment": {
+        "check": "Transfer answer names the supporting text ('the notice says...'), not only the fact; Extension adds the cards-cannot-settle-it conclusion with a reason.",
+        "evidence_modes": [
+          "speech",
+          "gesture_or_pointing",
+          "writing",
+          "demonstration"
+        ],
+        "explicitly_avoided": [
+          "quiz scoring",
+          "speed reading",
+          "voting on whether Card B is true"
+        ]
+      },
+      "caregiver_teacher_notes": [
+        "Keep examples synthetic and harmless: schedules, opening hours, event times. Never real immigration, legal, medical or political claims, and never learners' own family situations.",
+        "The rehearsed skill is 'show me where it says that'.",
+        "This is practice, not media-literacy certification."
+      ],
+      "language_policy": {
+        "home_language_first": true,
+        "english_role": "optional_never_entry_barrier",
+        "myanmar_text_status": "DRAFT FOR CCO REVIEW",
+        "thai_text_status": "DRAFT FOR THAI EDUCATOR REVIEW",
+        "notes": [
+          "Both cards exist in home-language versions as hand-written translations by/with the facilitator until reviewed versions exist."
+        ]
+      },
+      "audio_transcript": null,
+      "rights": {
+        "original_content": true,
+        "third_party_assets": [],
+        "note": "Both card texts are original fiction; 'this week' framing keeps the notice clearly non-operational."
+      },
+      "offline_delivery": {
+        "works_without_internet": true,
+        "printable_alternative": true,
+        "audio_required": false,
+        "data_note": "Two paper cards; zero data."
+      },
+      "safeguarding": {
+        "no_child_identifiable_data": true,
+        "prohibitions": [
+          "No real immigration, legal or medical claims discussed; no personalised advice.",
+          "No learner's real forwarded messages or family situations invited into the lesson.",
+          "No linkage of learner performance to employers, agents, recruitment or any assessment body."
+        ]
+      },
+      "formal_schooling_note": "Reading-for-evidence supports learning continuity; formal recognition runs through real schools, migrant learning centres and NFE providers — never through YDC.",
+      "created_at": "2026-10-14",
+      "review_due": "2027-01-31"
+    },
+    {
+      "schema_version": "0.1-draft",
+      "version": "0.1-draft",
+      "lesson_id": "A-L02",
+      "title": {
+        "en": "Read the timetable, then ask",
+        "my": "အချိန်ဇယားကို ဖတ်ပြီးနောက် မေးပါ",
+        "my_status": "DRAFT FOR CCO REVIEW"
+      },
+      "pathway": "12to17",
+      "age_band": "12-17",
+      "presentation_tier": "learner_print",
+      "duration_minutes": 15,
+      "status": "research_draft_not_for_children",
+      "educator_review": false,
+      "language_review": false,
+      "rights_review": false,
+      "starter_unit_refs": [
+        "A03",
+        "A04"
+      ],
+      "source_refs": [
+        "S01",
+        "S04",
+        "S11"
+      ],
+      "learning_goal": "The learner reads a small fictional timetable (Foundation: locate one cell; Extension: combine cells and state a limit of the table) and rehearses one reviewed Thai phrase for asking a staffed counter a question, with a home-language gloss and any pronunciation level accepted.",
+      "entry_levels": [
+        {
+          "dimension": "numeracy",
+          "levels": [
+            "Foundation (trace a column)",
+            "Extension (combine cells, state limits)"
+          ]
+        },
+        {
+          "dimension": "thai_participation",
+          "levels": [
+            "T0 — no prior Thai"
+          ],
+          "note": "Non-reading entry via picture-row cards."
+        }
+      ],
+      "gpf_crosswalk": [
+        {
+          "descriptor_code": "Table 2B: Retrieve and compare information from simple data displays (grade 2) through Interpret complex data displays using categorical data (grade 6)",
+          "edition": "GPF Reading and Mathematics Grades 2-6, Oct 2019",
+          "note": "Card demand sits near grade 4-6 for Extension; unvalidated.",
+          "validation": "proposed_not_validated"
+        }
+      ],
+      "prerequisites": [],
+      "materials": [
+        {
+          "item": "One fictional timetable card (practice card — not a real route), with icon row labels",
+          "kind": "printed_or_handwritten_card"
+        },
+        {
+          "item": "Three picture-row cards for the non-reading entry",
+          "kind": "printed_or_handwritten_card"
+        },
+        {
+          "item": "Paper and pencil",
+          "kind": "drawing_writing_supplies"
+        }
+      ],
+      "materials_safety": {
+        "numeric_thresholds_claimed": false,
+        "small_loose_objects_used": false,
+        "supervision_claimed_as_sufficient": false,
+        "physical_items_selected_by": "not_applicable_paper_only",
+        "review_status": "pending_qualified_safety_review",
+        "note": "Paper-only lesson."
+      },
+      "learner_materials": [
+        {
+          "material_id": "a-l02-timetable-card",
+          "kind": "timetable_card",
+          "content": {
+            "en": "Songthaew to Hill Market — weekday mornings (practice card — not a real route) | Leave Padauk Road: 6:10 / 7:30 / 8:50 | Leave Old Gate: 6:25 / 7:45 / 9:05 | Arrive Hill Market: 6:55 / 8:15 / 9:35",
+            "my": "ဟေးလ်ဈေးသို့ သွားသော စုံထဲဝ် — တနင်္လာနေ့မှ သောကြာနေ့အထိ မနက်ပိုင်းများ (လေ့ကျင့်မှုကတ် — တကယ့်လမ်းကြောင်း မဟုတ်ပါ) | ပိတောက်လမ်းမှ ထွက်ချိန်: 6:10 / 7:30 / 8:50 | ဂိတ်ဟောင်းမှ ထွက်ချိန်: 6:25 / 7:45 / 9:05 | ဟေးလ်ဈေးသို့ ရောက်ချိန်: 6:55 / 8:15 / 9:35",
+            "my_status": "DRAFT FOR CCO REVIEW"
+          },
+          "provenance_note": "Original practice material. Myanmar candidate received a CCO AI wording pass on 14 October 2026; independent human language, educator and safety reviews remain pending. See ../ydc-cco-card-provenance.json.",
+          "usage_note": "Render the three rows as a real table on the card; row labels also get icons for the non-reading entry."
+        },
+        {
+          "material_id": "a-l02-picture-row-cards",
+          "kind": "picture_row_card_spec",
+          "content": {
+            "en": "Three cards, one per timetable row, each showing the row's icon (house-road / gate / market-basket) and its three times in large numerals; used instead of the printed table for the non-reading entry.",
+            "my": "ကတ်သုံးကတ်၊ အချိန်ဇယားအတန်းတစ်ခုစီအတွက် တစ်ကတ်စီဖြစ်ပြီး အတန်း၏ သင်္ကေတ (အိမ်-လမ်း / တံခါး / ဈေးခြင်းတောင်း) နှင့် ၎င်း၏ အချိန်သုံးချိန်ကို ဂဏန်းကြီးများဖြင့် ပြထားသည်။ စာမဖတ်သေးသူများအတွက် ပုံနှိပ်ထားသော ဇယားအစား အသုံးပြုသည်။",
+            "my_status": "DRAFT FOR CCO REVIEW"
+          },
+          "usage_note": "Icon design to be confirmed by the accessibility reviewer.",
+          "provenance_note": "Original practice material. Myanmar candidate received a CCO AI wording pass on 14 October 2026; independent human language, educator and safety reviews remain pending. See ../ydc-cco-card-provenance.json."
+        },
+        {
+          "material_id": "a-l02-phrase-card",
+          "kind": "phrase_card",
+          "content": {
+            "en": "Excuse me — what time does the vehicle go to Hill Market? (choose ครับ/ค่ะ by speaker; the card shows both)",
+            "th": "ขอโทษครับ/ค่ะ รถไปตลาดเขากี่โมงครับ/ค่ะ",
+            "th_status": "DRAFT FOR THAI EDUCATOR REVIEW",
+            "my": "ခွင့်ပြုပါ — ဟေးလ်ဈေးသို့ ကား ဘယ်အချိန် သွားပါသလဲ။ (ပြောသူအလိုက် ครับ/ค่ะ ကို ရွေးပါ; ကတ်တွင် နှစ်ခုစလုံး ပြထားသည်)",
+            "my_status": "DRAFT FOR CCO REVIEW"
+          },
+          "provenance_note": "Original practice material. Myanmar candidate received a CCO AI wording pass on 14 October 2026; independent human language, educator and safety reviews remain pending. See ../ydc-cco-card-provenance.json. Thai text remains a draft for Thai educator review.",
+          "usage_note": "Paper card; learners may point at it instead of speaking in early practice."
+        }
+      ],
+      "activity_steps": [
+        {
+          "step_no": 1,
+          "who": "learner",
+          "instruction": "Find the arrival time when leaving Padauk Road at 7:30 — trace the column with a finger (Foundation) or use the picture-row cards (non-reading entry). Answer: 8:15.",
+          "instruction_my": "ပိတောက်လမ်းမှ 7:30 တွင် ထွက်လျှင် ရောက်ချိန်ကို ရှာပါ — ကော်လံကို လက်ညှိုးဖြင့် လိုက်ပါ (အခြေခံနည်း) သို့မဟုတ် ပုံပါအတန်းကတ်များကို အသုံးပြုပါ (စာမဖတ်သေးသူများအတွက် စတင်နည်း)။ အဖြေ: 8:15။",
+          "instruction_my_status": "DRAFT FOR CCO REVIEW"
+        },
+        {
+          "step_no": 2,
+          "who": "learner",
+          "instruction": "Extension: 'You must be at Hill Market by 8:00. Which departure works — and what does the table NOT tell you?' Expected: 6:10; no information about delays, Sunday service or fare.",
+          "instruction_my": "ပိုမိုတိုးချဲ့နည်း: သင် 8:00 အချိန်တွင် သို့မဟုတ် 8:00 မတိုင်မီ ဟေးလ်ဈေးသို့ ရောက်ရမည်။ မည်သည့်ထွက်ချိန်ကို ရွေးရမလဲ — နှင့် ဇယားက မည်သည့်အရာကို မပြောထားသလဲ။ မျှော်မှန်းအဖြေ: 6:10; နှောင့်နှေးမှု၊ တနင်္ဂနွေဝန်ဆောင်မှု သို့မဟုတ် ယာဉ်ခအကြောင်း အချက်အလက် မပါပါ။",
+          "instruction_my_status": "DRAFT FOR CCO REVIEW"
+        },
+        {
+          "step_no": 3,
+          "who": "together",
+          "instruction": "Practise the Thai phrase twice: choral with the facilitator, then individually — reading, whispering or saying it; pointing at the phrase card instead of speaking is accepted this week. Home-language meaning is given orally by the facilitator until a reviewed home-language gloss exists (a prior machine gloss was withdrawn for a known mistranslation of 'market').",
+          "instruction_th": "ขอโทษครับ/ค่ะ รถไปตลาดเขากี่โมงครับ/ค่ะ",
+          "instruction_th_status": "DRAFT FOR THAI EDUCATOR REVIEW",
+          "accessible_alternatives": [
+            "Point at the phrase card rather than speaking",
+            "Pair practice instead of group performance"
+          ],
+          "instruction_my": "ထိုင်းစကားစုကို နှစ်ကြိမ်လေ့ကျင့်ပါ: ပထမအကြိမ် ကူညီပို့ချသူနှင့် အုပ်စုလိုက်၊ ထို့နောက် တစ်ဦးချင်း — ဖတ်ခြင်း၊ တိုးတိုးပြောခြင်း သို့မဟုတ် အသံထွက်ပြောခြင်းဖြင့် လုပ်နိုင်ပါသည်။ ဤအပတ်တွင် မပြောဘဲ စကားစုကတ်ကို လက်ညှိုးထိုးပြခြင်းလည်း လက်ခံပါသည်။ ပြန်လည်စစ်ဆေးထားသော အိမ်သုံးဘာသာစကား အဓိပ္ပာယ်ဖော်ပြချက် မရှိသေးသရွေ့ အိမ်သုံးဘာသာစကားအဓိပ္ပာယ်ကို ကူညီပို့ချသူက နှုတ်ဖြင့်ပေးပါမည် (အရင်စက်ဘာသာပြန်အဓိပ္ပာယ်ဖော်ပြချက်ကို ဈေး ဟူသောစကားလုံး ဘာသာပြန်မှားကြောင်း သိရှိထားသောကြောင့် ရုပ်သိမ်းထားသည်)။",
+          "instruction_my_status": "DRAFT FOR CCO REVIEW"
+        },
+        {
+          "step_no": 4,
+          "who": "learner",
+          "instruction": "Transfer: 'You are at Old Gate at 7:50. What do you do?' Reading the table (9:05) or forming the question to ask at the counter — either is success; both is stronger.",
+          "instruction_my": "ပြောင်းလဲအသုံးချခြင်း: သင် 7:50 တွင် ဂိတ်ဟောင်း၌ ရှိနေသည်။ ဘာလုပ်မလဲ။ ဇယားကို ဖတ်ခြင်း (9:05) သို့မဟုတ် ကောင်တာတွင် မေးရန် မေးခွန်းဖွဲ့ခြင်း — မည်သည့်နည်းဖြစ်စေ အောင်မြင်မှုဖြစ်သည်။ နှစ်မျိုးစလုံးလုပ်နိုင်လျှင် ပိုကောင်းပါသည်။",
+          "instruction_my_status": "DRAFT FOR CCO REVIEW"
+        },
+        {
+          "step_no": 5,
+          "who": "learner",
+          "instruction": "Close: write one thing the table cannot tell you, on paper, for the private portfolio (the learner chooses to keep or bin it).",
+          "instruction_my": "အဆုံးသတ်: ဇယားက မပြောနိုင်သောအရာတစ်ခုကို စာရွက်ပေါ်တွင် ရေးပါ၊ ကိုယ်ပိုင်မှတ်တမ်းဖိုင်အတွက်ဖြစ်သည် (သင်ယူသူက ထားမလား၊ လွှင့်ပစ်မလား ရွေးချယ်နိုင်သည်)။",
+          "instruction_my_status": "DRAFT FOR CCO REVIEW"
+        }
+      ],
+      "observable_assessment": {
+        "check": "Step 4: correct cell or a sensible counter question; Extension adds one stated limit of the table. Step 3 participation in any mode.",
+        "evidence_modes": [
+          "gesture_or_pointing",
+          "speech",
+          "writing"
+        ],
+        "explicitly_avoided": [
+          "pronunciation scoring",
+          "timing",
+          "calling learners to perform publicly",
+          "implying the phrase is sufficient Thai for life"
+        ]
+      },
+      "caregiver_teacher_notes": [
+        "The timetable is deliberately fictional and marked 'practice card — not a real route'; never substitute a real one without local verification of times, routes and fares.",
+        "The Thai line must be re-authored or confirmed by a Thai educator before any real-world use; machine-drafted Thai is not approved.",
+        "Anxiety-aware facilitation: pair or solo practice is always available."
+      ],
+      "language_policy": {
+        "home_language_first": true,
+        "english_role": "optional_never_entry_barrier",
+        "myanmar_text_status": "DRAFT FOR CCO REVIEW",
+        "thai_text_status": "DRAFT FOR THAI EDUCATOR REVIEW",
+        "notes": [
+          "Thai appears only as a participation bridge; the medium of learning remains the learner's stronger language.",
+          "Myanmar gloss for the Thai phrase and for the timetable card is withheld pending CCO: the earlier machine drafts used a known mistranslation of 'market' (ဇယားကွက်); removed, and no replacement wording is invented before CCO review."
+        ]
+      },
+      "audio_transcript": null,
+      "rights": {
+        "original_content": true,
+        "third_party_assets": [],
+        "note": "Original fictional timetable and phrase card."
+      },
+      "offline_delivery": {
+        "works_without_internet": true,
+        "printable_alternative": true,
+        "audio_required": false,
+        "data_note": "Paper cards; zero data."
+      },
+      "safeguarding": {
+        "no_child_identifiable_data": true,
+        "prohibitions": [
+          "No child names, IDs, photos, recordings or status data.",
+          "No claims about real routes, fares, services or availability.",
+          "No public performance requirement; no ranking of pronunciation or speed."
+        ]
+      },
+      "formal_schooling_note": "The Thai strand rehearses classroom and counter participation to support real school/learning-centre attendance; it is not a language qualification and promises no admission.",
+      "created_at": "2026-10-14",
+      "review_due": "2027-01-31"
+    }
+  ]
+}

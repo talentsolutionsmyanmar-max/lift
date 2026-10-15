@@ -1,0 +1,7 @@
+{
+  "checkedAt": "2026-10-14",
+  "source": "CCO-private-review",
+  "review": "CCO AI static-copy review; not independent native-human or legal review",
+  "scope": "Six fixed preparation strings only. Does not approve generated Myanmar output.",
+  "publicMyanmarGenerationEnabled": false
+}

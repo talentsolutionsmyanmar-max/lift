@@ -1,0 +1,122 @@
+[
+  {
+    "id": "S01",
+    "publisher": "UNESCO Institute for Statistics",
+    "title": "Minimum Proficiency Levels and Global Proficiency Framework overview",
+    "url": "https://learningdata.uis.unesco.org/index.php/navigator/what-are-the-sustainable-development-goals/1-3-what-is-the-definition-of-minimum-proficiency-level-in-reading-and-mathematics-used-to-measure-performance-on-indicator-4-1-1/",
+    "kind": "Framework / benchmarks",
+    "evidence": "Primary page read. Reading and mathematics benchmark summary verified; full GPF PDF retrieval failed.",
+    "use_and_limit": "Choose reading/numeracy outcomes; not a complete curriculum or individual placement test.",
+    "checked_at": "2026-10-14"
+  },
+  {
+    "id": "S02",
+    "publisher": "UNICEF / LEGO Foundation",
+    "title": "Learning through play (2018)",
+    "url": "https://www.unicef.org/sites/default/files/2018-12/UNICEF-Lego-Foundation-Learning-through-Play.pdf",
+    "kind": "Early-childhood pedagogy",
+    "evidence": "Primary PDF text read, especially printed pp.6–8 and 20–21.",
+    "use_and_limit": "Guide play-based design; do not copy illustrations or whole activities without checking asset rights.",
+    "checked_at": "2026-10-14"
+  },
+  {
+    "id": "S03",
+    "publisher": "UNICEF / WHO",
+    "title": "Care for Child Development",
+    "url": "https://www.unicef.org/documents/care-child-development",
+    "kind": "Caregiver facilitation",
+    "evidence": "Primary programme page read; complete clinical manual not reviewed.",
+    "use_and_limit": "Caregiver play/communication principles only; not a diagnostic or health programme.",
+    "checked_at": "2026-10-14"
+  },
+  {
+    "id": "S04",
+    "publisher": "UNESCO",
+    "title": "Languages matter: Global guidance on multilingual education (2025)",
+    "url": "https://www.unesco.org/en/articles/languages-matter-global-guidance-multilingual-education",
+    "kind": "Language-in-education guidance",
+    "evidence": "Primary publication page read; full publication not reviewed.",
+    "use_and_limit": "First-language support plus host-language bridge; needs local language educators.",
+    "checked_at": "2026-10-14"
+  },
+  {
+    "id": "S05",
+    "publisher": "INEE / Accelerated Education Working Group",
+    "title": "Accelerated Education collection and programme principles",
+    "url": "https://inee.org/collections/accelerated-education",
+    "kind": "Interrupted-schooling programme design",
+    "evidence": "Primary collection read; guide age-range passage checked through primary indexed PDF extract.",
+    "use_and_limit": "Distinguish catch-up, bridging and accelerated education; app practice is not a certified AEP.",
+    "checked_at": "2026-10-14"
+  },
+  {
+    "id": "S06",
+    "publisher": "UNICEF",
+    "title": "Adolescent Kit for Expression and Innovation: overview (July 2025)",
+    "url": "https://www.unicef.org/adolescentkit/reports/guide-about-adolescent-kit-expression-and-innovation",
+    "kind": "Facilitated adolescent learning",
+    "evidence": "Primary overview read; current overview targets ages 10–17.",
+    "use_and_limit": "Age-respectful facilitated projects and participation; not a replacement academic curriculum.",
+    "checked_at": "2026-10-14"
+  },
+  {
+    "id": "S07",
+    "publisher": "UNICEF",
+    "title": "Global framework on transferable skills (2019)",
+    "url": "https://www.unicef.org/reports/global-framework-transferable-skills",
+    "kind": "Cross-cutting skills framework",
+    "evidence": "Primary publication page and selected indexed PDF text read.",
+    "use_and_limit": "Integrate communication, problem solving and cooperation alongside academic learning.",
+    "checked_at": "2026-10-14"
+  },
+  {
+    "id": "S08",
+    "publisher": "UNESCO",
+    "title": "LearnBig initiative (February 2026)",
+    "url": "https://www.unesco.org/en/articles/expanding-access-learning-through-digital-innovation-unescos-learnbig-initiative",
+    "kind": "Existing multilingual resource library",
+    "evidence": "Primary article read; individual books and current app functionality not tested.",
+    "use_and_limit": "Assess existing Thai/Myanmar/local-language books before authoring; verify each title and licence.",
+    "checked_at": "2026-10-14"
+  },
+  {
+    "id": "S09",
+    "publisher": "Pratham Books / StoryWeaver",
+    "title": "Open content and licensing",
+    "url": "https://storyweaver.org.in/en/open-content",
+    "kind": "Potentially reusable story library",
+    "evidence": "Official indexed page checked; direct page fetch failed. Page distinguishes book/illustration and readalong/video licences.",
+    "use_and_limit": "Candidate CC BY 4.0 books with complete attribution. Readalongs/videos have separate CC BY-NC-ND terms; verify exact selected asset.",
+    "checked_at": "2026-10-14"
+  },
+  {
+    "id": "S10",
+    "publisher": "Learning Equality",
+    "title": "About Kolibri",
+    "url": "https://learningequality.org/kolibri/about-kolibri/",
+    "kind": "Offline delivery reference",
+    "evidence": "Primary page read; no installation, channel selection or device test performed.",
+    "use_and_limit": "Consider later for learning-centre deployment; platform licence does not establish content rights.",
+    "checked_at": "2026-10-14"
+  },
+  {
+    "id": "S11",
+    "publisher": "UNESCO",
+    "title": "Pathways to inclusion: Education for Myanmar migrant children in Thailand, 567THA1001",
+    "url": "https://core.unesco.org/en/project/567THA1001",
+    "kind": "Thailand programme context",
+    "evidence": "Primary project page read during this conversation; 2026–2027 project includes Thai-language teaching and learning-centre support.",
+    "use_and_limit": "Complement schools and migrant learning centres; no partnership, availability or admission promise.",
+    "checked_at": "2026-10-14"
+  },
+  {
+    "id": "S12",
+    "publisher": "UNESCO",
+    "title": "Creative Commons licences",
+    "url": "https://www.unesco.org/en/open-access/creative-commons",
+    "kind": "Publisher reuse conditions",
+    "evidence": "Primary page read; different publications have different conditions.",
+    "use_and_limit": "Check exact publication/third-party assets; do not imply endorsement or blanket reuse rights.",
+    "checked_at": "2026-10-14"
+  }
+]

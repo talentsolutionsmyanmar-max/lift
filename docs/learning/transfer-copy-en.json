@@ -1,0 +1,8 @@
+{
+  "title": "Review before using this amount",
+  "explain": "This is the remainder of your spending calculation, not a confirmed current cash balance. Some costs may still be unpaid. Do not count an unpaid cost twice.",
+  "confirm": "I checked: this amount is money I have now, after costs already paid.",
+  "use": "Use as money I have now",
+  "own": "Enter my own amount instead",
+  "applied": "Starting cash filled only. Future costs and dates still need your entries."
+}

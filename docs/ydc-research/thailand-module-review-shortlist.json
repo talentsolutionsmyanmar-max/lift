@@ -1,0 +1,20 @@
+{
+  "status": "research_proposal_not_lessons",
+  "researchDate": "2026-10-14",
+  "placement": "YDC / optional Life & Learning in Thailand module collection",
+  "adultPlacement": "Lift; not a child-to-work pipeline",
+  "priorities": [
+    {"id":"TH01","priority":1,"situation":"Ask someone to repeat, show or explain","audiences":["6to11","12to17","adult"],"evidence":"LearnBig Unit 2 topics 6, 16, 17","proposedOutcome":"Choose an appropriate clarification request in a fictional situation, with pointing accepted","reviewNeeded":["Thai second-language phrase/register review","home-language meaning review"],"unknown":"Whether this is families' highest priority"},
+    {"id":"TH02","priority":2,"situation":"Take part in a classroom routine and ask a trusted adult for help","audiences":["6to11","12to17"],"evidence":"LearnBig Unit 2 topic 17; UNICEF education studies","proposedOutcome":"Understand a short fictional instruction and identify an adult support route","reviewNeeded":["local teacher routine check","safeguarding review","Thai/home-language review"],"unknown":"Routines and available support differ by school"},
+    {"id":"TH03","priority":3,"situation":"Check a time, place and appointment","audiences":["12to17","adult"],"evidence":"LearnBig Unit 2 topics 3–5, 11–13","proposedOutcome":"Read or hear a fictional time/place and confirm what remains unknown","reviewNeeded":["Thai time-expression review","math/time comprehension check"],"unknown":"Current lesson outline does not prove real-world transfer"},
+    {"id":"TH04","priority":4,"situation":"Greet someone in a specific setting","audiences":["3to5_caregiver_led","6to11","12to17","adult"],"evidence":"LearnBig Unit 2 topic 1; Thailand Foundation greeting context","proposedOutcome":"Recognise that greeting choices depend on relationship and setting","reviewNeeded":["local Thai educator","age and accessibility review","respect for religion and identity"],"unknown":"Preschool suitability is a proposal, not established by the course outline"},
+    {"id":"TH05","priority":5,"situation":"Understand everyday prices and ask for clarification","audiences":["12to17","adult"],"evidence":"LearnBig Unit 2 topic 7","proposedOutcome":"Match a fictional price with a spoken amount without a real purchase","reviewNeeded":["Thai number pronunciation review","numeracy entry adaptations"],"unknown":"No assumption that bargaining is appropriate in every transaction"}
+  ],
+  "caregiverInfantBoundary": "0–2 support stays caregiver-facing in the strongest home language; no infant Thai target or screen activity",
+  "cultureApproach": ["Context and reciprocal respect, not a national-personality checklist","Do not grade children on cultural obedience","Cultural politeness never removes a person's right to seek help","No forced religious practice or public role-play disclosure","Thai language proficiency is separate from intelligence and age"],
+  "assetPolicy": "Link and map first. No imported provider PDFs/video/audio without asset-level permission.",
+  "pilotResearch": {"participants":"12 adults planned, not yet interviewed","questions":["Which recent everyday conversation was hardest? No names or private documents needed.","Which home language and spoken/written format is easiest?","What do children and caregivers need to ask teachers?","Which situations differ between your school, workplace or neighbourhood?","Can this phone play short audio, and when is data available?","What important situation did our questions miss?"],"limits":"Purposive interviews inform design; they do not estimate population prevalence or establish learning effectiveness."},
+  "firstBuildRecommendation": "After research and language review, prototype TH01 and TH02 as original private practice scenarios; keep wider YDC intact.",
+  "productionChange": false,
+  "humanReviewComplete": false
+}

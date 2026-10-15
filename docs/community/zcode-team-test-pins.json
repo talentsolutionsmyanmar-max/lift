@@ -1,0 +1,15 @@
+{
+  "dist/community.js": "1fca6871ed4574798a9bb9f684239a6ce647b319e199cb049a69f839f81b908e",
+  "dist/community-ui.js": "d3ad3992bdf01d0a859580b3636947c352a0117025be6f313496f036edaed3a2",
+  "dist/companion.css": "37eeff96ae31f8d003d2c9030858ea2c96868932fd4b824f6dd31f1c38ae27bf",
+  "scripts/build-community-team-test.cjs": "db2291287954739955b59ccb82bef9491a2b5cfaa7412f70ec17a31515a6a121",
+  "dist/team-test.html": "31f6b4d680fd860b2e808e8010426a285d9a8eaa801504415b1f6db9a472f2e0",
+  "artifacts/lift-community-team-test.html": "31f6b4d680fd860b2e808e8010426a285d9a8eaa801504415b1f6db9a472f2e0",
+  "dist/lift-offline.txt": "9e6826aa07f2f1437cc64ef202a7aaf2069bd29261e12d01d5bc2121546cfe34",
+  "docs/community/team-test-copy-en.json": "063abcebe49e62838317950fae2dd4bf9176a9c053a5b8a4615c876d39a884f0",
+  "docs/community/team-test-copy-my.json": "4b0883d7e5dde9e924eee402291e50668e97d581c13a9c02fda59a4a643263e7",
+  "docs/community/team-test-copy-provenance.json": "4b15f1b846832be0487ae9f962c031c73e95ef462088d24e60aff691d9ebe7ee",
+  "docs/community/human-team-test-guide.txt": "580e82b4dd251025af38ac0582a8d3a1c5e285100153a52c8e6a68ab0d177d3c",
+  "tests/community-prompts.test.cjs": "1c90dae1e26cfba55d589d81fc45cacfb9110ece9d51e6e810b6976464434869",
+  "tests/community-team-test.test.cjs": "af2c7ad70786040d48da90ff825c39805bc626eb3f13595016abc8af0ffe9914"
+}

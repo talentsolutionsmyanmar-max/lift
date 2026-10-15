@@ -1,0 +1,147 @@
+{
+  "checkedAt": "2026-10-14T12:32:57.700265+00:00",
+  "review": "CCO AI wording candidate; independent human, educator, safety and rights approval remain pending.",
+  "conversation": "CCO-private-review",
+  "scope": "Six titles and 28 activity instructions only; not every background curriculum/assessment/teacher note.",
+  "inputHash": "cd3839d857582e2b531d9dbd1fd46d9c4d3c3aacb83b130365d8b20acba80647",
+  "copyHash": "41c56d011ef9e7e63294f79915b357da5e39971a2f2906f936a0ebe34ab7c7e6",
+  "priorCopy": [
+    {
+      "key": "U6-L01-title",
+      "priorMyanmar": "ရေတွက်ကစားကြမယ်"
+    },
+    {
+      "key": "U6-L01-step-1",
+      "priorMyanmar": "တစ်… နှစ်… သုံး…"
+    },
+    {
+      "key": "U6-L01-step-2",
+      "priorMyanmar": null
+    },
+    {
+      "key": "U6-L01-step-3",
+      "priorMyanmar": null
+    },
+    {
+      "key": "U6-L01-step-4",
+      "priorMyanmar": null
+    },
+    {
+      "key": "U6-L01-step-5",
+      "priorMyanmar": null
+    },
+    {
+      "key": "U6-L02-title",
+      "priorMyanmar": "တစ်လှည့်စီ ပြောကြမယ်"
+    },
+    {
+      "key": "U6-L02-step-1",
+      "priorMyanmar": "ကလေး လုပ်တာ/ထုတ်တာ မြင်ရင် စကားလုံးနဲ့ ပြန်ပြောပြီး ခဏ စောင့်ပါ။"
+    },
+    {
+      "key": "U6-L02-step-2",
+      "priorMyanmar": null
+    },
+    {
+      "key": "U6-L02-step-3",
+      "priorMyanmar": null
+    },
+    {
+      "key": "B-L01-title",
+      "priorMyanmar": "စာတစ်စောင် ဖတ်ကြမယ်"
+    },
+    {
+      "key": "B-L01-step-1",
+      "priorMyanmar": null
+    },
+    {
+      "key": "B-L01-step-2",
+      "priorMyanmar": null
+    },
+    {
+      "key": "B-L01-step-3",
+      "priorMyanmar": null
+    },
+    {
+      "key": "B-L01-step-4",
+      "priorMyanmar": null
+    },
+    {
+      "key": "B-L01-step-5",
+      "priorMyanmar": null
+    },
+    {
+      "key": "B-L02-title",
+      "priorMyanmar": "တန်းတူ ခွဲဝေကြမယ်"
+    },
+    {
+      "key": "B-L02-step-1",
+      "priorMyanmar": null
+    },
+    {
+      "key": "B-L02-step-2",
+      "priorMyanmar": null
+    },
+    {
+      "key": "B-L02-step-3",
+      "priorMyanmar": null
+    },
+    {
+      "key": "B-L02-step-4",
+      "priorMyanmar": null
+    },
+    {
+      "key": "B-L02-step-5",
+      "priorMyanmar": null
+    },
+    {
+      "key": "A-L01-title",
+      "priorMyanmar": "စာနှစ်စောင် မေးခွန်းတစ်ခု"
+    },
+    {
+      "key": "A-L01-step-1",
+      "priorMyanmar": null
+    },
+    {
+      "key": "A-L01-step-2",
+      "priorMyanmar": null
+    },
+    {
+      "key": "A-L01-step-3",
+      "priorMyanmar": null
+    },
+    {
+      "key": "A-L01-step-4",
+      "priorMyanmar": null
+    },
+    {
+      "key": "A-L01-step-5",
+      "priorMyanmar": null
+    },
+    {
+      "key": "A-L02-title",
+      "priorMyanmar": "အချိန်ဇယား ဖတ်ပြီး မေးကြမယ်"
+    },
+    {
+      "key": "A-L02-step-1",
+      "priorMyanmar": null
+    },
+    {
+      "key": "A-L02-step-2",
+      "priorMyanmar": null
+    },
+    {
+      "key": "A-L02-step-3",
+      "priorMyanmar": null
+    },
+    {
+      "key": "A-L02-step-4",
+      "priorMyanmar": null
+    },
+    {
+      "key": "A-L02-step-5",
+      "priorMyanmar": null
+    }
+  ],
+  "readyForChildren": false
+}

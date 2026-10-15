@@ -1,0 +1,15 @@
+const test=require('node:test'),assert=require('node:assert/strict');
+const {validate}=require('../lib/survey.cjs');
+const {makeHandler}=require('../api/survey');
+const base=()=>({id:'11111111-1111-4111-8111-111111111111',version:1,consent:true,language:'my',answers:{role:'',recent:'Test only',source:'',trust:'',agent:'',threeMonths:'',format:'',language:'',anything:''},topics:[],pairs:[],website:''});
+const {BlobNotFoundError}=require('@vercel/blob');
+const err=name=>name==='BlobNotFoundError'?new BlobNotFoundError():new Error('Exists');
+function response(){return {headers:{},setHeader(k,v){this.headers[k]=v},status(code){this.code=code;return this},json(body){this.body=body;return this}}}
+const req=b=>({method:'POST',headers:{origin:'https://lift-next-step.vercel.app','content-type':'application/json','x-vercel-forwarded-for':'192.0.2.1'},body:b});
+test('allows own question without answer, preserves Unicode and strips extra fields',()=>{let b=base();b.pairs=[{ownQuestion:'မေးခွန်း',ownAnswer:''}];b.secret='discard';assert.equal(validate(b).pairs[0].ownQuestion,'မေးခွန်း');assert.equal(validate(b).secret,undefined)});
+test('rejects missing consent, oversized content, duplicate topics and invalid enums',()=>{for(const mutate of [b=>b.consent=false,b=>b.answers.recent='x'.repeat(1501),b=>b.topics=['work','work'],b=>b.answers.role='admin',b=>b.pairs=[{}, {}, {}, {}],b=>b.website='spam']){let b=base();mutate(b);assert.throws(()=>validate(b))}});
+test('server fails closed for foreign origins and storage failure',async()=>{process.env.SURVEY_RATE_SECRET='test';let writes=0;const h=makeHandler({head:async()=>{throw err('BlobNotFoundError')},put:async()=>{writes++;throw Error('offline')}});let r=response(),q=req(base());q.headers.origin='https://elsewhere.test';await h(q,r);assert.equal(r.code,403);assert.equal(writes,0);r=response();await h(req(base()),r);assert.equal(r.code,503);assert.equal(r.body.ok,false)});
+test('private write excludes IP and retry does not write twice',async()=>{process.env.SURVEY_RATE_SECRET='test';const store=new Map();const h=makeHandler({head:async p=>{if(!store.has(p))throw err('BlobNotFoundError');return {}},put:async(p,b,o)=>{assert.equal(o.access,'private');if(store.has(p))throw err('BlobAlreadyExistsError');store.set(p,b)}});let r=response();await h(req(base()),r);assert.equal(r.code,201);let n=store.size;r=response();await h(req(base()),r);assert.equal(r.code,200);assert.equal(store.size,n);assert.ok(!JSON.stringify([...store]).includes('192.0.2.1'))});
+test('rate cap refuses sixth request without response write',async()=>{process.env.SURVEY_RATE_SECRET='test';const h=makeHandler({head:async p=>{if(p.startsWith('responses/'))throw err('BlobNotFoundError');return {}},put:async()=>{throw err('BlobAlreadyExistsError')}});let r=response();await h(req(base()),r);assert.equal(r.code,429)});
+
+test('retains instrument version while accepting old and choice-first responses',()=>{for(const version of [1,2]){const b=base();b.version=version;assert.equal(validate(b).version,version)}for(const version of [0,3,"2",null]){const b=base();b.version=version;assert.throws(()=>validate(b))}});

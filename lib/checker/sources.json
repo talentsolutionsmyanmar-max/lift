@@ -1,0 +1,28 @@
+[
+  {
+    "id": "forms",
+    "title": "Samut Prakan Immigration — forms",
+    "url": "https://www.samutprakanimmigration.go.th/download-forms/",
+    "checkedAt": "2026-10-14",
+    "reviewBy": "2026-10-21",
+    "scope": "Form names only. This page distinguishes TM.7 from TM.47; it does not establish individual eligibility, deadlines, fees or work permission.",
+    "excerpt": "Extension of Temporary Stay\nApplication Form (TM. 7)\nForm for Alien to Notify of Staying Longer Than 90 Days (TM.47)",
+    "markers": [
+      "TM. 7",
+      "TM.47"
+    ]
+  },
+  {
+    "id": "services",
+    "title": "Samut Prakan Immigration — service categories",
+    "url": "https://www.samutprakanimmigration.go.th/thai-visa-information/",
+    "checkedAt": "2026-10-14",
+    "reviewBy": "2026-10-21",
+    "scope": "Service categories at one provincial office. Not confirmation of current requirements for a pink-card holder or any particular person.",
+    "excerpt": "Extension Division\nRequest for extension of stay\nResidence Notification\nNotification of staying in the Kingdom for more than 90 days",
+    "markers": [
+      "Extension Division",
+      "Residence Notification"
+    ]
+  }
+]
