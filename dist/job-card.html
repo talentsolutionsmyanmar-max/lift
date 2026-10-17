@@ -4,55 +4,58 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="google" content="notranslate">
-  <meta name="description" content="Lift offer check (English limited pilot): paste a job offer, see the exact sentences that may matter and questions to ask. Not a safety rating. No account, no tracking.">
-  <title>Lift — Check a job offer</title>
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Lift offer check (English limited pilot): paste a job offer, see what to ask before you sign. Not a safety rating. No account, no tracking.">
+  <title>Lift — Check an offer</title>
   <link rel="icon" href="./icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./survey.css">
-  <link rel="stylesheet" href="./job-card.css">
+  <link rel="stylesheet" href="./offer-check.css">
   <script defer src="./offer-check.js"></script>
   <script defer src="./offer-check-ui.js"></script>
 </head>
 <body>
-  <header>
-    <a class="survey-brand" href="./index.html" aria-label="Lift home">
-      <svg viewBox="3 3 34 32" aria-hidden="true"><path d="M8 29V17a12 12 0 0 1 24 0v12"/><path d="M15 29V18a5 5 0 0 1 10 0v11"/><path d="M5 32h30"/></svg>
-      <span aria-hidden="true">l<span class="lift-sun-i">ı</span>ft</span>
-    </a>
+  <header class="oc-bar">
+    <a class="oc-back" href="./index.html" aria-label="Back to Lift">‹</a>
+    <h1>Offer check</h1>
+    <span class="oc-pill" title="English limited pilot. Myanmar language comes only after CCO-approved copy is ready.">English limited pilot</span>
   </header>
-  <main>
-    <p class="jc-eyebrow">LIFT / OFFER CHECK — ENGLISH LIMITED PILOT</p>
-    <h1>Read a job offer before you pay or hand over documents</h1>
-    <p>Paste the words of an offer you already received. Lift shows the exact sentence behind each point, why it may matter, and a question to ask. Lift never says an offer is safe, legal, verified or a scam.</p>
-    <p class="jc-scope"><strong>English limited pilot.</strong> Myanmar language will come only after CCO-approved copy is ready. Not a job board: Lift does not list jobs or employers. No account. No ID. No location.</p>
-
-    <section class="jc-card">
-      <h2>Paste the offer text</h2>
-      <label for="jc-text">Offer text</label>
-      <textarea id="jc-text" maxlength="8000" placeholder="Paste only the words of the offer. You do not need to include your name, phone or passport number."></textarea>
-      <p id="jc-privacy" class="jc-note"><strong>Where your text goes:</strong> checked in this browser with Lift’s reviewed rules. Nothing is saved, logged or sent to analytics.</p>
-      <label id="jc-model-wrap" class="jc-consent" hidden>
+  <main class="oc">
+    <section id="oc-input" class="oc-screen">
+      <p class="oc-lead">Paste the offer</p>
+      <p class="oc-sub">See what to ask before you pay or hand over documents.</p>
+      <label for="jc-text" class="oc-label" style="position:absolute;left:-9999px">Offer text</label>
+      <textarea id="jc-text" class="oc-paste" maxlength="8000" placeholder="Paste the message or poster text here. No need to include your name, phone or passport number."></textarea>
+      <label id="jc-model-wrap" class="oc-toggle" hidden>
         <input id="jc-model" type="checkbox">
-        <span>Also use the Meta Llama model. This <strong>sends the text to a server</strong> (Vercel AI Gateway, zero data retention requested) for this one check. Having no account does not mean it stays on your phone.</span>
+        <span>Use Meta Llama too. This <strong>sends the text to a server</strong> (Vercel AI Gateway, zero data retention requested) for this one check. No account does not mean it stays on your phone.</span>
       </label>
+      <button type="button" class="oc-btn primary" id="jc-run" disabled>Check offer</button>
+      <div class="oc-fine"><span id="jc-privacy">Checked on this phone. Nothing saved or tracked.</span></div>
     </section>
 
-    <div class="jc-actions">
-      <button type="button" class="primary" id="jc-run">Check the wording</button>
-      <button type="button" class="secondary" id="jc-clear">Clear</button>
-    </div>
-    <p id="jc-status" class="jc-status" role="status" tabindex="-1"></p>
-
-    <section id="jc-result" hidden aria-live="polite">
-      <p class="jc-flag medium"><strong>This is not a safety rating.</strong><span id="jc-notice"></span></p>
-      <section class="jc-card"><h2>Concerning wording found</h2><div id="jc-concerning"></div></section>
-      <section class="jc-card" style="margin-top:16px"><h2>Information missing</h2><div id="jc-missing"></div></section>
-      <section class="jc-card" style="margin-top:16px"><h2>Cannot assess</h2><div id="jc-cannot"></div></section>
-      <p id="jc-engine" class="jc-note"></p>
-      <p><a href="./index.html#prepare">Open Lift’s prepare-a-conversation checklist</a></p>
+    <section id="jc-result" class="oc-screen" hidden aria-live="polite">
+      <div class="oc-summary">
+        <p id="oc-headline" class="oc-lead"></p>
+        <div id="oc-chips" class="oc-chips"></div>
+      </div>
+      <div class="oc-fine">
+        <span>No flags ≠ safe. Lift can’t verify employers.</span>
+        <button type="button" class="oc-info" id="oc-info" aria-expanded="false" aria-controls="oc-disclaimer" aria-label="More about these limits">i</button>
+      </div>
+      <div id="oc-disclaimer" class="oc-sheet" hidden>
+        <p><strong>This is not a safety rating.</strong> <span id="jc-notice"></span></p>
+        <p>Lift never says an offer is safe, legal, verified or a scam. It only reads the words you pasted.</p>
+        <p>Not a job board: Lift does not list jobs or employers. No account, no ID, no location, no tracking.</p>
+        <p>English limited pilot. Myanmar language will come only after CCO-approved copy is ready.</p>
+      </div>
+      <section class="oc-sec c" id="sec-c"><h2>Concerning wording found <span class="oc-chip c"><b id="n-c">0</b></span></h2><div id="jc-concerning"></div></section>
+      <section class="oc-sec m" id="sec-m"><h2>Information missing <span class="oc-chip m"><b id="n-m">0</b></span></h2><div id="jc-missing"></div></section>
+      <section class="oc-sec u" id="sec-u"><h2>Cannot assess <span class="oc-chip u"><b id="n-u">0</b></span></h2><div id="jc-cannot"></div></section>
+      <p id="jc-engine" class="oc-engine"></p>
+      <button type="button" class="oc-btn primary" id="jc-clear">Check another offer</button>
+      <a class="oc-btn ghost" style="text-align:center;text-decoration:none" href="./index.html#prepare">Prepare for the conversation</a>
     </section>
-
-    <p class="jc-note" style="margin-top:32px">No worker tracking, no location maps, no analytics on this page. Separate from ReferTRM.</p>
-    <p><a href="./index.html">Back to Lift</a></p>
+    <p id="jc-status" class="oc-sub" role="status" tabindex="-1"></p>
   </main>
+  <div id="oc-toast" class="oc-toast" role="status"></div>
 </body>
 </html>

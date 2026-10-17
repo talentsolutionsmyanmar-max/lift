@@ -114,6 +114,17 @@ describe('offer check — UI constraints', () => {
   it('paste only: no file upload input', () => assert.doesNotMatch(html, /type="file"/));
   it('three sections present', () => { for (const s of ['Concerning wording found', 'Information missing', 'Cannot assess']) assert.ok(html.includes(s), s); });
   it('English labelled limited pilot; no Myanmar script', () => { assert.match(html, /English limited pilot/i); assert.doesNotMatch(html + fs.readFileSync(path.join(__dirname, '../dist/offer-check.js'), 'utf8'), /[\u1000-\u109F]/); });
+  it('no-flags-is-not-safe statement and short disclaimer reachable in markup', () => {
+    assert.match(html, /No flags ≠ safe/);
+    assert.match(html, /id="jc-notice"/);
+    assert.match(html, /never says an offer is safe, legal, verified or a scam/);
+    assert.match(fs.readFileSync(path.join(__dirname, '../dist/offer-check-ui.js'), 'utf8'), /does not mean the offer is safe/);
+  });
+  it('flag cards put the question first with copy, quote, and Why? expander', () => {
+    const ui = fs.readFileSync(path.join(__dirname, '../dist/offer-check-ui.js'), 'utf8');
+    assert.ok(ui.indexOf('oc-ask') < ui.indexOf('oc-quote') && ui.indexOf('oc-quote') < ui.indexOf('Why?'));
+    assert.match(ui, /data-copy/);
+  });
   it('server disclosure before model use; no geolocation/analytics', () => {
     assert.match(html, /sends the text to a server/);
     const ui = fs.readFileSync(path.join(__dirname, '../dist/offer-check-ui.js'), 'utf8');
