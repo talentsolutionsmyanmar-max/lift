@@ -2,7 +2,7 @@
  * Lift Clear Job Cards — extraction interface + fee red-flag.
  * Privacy: runs in the browser. No GPS, no accounts, no analytics.
  * Myanmar cannot use Meta Model API; open-weights remote is optional.
- * Demo path uses fixtures (human-checked English quotes from OCR) or pasted text rules.
+ * Primary path: user upload or pasted poster text. Optional DEMO fixtures are fictional Thailand migrant samples only.
  */
 (function (root) {
   'use strict';
@@ -19,183 +19,13 @@
     'fees_mentioned'
   ];
 
-  /** Fee / deposit language that asks something of the worker (EN + common MY loanwords). */
-  const FEE_ASK_PATTERNS = [
-    /\b(?:agency\s+)?fee\b/i,
-    /\bfees?\b/i,
-    /\bdeposit\b/i,
-    /\bguarantee\s+(?:money|fee|deposit)\b/i,
-    /\bregistration\s+fee\b/i,
-    /\bplacement\s+fee\b/i,
-    /\bpassport\s+hold(?:ing)?\b/i,
-    /\bhold(?:ing)?\s+(?:your\s+)?passport\b/i,
-    /\bpassport\s+held\b/i,
-    /\bheld\b[^\n]{0,40}\bpassport\b/i,
-    /\bpassport\b[^\n]{0,40}\bheld\b/i,
-    /\bpay\s+(?:us|to\s+apply|before\s+start)\b/i,
-    /\bupfront\s+(?:payment|fee|cost)\b/i,
-    /\bကုန်ကျစရိတ်\b/,
-    /\bကြိုတင်ငွေ\b/,
-    /\bအာမခံငွေ\b/,
-    /\bစာရင်းသွင်းခ\b/,
-    /\bပတ်စ်ပို့\s*ထိန်း\b/
-  ];
-
-  /** Phrases that negate a fee ask (do not red-flag alone). */
-  const FEE_NEGATION = [
-    /\bno\s+(?:agency\s+)?fees?\b/i,
-    /\bwithout\s+(?:any\s+)?(?:agency\s+)?fees?\b/i,
-    /\bfree\s+(?:of\s+)?(?:charge|fee)\b/i,
-    /\bzero\s+fee\b/i,
-    /\bမည်သည့်\s*အခကြေးငွေမှ\s*မ\b/,
-    /\bအခမဲ့\b/
-  ];
-
-  function field(value, quote, confidence) {
-    if (value == null || value === '' || value === NOT_STATED) return NOT_STATED;
-    return {
-      value: String(value),
-      source_quote_verbatim: quote == null || quote === '' ? NOT_STATED : String(quote),
-      confidence: typeof confidence === 'number' ? confidence : 0.7
-    };
-  }
-
-  function payField(amount, period, amountQuote, periodQuote) {
-    const a = amount == null || amount === '' || amount === NOT_STATED ? NOT_STATED : String(amount);
-    const p = period == null || period === '' || period === NOT_STATED ? NOT_STATED : String(period);
-    if (a === NOT_STATED && p === NOT_STATED) return NOT_STATED;
-    return {
-      value: { amount: a, period: p },
-      source_quote_verbatim: amountQuote || periodQuote || NOT_STATED,
-      confidence: 0.75
-    };
-  }
-
-  function emptyCard(meta) {
-    const card = {};
-    for (const k of FIELDS) card[k] = NOT_STATED;
-    card._meta = Object.assign({ extractor: 'none', invented: false }, meta || {});
-    return card;
-  }
-
   /**
-   * Fixtures: only English (or clearly readable OCR) quotes — no invented Burmese.
-   * Source: Tesseract OCR on TRM TikTok posters in /workspace/meta-hackathon/posters (14 Oct 2026).
-   * Burmese lines that OCR garbled are left NOT STATED rather than "fixed".
+   * DEMO FIXTURES PAUSED (Ko Ko, 17 Oct 2026).
+   * Do not invent Thailand or Myanmar job listings until research is reviewed:
+   * see docs/THAILAND-MIGRANT-LEGIT-WORK-RESEARCH-2026-10-17.md
+   * Primary path remains: user upload or paste of THEIR own poster text only.
    */
-  const FIXTURES = {
-    'tiktok-01': {
-      id: 'tiktok-01',
-      label: 'Demo poster 1 — Sales staff (Makro / TRM)',
-      image: './demo-posters/tiktok-01.png',
-      note: 'Fixture from OCR-visible English only. Burmese hours/requirements left NOT STATED where OCR was unreliable.',
-      card: {
-        job_title: field('Sales staff', 'SALES STAFF', 0.9),
-        employer: field('TRM Direct Employment', 'TRM Direct Employment', 0.85),
-        location: NOT_STATED,
-        pay: payField('350,000 + OT', NOT_STATED, 'Salary - 350,000 + OT'),
-        hours_shift: NOT_STATED,
-        requirements: NOT_STATED,
-        how_to_apply: field(
-          'Phone 09 42000 8965; www.refertrm.com',
-          '09 42000 8965\nwww.refertrm.com',
-          0.8
-        ),
-        fees_mentioned: field('No agency fees (as written)', 'no agency Fees', 0.85),
-        _meta: {
-          extractor: 'fixture',
-          poster: 'tiktok-01.png',
-          invented: false,
-          mode: 'fixture'
-        }
-      }
-    },
-    'tiktok-02': {
-      id: 'tiktok-02',
-      label: 'Demo poster 2 — O2O / hiring',
-      image: './demo-posters/tiktok-02.png',
-      note: 'Fixture from OCR-visible English only.',
-      card: {
-        job_title: field('O2O (အဝယ်တော်)', 'O2O (အဝယ်တော်)', 0.7),
-        employer: field('Talent Resources Myanmar (TRM)', 'Apply Now - Talent Resources Myanmar (TRM)', 0.85),
-        location: NOT_STATED,
-        pay: payField('4.1 Laks + OT', NOT_STATED, 'Salary - 4.1 Laks + OT'),
-        hours_shift: NOT_STATED,
-        requirements: NOT_STATED,
-        how_to_apply: field(
-          'Phone 09420008965 / 09945592999; www.refertrm.com',
-          '09420008965 / 09945592999\nwww.refertrm.com',
-          0.8
-        ),
-        fees_mentioned: NOT_STATED,
-        _meta: {
-          extractor: 'fixture',
-          poster: 'tiktok-02.png',
-          invented: false,
-          mode: 'fixture'
-        }
-      }
-    },
-    'tiktok-06': {
-      id: 'tiktok-06',
-      label: 'Demo poster 3 — Salary range visible',
-      image: './demo-posters/tiktok-06.png',
-      note: 'Fixture from OCR-visible English/numbers only.',
-      card: {
-        job_title: NOT_STATED,
-        employer: NOT_STATED,
-        location: NOT_STATED,
-        pay: payField('320,000 + OT / 350,000 + OT', NOT_STATED, 'Salary - 320,000 + OT\n350,000 + OT'),
-        hours_shift: NOT_STATED,
-        requirements: NOT_STATED,
-        how_to_apply: field(
-          'Phone 09 420008965 (Viber); www.refertrm.com',
-          '09 420008965 (viber)\nwww.refertrm.com',
-          0.75
-        ),
-        fees_mentioned: NOT_STATED,
-        _meta: {
-          extractor: 'fixture',
-          poster: 'tiktok-06.png',
-          invented: false,
-          mode: 'fixture'
-        }
-      }
-    },
-    'demo-fee-ask': {
-      id: 'demo-fee-ask',
-      label: 'DEMO — fee / deposit red-flag sample (not a real job)',
-      image: null,
-      demoText:
-        'DEMONSTRATION ONLY — NOT A REAL JOB.\n' +
-        'Factory helper needed. Salary 12,000 THB / month.\n' +
-        'Location: Samut Sakhon.\n' +
-        'Apply via LINE. Registration fee 3,000 baht before start.\n' +
-        'Deposit 2,000 baht held from first wage. Passport held until contract ends.',
-      note: 'Synthetic text for judges to see the fee red-flag. Not a real poster.',
-      card: {
-        job_title: field('Factory helper', 'Factory helper needed', 0.95),
-        employer: NOT_STATED,
-        location: field('Samut Sakhon', 'Location: Samut Sakhon.', 0.95),
-        pay: payField('12,000 THB', 'month', 'Salary 12,000 THB / month.'),
-        hours_shift: NOT_STATED,
-        requirements: NOT_STATED,
-        how_to_apply: field('Apply via LINE', 'Apply via LINE.', 0.9),
-        fees_mentioned: field(
-          'Registration fee 3,000 baht; deposit 2,000 baht; passport held',
-          'Registration fee 3,000 baht before start.\nDeposit 2,000 baht held from first wage. Passport held until contract ends.',
-          0.95
-        ),
-        _meta: {
-          extractor: 'fixture',
-          poster: 'demo-fee-ask',
-          invented: false,
-          mode: 'fixture',
-          demonstration_only: true
-        }
-      }
-    }
-  };
+  const FIXTURES = {};
 
   function listFixtures() {
     return Object.keys(FIXTURES).map((id) => {

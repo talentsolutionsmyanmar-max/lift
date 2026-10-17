@@ -68,7 +68,7 @@
           $('jc-image-tools').hidden = true;
         }
         if (f && f.demoText) $('jc-text').value = f.demoText;
-        $('jc-status').textContent = 'Demo poster selected. Tap “Build honest job card”.';
+        $('jc-status').textContent = 'DEMO sample selected (not a real job). Tap “Build honest job card”.';
       };
     }
   }
@@ -241,7 +241,7 @@
       $('jc-image-tools').hidden = false;
       imageReady = true;
       $('jc-status').textContent =
-        'Image ready on this device only. Open-weights model is not connected in this demo — paste visible text or use a demo poster for a full card.';
+        'Image ready on this device only. Open-weights model is not connected — paste the visible poster text to build fields, or try an optional DEMO sample.';
     } catch {
       imageReady = false;
       $('jc-status').textContent = 'Could not read that image.';
