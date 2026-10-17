@@ -12,6 +12,10 @@
     {
       "source": "/check",
       "destination": "/check.html"
+    },
+    {
+      "source": "/job-card",
+      "destination": "/job-card.html"
     }
   ],
   "crons": [

@@ -34,3 +34,31 @@ Research/proposals only: explain each activity's benefit before starting, why qu
 No implementation of the proposed redesign is approved yet. Do not infer a job, renewed document, school place or improved finances from a checkbox.
 
 No software licence is granted by publication alone. Bundled Padauk font licensing is in `dist/fonts/OFL.txt`.
+
+## Clear Job Cards (Meta hackathon demo — 17 Oct 2026)
+
+Privacy-first poster → honest job card for Myanmar migrant workers. Stays part of Lift’s non-commercial prototype; separate from ReferTRM’s commercial employer portal.
+
+### What changed
+- New page: `dist/job-card.html` (also `/job-card` via Vercel rewrite).
+- Client modules: `dist/job-card-extract.js`, `dist/job-card-ui.js`, `dist/job-card.css`.
+- Demo posters: `dist/demo-posters/tiktok-01.png`, `tiktok-02.png`, `tiktok-06.png` (from Meta harness OCR set).
+- Fixture path quotes OCR-visible English only; garbled Burmese → `NOT STATED` (never invented).
+- Synthetic `demo-fee-ask` fixture shows fee / deposit / passport-hold red-flag before download.
+- Conversation coach prompts stay on-device; link back to `#prepare`.
+- Open-weights hook: set `window.LIFT_JOB_CARD_ENDPOINT` to a self-hosted Muse Glimmer (or compatible) JSON extractor. Myanmar cannot use Meta Model API; demo works offline via fixtures + pasted text.
+- Home and Useful information link to Clear Job Cards.
+- Tests: `tests/job-card-extract.test.cjs` (7 passing).
+- Docs: `docs/meta-hackathon/WHAT-CHANGED-2026-10-17.md`, `docs/meta-hackathon/META-PITCH-NOTE-2026-10-17.md`.
+
+### Run the demo locally
+```bash
+python3 -m http.server 4173 --directory dist
+# open http://127.0.0.1:4173/job-card.html
+```
+
+### Dignity wall (unchanged)
+No GPS, no worker location maps, no accounts requiring ID, no employer dashboards of people, no analytics trackers on this page. Share = download on device only, gated if fee language is flagged.
+
+### Burmese copy
+English-first for new Clear Job Cards strings. Full Myanmar UI labels marked **NEED-CCO** — do not invent Burmese with an LLM.

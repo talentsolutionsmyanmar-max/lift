@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en" translate="no" class="notranslate">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="google" content="notranslate">
+  <meta name="description" content="Lift Clear Job Cards: turn a job poster into an honest structured card. Every field quotes the poster or is NOT STATED. No account, no tracking.">
+  <title>Lift — Clear Job Cards</title>
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./survey.css">
+  <link rel="stylesheet" href="./job-card.css">
+  <script defer src="./job-card-extract.js"></script>
+  <script defer src="./job-card-ui.js"></script>
+</head>
+<body>
+  <header>
+    <a class="survey-brand" href="./index.html" aria-label="Lift home">
+      <svg viewBox="3 3 34 32" aria-hidden="true"><path d="M8 29V17a12 12 0 0 1 24 0v12"/><path d="M15 29V18a5 5 0 0 1 10 0v11"/><path d="M5 32h30"/></svg>
+      <span aria-hidden="true">l<span class="lift-sun-i">ı</span>ft</span>
+    </a>
+  </header>
+  <main>
+    <p class="jc-eyebrow">LIFT / CLEAR JOB CARDS</p>
+    <h1>Turn a messy job poster into an honest card</h1>
+    <p>Upload or pick a poster. Lift lists only what is written: title, employer, location, pay, hours, requirements, how to apply, and any fee or deposit. If it is not on the poster, the field is <strong>NOT STATED</strong> — never guessed.</p>
+    <p class="jc-scope">Early prototype for Myanmar migrant workers. No account. No GPS. No employer map. Your image and card stay on this device unless you download a copy. Open-weights vision (Meta Muse Glimmer self-hosted) can be plugged in later; this demo uses fixtures and pasted text because Myanmar cannot use Meta’s hosted Model API.</p>
+
+    <div class="jc-grid">
+      <section class="jc-card">
+        <h2>1. Choose a demo poster</h2>
+        <p class="jc-note">Fastest path for judges. Fixtures quote only OCR-visible English (or clearly readable lines). Garbled Burmese is left NOT STATED.</p>
+        <div id="jc-fixtures" class="jc-fixtures" role="list"></div>
+      </section>
+      <section class="jc-card">
+        <h2>2. Or use your own poster</h2>
+        <label for="jc-image">Poster image (JPEG, PNG or WebP)</label>
+        <input id="jc-image" type="file" accept="image/jpeg,image/png,image/webp">
+        <div id="jc-image-tools" hidden>
+          <p class="jc-note">Preview stays in this browser tab only.</p>
+          <img id="jc-preview" class="jc-preview" alt="Poster preview">
+          <button type="button" class="secondary" id="jc-remove-image">Remove image</button>
+        </div>
+        <label for="jc-text" style="display:block;margin-top:16px">Paste visible poster text (optional but needed when the model is offline)</label>
+        <textarea id="jc-text" maxlength="8000" placeholder="Paste only words you can see on the poster. Do not add pay or fees that are not written."></textarea>
+        <p class="jc-note">New Myanmar UI strings need CCO review. This page is English-first. NEED-CCO: full Burmese labels for Clear Job Cards.</p>
+      </section>
+    </div>
+
+    <div class="jc-actions">
+      <button type="button" class="primary" id="jc-run">Build honest job card</button>
+      <button type="button" class="secondary" id="jc-clear">Clear</button>
+    </div>
+    <p id="jc-status" class="jc-status" role="status" tabindex="-1"></p>
+
+    <section id="jc-result" hidden aria-live="polite">
+      <p id="jc-demo-banner" class="jc-flag medium" hidden><strong>Demonstration sample</strong><span> Not a real job. Used to show the fee red-flag.</span></p>
+      <section class="jc-card">
+        <h2>Honest job card</h2>
+        <p id="jc-meta" class="jc-note"></p>
+        <p id="jc-hint" class="jc-note"></p>
+        <div id="jc-fields"></div>
+      </section>
+      <div id="jc-flag" class="jc-flag none" hidden></div>
+      <section class="jc-card">
+        <h2>Conversation coach (on this device only)</h2>
+        <p class="jc-note">Practice questions before you contact anyone. Answers you type elsewhere are not sent by Lift.</p>
+        <ul id="jc-coach" class="jc-coach"></ul>
+        <p><a href="./index.html#prepare">Open Lift’s prepare-a-conversation checklist</a></p>
+      </section>
+      <section id="jc-share-panel" class="jc-card" hidden>
+        <h2>Before you share a copy</h2>
+        <p id="jc-share-note" class="jc-note"></p>
+        <label id="jc-fee-ack-wrap" class="jc-consent" hidden>
+          <input id="jc-fee-ack" type="checkbox">
+          <span>I have read the fee / deposit red flag and will not share this as a safe job without checking.</span>
+        </label>
+        <div class="jc-actions">
+          <button type="button" class="primary" id="jc-share">Download card on this device</button>
+        </div>
+      </section>
+    </section>
+
+    <p class="jc-note" style="margin-top:32px">Dignity wall: Lift does not locate workers, build employer dashboards of people, or add analytics trackers here. Clear Job Cards is part of Lift’s non-commercial prototype and stays separate from ReferTRM’s commercial employer portal.</p>
+    <p><a href="./index.html">Back to Lift</a> · <a href="./check.html">Information check</a></p>
+  </main>
+</body>
+</html>
