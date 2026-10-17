@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="google" content="notranslate">
-  <meta name="description" content="Lift offer check: review a job offer you already have in Thailand. Quoted fields or NOT STATED. Fee and passport-hold language flagged. No job board. No tracking.">
+  <meta name="description" content="Lift offer check (English limited pilot): paste a job offer, see the exact sentences that may matter and questions to ask. Not a safety rating. No account, no tracking.">
   <title>Lift — Check a job offer</title>
   <link rel="icon" href="./icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./survey.css">
   <link rel="stylesheet" href="./job-card.css">
-  <script defer src="./job-card-extract.js"></script>
-  <script defer src="./job-card-ui.js"></script>
+  <script defer src="./offer-check.js"></script>
+  <script defer src="./offer-check-ui.js"></script>
 </head>
 <body>
   <header>
@@ -20,67 +20,39 @@
     </a>
   </header>
   <main>
-    <p class="jc-eyebrow">LIFT / OFFER CHECK (DEMO LISTINGS PAUSED)</p>
-    <h1>Check a job offer you already have</h1>
-    <p>For Myanmar migrants in Thailand reviewing an offer (factory, construction, domestic work, or similar). Upload a poster photo or paste the words you can see. Lift lists only what is written. If it is not on the poster, the field is <strong>NOT STATED</strong> — never guessed. Fee, deposit or passport-hold language is flagged before you download a copy.</p>
-    <p class="jc-scope"><strong>Not a job board.</strong> Lift does not list or invent Thailand jobs. Demo employer samples are paused until Ko Ko reviews the legitimacy research note in the Lift repo (`docs/THAILAND-MIGRANT-LEGIT-WORK-RESEARCH-2026-10-17.md`). Stay on a lawful pathway — confirm employer-change and permit rules at your provincial Employment Office. No account. No GPS. No employer map of workers.</p>
+    <p class="jc-eyebrow">LIFT / OFFER CHECK — ENGLISH LIMITED PILOT</p>
+    <h1>Read a job offer before you pay or hand over documents</h1>
+    <p>Paste the words of an offer you already received. Lift shows the exact sentence behind each point, why it may matter, and a question to ask. Lift never says an offer is safe, legal, verified or a scam.</p>
+    <p class="jc-scope"><strong>English limited pilot.</strong> Myanmar language will come only after CCO-approved copy is ready. Not a job board: Lift does not list jobs or employers. No account. No ID. No location.</p>
 
     <section class="jc-card">
-      <h2>Your poster or message</h2>
-      <label for="jc-image">Poster image (JPEG, PNG or WebP)</label>
-      <input id="jc-image" type="file" accept="image/jpeg,image/png,image/webp">
-      <div id="jc-image-tools" hidden>
-        <p class="jc-note">Preview stays in this browser tab only.</p>
-        <img id="jc-preview" class="jc-preview" alt="Poster preview">
-        <button type="button" class="secondary" id="jc-remove-image">Remove image</button>
-      </div>
-      <label for="jc-text" style="display:block;margin-top:16px">Paste visible poster text</label>
-      <textarea id="jc-text" maxlength="8000" placeholder="Paste only words you can see. Do not add pay or fees that are not written."></textarea>
-      <p class="jc-note">Open-weights model is offline in this build — paste is required to fill fields. NEED-CCO: Burmese UI labels.</p>
-    </section>
-
-    <section class="jc-card" style="margin-top:16px">
-      <h2>Demo samples</h2>
-      <p class="jc-note">Paused. No fictional Thailand employers and no Myanmar domestic hiring posters until research review. Optional samples will only return after Ko Ko approves framing (legitimacy check, not job listings).</p>
-      <div id="jc-fixtures" class="jc-fixtures" role="list" hidden></div>
+      <h2>Paste the offer text</h2>
+      <label for="jc-text">Offer text</label>
+      <textarea id="jc-text" maxlength="8000" placeholder="Paste only the words of the offer. You do not need to include your name, phone or passport number."></textarea>
+      <p id="jc-privacy" class="jc-note"><strong>Where your text goes:</strong> checked in this browser with Lift’s reviewed rules. Nothing is saved, logged or sent to analytics.</p>
+      <label id="jc-model-wrap" class="jc-consent" hidden>
+        <input id="jc-model" type="checkbox">
+        <span>Also use the Meta Llama model. This <strong>sends the text to a server</strong> (Vercel AI Gateway, zero data retention requested) for this one check. Having no account does not mean it stays on your phone.</span>
+      </label>
     </section>
 
     <div class="jc-actions">
-      <button type="button" class="primary" id="jc-run">Build honesty card</button>
+      <button type="button" class="primary" id="jc-run">Check the wording</button>
       <button type="button" class="secondary" id="jc-clear">Clear</button>
     </div>
     <p id="jc-status" class="jc-status" role="status" tabindex="-1"></p>
 
     <section id="jc-result" hidden aria-live="polite">
-      <p id="jc-demo-banner" class="jc-flag medium" hidden><strong>Demonstration sample</strong><span> Not a real job.</span></p>
-      <section class="jc-card">
-        <h2>Honesty card</h2>
-        <p id="jc-meta" class="jc-note"></p>
-        <p id="jc-hint" class="jc-note"></p>
-        <div id="jc-fields"></div>
-      </section>
-      <div id="jc-flag" class="jc-flag none" hidden></div>
-      <section class="jc-card">
-        <h2>Questions to ask (on this device only)</h2>
-        <p class="jc-note">Practice before you contact anyone. Lift does not send messages for you.</p>
-        <ul id="jc-coach" class="jc-coach"></ul>
-        <p><a href="./index.html#prepare">Open Lift’s prepare-a-conversation checklist</a></p>
-      </section>
-      <section id="jc-share-panel" class="jc-card" hidden>
-        <h2>Before you share a copy</h2>
-        <p id="jc-share-note" class="jc-note"></p>
-        <label id="jc-fee-ack-wrap" class="jc-consent" hidden>
-          <input id="jc-fee-ack" type="checkbox">
-          <span>I have read the fee / deposit red flag and will not treat this as a safe job without checking.</span>
-        </label>
-        <div class="jc-actions">
-          <button type="button" class="primary" id="jc-share">Download card on this device</button>
-        </div>
-      </section>
+      <p class="jc-flag medium"><strong>This is not a safety rating.</strong><span id="jc-notice"></span></p>
+      <section class="jc-card"><h2>Concerning wording found</h2><div id="jc-concerning"></div></section>
+      <section class="jc-card" style="margin-top:16px"><h2>Information missing</h2><div id="jc-missing"></div></section>
+      <section class="jc-card" style="margin-top:16px"><h2>Cannot assess</h2><div id="jc-cannot"></div></section>
+      <p id="jc-engine" class="jc-note"></p>
+      <p><a href="./index.html#prepare">Open Lift’s prepare-a-conversation checklist</a></p>
     </section>
 
-    <p class="jc-note" style="margin-top:32px">Dignity wall: no worker tracking, no location maps, no analytics trackers on this page. Separate from ReferTRM commercial hiring.</p>
-    <p><a href="./index.html">Back to Lift</a> · <a href="./check.html">Information check</a></p>
+    <p class="jc-note" style="margin-top:32px">No worker tracking, no location maps, no analytics on this page. Separate from ReferTRM.</p>
+    <p><a href="./index.html">Back to Lift</a></p>
   </main>
 </body>
 </html>

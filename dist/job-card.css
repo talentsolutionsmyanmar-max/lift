@@ -40,3 +40,4 @@ button.primary{background:#34533f;color:#fff;border:none;border-radius:10px;padd
 button.secondary{background:#fff;color:#34533f;border:1px solid #acb7a5;border-radius:10px;padding:12px 16px;cursor:pointer}
 button.primary:disabled,button.secondary:disabled{opacity:.45;cursor:not-allowed}
 textarea#jc-text{width:100%;min-height:120px;border:1px solid #a4b58d;border-radius:10px;padding:12px;font:inherit}
+#jc-model-wrap[hidden]{display:none}
