@@ -34,7 +34,7 @@
     $('jc-concerning').innerHTML = list(report.concerning, 'No concerning wording found. This does not mean the offer is safe.');
     $('jc-missing').innerHTML = list(report.missing, 'Each basic term is mentioned. Still confirm the details.');
     $('jc-cannot').innerHTML = list(report.cannotAssess, '');
-    $('jc-engine').textContent = 'Checked with ' + report.engine + ' · rules reviewed ' + report.reviewedRules + (report.personalDetailsHidden ? ' · personal details hidden' : '');
+    $('jc-engine').textContent = 'Checked with ' + report.engine + ' · rules reviewed ' + report.reviewedRules + (report.personalDetailsHidden ? ' · some personal details hidden (tap i for what)' : '');
     $('oc-input').hidden = true; $('jc-result').hidden = false; $('jc-status').textContent = ''; window.scrollTo(0, 0);
   }
   function toast(msg) { const t = $('oc-toast'); t.textContent = msg; t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 1400); }

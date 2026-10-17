@@ -49,35 +49,56 @@
   var NEGATION = /\b(never|no|not|don'?t|do not|does not|doesn'?t|will not|won'?t|free of|zero|without any)\b/i;
   var QUOTED_WARNING = /\b(beware|warning|be careful|scam alert|watch out|report)\b|["“'‘]/i;
   var INJECTION = /\b(ignore (all|any|the|previous|prior)|disregard|system prompt|you are (now )?an? (ai|assistant)|mark (this|it) (as )?(safe|legit|verified)|say (this|it) is (safe|legal))\b/i;
-  var PII = [/\b[A-Z]{1,2}\d{6,8}\b/g, /(\+?66|\+?95|0)[\d\s-]{8,12}\d/g, /\b\d{1}-\d{4}-\d{5}-\d{2}-\d{1}\b/g, /\b\d{13}\b/g, /[\w.+-]+@[\w-]+\.[\w.]+/g];
+  // Masked in quotes (each covered by a test). Order matters: specific formats first.
+  var PII = [
+    /\b\d{1,2}\s?\/\s?[A-Za-z]{3,9}\s?\((?:N|E|P|T|Naing|C)\)\s?\d{5,6}\b/gi,              // Myanmar NRC 12/ABC(N)123456
+    /[\w.+-]+@[\w-]+\.[\w.]+/g,                                                           // email
+    /\b\d[-\s]\d{4}[-\s]\d{5}[-\s]\d{2}[-\s]\d\b/g,                                        // Thai ID with dashes/spaces
+    /\b\d{13}\b/g,                                                                        // Thai ID 13 digits
+    /\bline(?:\s*id)?\s*[:：=]\s*@?[\w.-]{2,}|\bline\s+id\s+@?[\w.-]{2,}/gi,                 // LINE: abc123 / line id abc
+    /(^|[\s(])@[A-Za-z0-9._-]{3,}/g,                                                      // @handle
+    /(?:\+\s?(?:66|95)|(?<![\d,.])0)[\d\s-]{7,13}\d/g,                                     // phones +66 / +95 / 0x
+    /\b[A-Z]{1,2}\d{6,8}\b/g,                                                             // passport letter+digits MA123456, M1234567
+    /\b\d{8,9}\b/g,                                                                       // 8-9 digit document numbers
+    /\bName\s*[:：]\s*[A-Z][\w'-]*(?:\s+[A-Z][\w'-]*){0,3}/g,                              // Name: X
+    /\b(?:Mr|Mrs|Ms|Miss|Daw|Ko|Ma|Maung|Mg|U|Khun)\.?\s+[A-Z][a-z]+(?:\s+[A-Z][a-z]+){0,3}/g // title + name
+  ];
+  var MASKED = ['phone numbers (+66, +95, 0…)', 'email addresses', 'LINE IDs and @handles', 'passport-style numbers (letters + digits, or 8–9 digits)', 'Thai 13-digit ID numbers', 'Myanmar NRC numbers', 'names written after “Name:” or a title (Mr, Ms, U, Daw, Ko, Ma, Khun…)'];
   var BANNED = /\b(safe|legal|verified|legit(imate)?|scam|trustworthy|genuine)\b/i;
 
   function sentences(text) {
     return String(text || '').replace(/\r/g, '').split(/(?<=[.!?。])\s+|\n+/).map(function (s) { return s.trim(); }).filter(Boolean).slice(0, 200);
   }
-  function redact(s) { var out = s; PII.forEach(function (re) { out = out.replace(re, '[personal detail hidden]'); }); return out; }
+  function redact(s) { var out = s; PII.forEach(function (re) { out = out.replace(re, function (m, lead) { return (typeof lead === 'string' && /^[\s(]$/.test(lead) ? lead : '') + '[personal detail hidden]'; }); }); return out; }
   function hasPII(text) { return PII.some(function (re) { re.lastIndex = 0; var r = re.test(text); re.lastIndex = 0; return r; }); }
   function ruleById(id) { for (var i = 0; i < RULES.length; i++) if (RULES[i].id === id) return RULES[i]; return null; }
   function srcs(ids) { return ids.map(function (k) { return SOURCES[k]; }); }
 
+  // Clauses: negation only applies inside the clause that contains the trigger.
+  function clauses(s) { return s.split(/\s*(?:[;:]|,(?!\s*[\d฿]))\s*|\s+(?:but|and|however|although|though|except|while|plus|then)\s+/i).filter(Boolean); }
+  function classifyClause(rule, c) {
+    if (!rule.re.test(c)) return null;
+    if (QUOTED_WARNING.test(c) && /\b(beware|warning|be careful|watch out|report|never pay)\b/i.test(c)) return 'unclear';
+    if (rule.id !== 'no_permit' && NEGATION.test(c)) return 'negated';
+    if (rule.id === 'upfront_fee' && /\b(may|might|some|possible|depends|to be discussed|discuss|ask)\b/i.test(c)) return 'unclear';
+    return 'concern';
+  }
   // Classify one sentence for one rule: 'concern' | 'unclear' | null
   function classify(rule, s) {
-    if (!rule.re.test(s)) return null;
-    if (QUOTED_WARNING.test(s) && /\b(beware|warning|be careful|watch out|report|never pay)\b/i.test(s)) return 'unclear';
-    if (rule.id !== 'no_permit' && NEGATION.test(s)) {
-      // ambiguous mix e.g. "no agency fee but pay 2,000 baht for documents"
-      if (/\b(but|except|only|however|plus)\b/i.test(s)) return 'unclear';
-      return null;
-    }
-    if (rule.id === 'upfront_fee' && /\b(may|might|some|possible|depends|to be discussed|ask)\b/i.test(s)) return 'unclear';
-    return 'concern';
+    var ks = clauses(s).map(function (c) { return classifyClause(rule, c); }).filter(Boolean);
+    if (!ks.length) return null; // trigger must sit inside one clause
+    var hasNeg = ks.indexOf('negated') >= 0, hasConcern = ks.indexOf('concern') >= 0;
+    if (hasNeg && hasConcern) return 'unclear'; // same practice both denied and stated in one sentence
+    if (hasConcern) return 'concern';
+    if (ks.indexOf('unclear') >= 0) return 'unclear';
+    return null;
   }
 
   /** Rules-only analysis. Returns sentence-level hits (indices into sentences()). */
   function rulesExtract(text) {
     var ss = sentences(text), hits = [];
     ss.forEach(function (s, i) {
-      if (INJECTION.test(s)) { hits.push({ sentence: i, rule: 'instruction_in_text', kind: 'unclear' }); return; }
+      if (INJECTION.test(s)) hits.push({ sentence: i, rule: 'instruction_in_text', kind: 'unclear' }); // keep evaluating every rule
       RULES.forEach(function (r) { var k = classify(r, s); if (k) hits.push({ sentence: i, rule: r.id, kind: k }); });
     });
     return { engine: 'rules', hits: hits };
@@ -133,5 +154,5 @@
   }
 
   function reportText(report) { return JSON.stringify(report); }
-  return { REVIEWED: REVIEWED, SOURCES: SOURCES, RULES: RULES, MISSING: MISSING, BANNED: BANNED, sentences: sentences, redact: redact, rulesExtract: rulesExtract, sanitizeModelHits: sanitizeModelHits, buildReport: buildReport, analyze: analyze, reportText: reportText };
+  return { MASKED: MASKED, clauses: clauses, REVIEWED: REVIEWED, SOURCES: SOURCES, RULES: RULES, MISSING: MISSING, BANNED: BANNED, sentences: sentences, redact: redact, rulesExtract: rulesExtract, sanitizeModelHits: sanitizeModelHits, buildReport: buildReport, analyze: analyze, reportText: reportText };
 });
