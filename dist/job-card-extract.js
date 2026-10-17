@@ -2,7 +2,7 @@
  * Lift Clear Job Cards — extraction interface + fee red-flag.
  * Privacy: runs in the browser. No GPS, no accounts, no analytics.
  * Myanmar cannot use Meta Model API; open-weights remote is optional.
- * Primary path: user upload or pasted poster text. Optional DEMO fixtures are fictional Thailand migrant samples only.
+ * Primary path: user upload or pasted poster text. Demo fixtures paused pending legitimacy research (docs/THAILAND-MIGRANT-LEGIT-WORK-RESEARCH-2026-10-17.md).
  */
 (function (root) {
   'use strict';
@@ -18,6 +18,64 @@
     'how_to_apply',
     'fees_mentioned'
   ];
+
+  const FEE_ASK_PATTERNS = [
+    /\b(?:agency\s+)?fee\b/i,
+    /\bfees?\b/i,
+    /\bdeposit\b/i,
+    /\bguarantee\s+(?:money|fee|deposit)\b/i,
+    /\bregistration\s+fee\b/i,
+    /\bplacement\s+fee\b/i,
+    /\bpassport\s+hold(?:ing)?\b/i,
+    /\bhold(?:ing)?\s+(?:your\s+)?passport\b/i,
+    /\bpassport\s+held\b/i,
+    /\bheld\b[^\n]{0,40}\bpassport\b/i,
+    /\bpassport\b[^\n]{0,40}\bheld\b/i,
+    /\bpay\s+(?:us|to\s+apply|before\s+start)\b/i,
+    /\bupfront\s+(?:payment|fee|cost)\b/i,
+    /\bကုန်ကျစရိတ်\b/,
+    /\bကြိုတင်ငွေ\b/,
+    /\bအာမခံငွေ\b/,
+    /\bစာရင်းသွင်းခ\b/,
+    /\bပတ်စ်ပို့\s*ထိန်း\b/
+  ];
+
+  /** Phrases that negate a fee ask (do not red-flag alone). */
+  const FEE_NEGATION = [
+    /\bno\s+(?:agency\s+)?fees?\b/i,
+    /\bwithout\s+(?:any\s+)?(?:agency\s+)?fees?\b/i,
+    /\bfree\s+(?:of\s+)?(?:charge|fee)\b/i,
+    /\bzero\s+fee\b/i,
+    /\bမည်သည့်\s*အခကြေးငွေမှ\s*မ\b/,
+    /\bအခမဲ့\b/
+  ];
+
+  function field(value, quote, confidence) {
+    if (value == null || value === '' || value === NOT_STATED) return NOT_STATED;
+    return {
+      value: String(value),
+      source_quote_verbatim: quote == null || quote === '' ? NOT_STATED : String(quote),
+      confidence: typeof confidence === 'number' ? confidence : 0.7
+    };
+  }
+
+  function payField(amount, period, amountQuote, periodQuote) {
+    const a = amount == null || amount === '' || amount === NOT_STATED ? NOT_STATED : String(amount);
+    const p = period == null || period === '' || period === NOT_STATED ? NOT_STATED : String(period);
+    if (a === NOT_STATED && p === NOT_STATED) return NOT_STATED;
+    return {
+      value: { amount: a, period: p },
+      source_quote_verbatim: amountQuote || periodQuote || NOT_STATED,
+      confidence: 0.75
+    };
+  }
+
+  function emptyCard(meta) {
+    const card = {};
+    for (const k of FIELDS) card[k] = NOT_STATED;
+    card._meta = Object.assign({ extractor: 'none', invented: false }, meta || {});
+    return card;
+  }
 
   /**
    * DEMO FIXTURES PAUSED (Ko Ko, 17 Oct 2026).
