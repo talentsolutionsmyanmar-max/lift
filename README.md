@@ -2,7 +2,7 @@
 
 Lift is a non-commercial open-source project for Myanmar migrant workers in Thailand and their families.
 
-It is a mobile-first daily-life and community prototype. The work is designed around dignity, understandable next steps and family opportunity. There is no platform revenue. Lift does not locate or track workers.
+It is a mobile-first daily-life and community prototype. The work is designed around dignity, understandable next steps and family opportunity. There is no platform revenue. Lift does not locate or track workers. See [Do no harm](DO_NO_HARM.md).
 
 Related work: [www.refertrm.com](https://www.refertrm.com/)
 
@@ -49,7 +49,19 @@ python3 -m http.server 4173 --directory dist
 
 For the exact isolated team-test experience, serve `artifacts/workflow-followup-team-test-release/` instead. Use invented examples only.
 
-Run regression checks with `npm test`. Install dependencies with `npm ci` if needed for backend development. No credentials are needed for static UI review.
+Run regression checks with `npm test`. Install dependencies with `npm ci` if needed for experimental backend unit tests. No credentials are needed for static UI review.
+
+## Run without Vercel or other hosted services
+
+The planner, family tools, dates, spending calculator, community composer and team-test pages are static files. They do not need Vercel, a database, Blob storage, an AI gateway or API keys. Any static file server works. The `python3` command above is enough.
+
+`npm test` uses Node’s built-in test runner. It installs `@vercel/blob` from npm only so the experimental API unit tests can import and mock that library. The tests do not call Vercel.
+
+The files in `api/` are experimental Vercel Functions. They use Vercel Blob, Vercel OIDC, the Vercel AI Gateway and a Vercel cron. Those routes are not required to run or review the frontend. Rewriting them for another host is not a small change. Do not enable them for a design review.
+
+Team-test snapshots in `artifacts/` can be served the same way as `dist/`. Their `vercel.json` is only for optional hosting.
+
+Outbound links (for example LearnBig or Google Translate) are optional. Lift does not need them to open.
 
 ## Frontend entry points
 
@@ -74,6 +86,7 @@ No implementation of the proposed redesign is approved yet. Do not infer a job, 
 - [Contributing](CONTRIBUTING.md)
 - [Security](SECURITY.md)
 - [Privacy](PRIVACY.md)
+- [Do no harm](DO_NO_HARM.md)
 - [Governance](GOVERNANCE.md)
 
 ## Licence

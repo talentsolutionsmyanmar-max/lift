@@ -98,4 +98,6 @@ public issue for a security report.
 
 Lift does not locate or track workers. Do not add location, tracking, accounts,
 or identity-document collection unless a maintainer has agreed the product
-change and [PRIVACY.md](PRIVACY.md) is updated to match the code.
+change and [PRIVACY.md](PRIVACY.md) is updated to match the code. Follow
+[DO_NO_HARM.md](DO_NO_HARM.md) for child safety and for any future opening of
+user submissions.
