@@ -10,6 +10,39 @@ are not part of that team test.
 
 Lift does not require an account or identity documents.
 
+## Applicable laws
+
+Lift is built in Myanmar by Talent Resources Myanmar Co.,Ltd.
+
+The Myanmar statute we can name here is the **Law Protecting the Privacy and
+Security of Citizens** (Pyidaungsu Hluttaw Law 5/2017; unofficial English
+title). It was later amended, including by National Defence and Security
+Council Law 4/2026. That law is mainly about protecting a citizen’s privacy
+and security against unlawful search, surveillance, and interference with
+correspondence. It is not a comprehensive personal-data-protection statute
+for private digital services.
+
+As of October 2026, a separate Personal Data Protection Law remains a
+published draft, not an enacted statute we can treat as in force.
+
+This file describes how the code treats data. It is not a legal opinion and
+does not claim that Lift, this repository, or any host is certified,
+audited, or compliant with Myanmar law or any other law.
+
+**Data-minimisation principles we design to** (practice, not a compliance
+claim):
+
+- Do not create accounts or collect identity documents
+- Do not locate or track workers
+- Do not collect children’s responses
+- Keep plan saving off unless the person turns it on
+- Keep spending amounts and everyday answers in the open page only
+- Keep experimental server writes closed unless a maintainer enables them
+- Store only the fields listed below, with short retention where a server
+  record exists
+- Ask people not to send names, contact details, document numbers, or
+  exact addresses
+
 ## On the person’s device
 
 ### Language
