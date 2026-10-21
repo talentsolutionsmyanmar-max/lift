@@ -68,6 +68,14 @@ Research and proposals only: explain each activity’s benefit before starting, 
 
 No implementation of the proposed redesign is approved yet. Do not infer a job, renewed document, school place, improved finances or a health outcome from a checkbox.
 
+## Project documents
+
+- [Code of conduct](CODE_OF_CONDUCT.md)
+- [Contributing](CONTRIBUTING.md)
+- [Security](SECURITY.md)
+- [Privacy](PRIVACY.md)
+- [Governance](GOVERNANCE.md)
+
 ## Licence
 
 This project is released under the MIT Licence. See [LICENSE](LICENSE).
